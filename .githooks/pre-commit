@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Soft hook: warn when high-risk paths change without a local receipt.
+set -euo pipefail
+HIGH='^(enforcement/|\.githooks/|\.github/workflows/|aoc/PORTFOLIO\.yaml)'
+if git diff --cached --name-only | grep -Eq "$HIGH"; then
+  if [[ ! -d .aoc/receipts ]] || [[ -z "$(ls -A .aoc/receipts 2>/dev/null || true)" ]]; then
+    echo "AOC/Canon: high-risk path staged, no .aoc/receipts/ found." >&2
+    if [[ "${AOC_HOOKS_HARD:-0}" == "1" ]]; then
+      exit 1
+    fi
+    echo "AOC/Canon: soft warning only." >&2
+  fi
+fi
+exit 0

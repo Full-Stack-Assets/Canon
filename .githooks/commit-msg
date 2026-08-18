@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Soft hook: warn if the commit message lacks an AOC/Canon marker.
+set -euo pipefail
+MSG_FILE="$1"
+MSG="$(head -n 1 "$MSG_FILE" || true)"
+if echo "$MSG" | grep -Eq '\[AOC/Canon'; then
+  exit 0
+fi
+echo "AOC/Canon: commit subject has no status marker (e.g. [AOC/Canon • Preflight PASS])." >&2
+if [[ "${AOC_HOOKS_HARD:-0}" == "1" ]]; then
+  echo "AOC/Canon: hard mode on — commit blocked." >&2
+  exit 1
+fi
+echo "AOC/Canon: soft warning only. Set AOC_HOOKS_HARD=1 to block." >&2
+exit 0

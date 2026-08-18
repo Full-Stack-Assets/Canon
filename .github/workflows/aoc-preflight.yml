@@ -1,0 +1,33 @@
+name: aoc-preflight
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  preflight-evidence:
+    name: aoc-preflight
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Require Preflight evidence on high-risk paths
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          set -euo pipefail
+          HIGH='^(enforcement/|\.githooks/|\.github/workflows/|aoc/PORTFOLIO\.yaml)'
+          git fetch origin "${{ github.base_ref }}" --depth=1
+          CHANGED="$(git diff --name-only "origin/${{ github.base_ref }}"...HEAD || true)"
+          echo "$CHANGED"
+          if ! echo "$CHANGED" | grep -Eq "$HIGH"; then
+            echo "No high-risk paths in this PR."
+            exit 0
+          fi
+          if echo "$PR_BODY" | grep -Eq '\[AOC/Canon • Preflight PASS\]|receipt[_ -]?id[[:space:]]*:'; then
+            echo "Preflight evidence present."
+            exit 0
+          fi
+          echo "High-risk paths changed without a [AOC/Canon • Preflight PASS] marker or receipt id in the PR body."
+          exit 1

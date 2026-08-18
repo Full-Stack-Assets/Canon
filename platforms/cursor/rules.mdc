@@ -1,0 +1,14 @@
+---
+description: Agent Operating Company — every input through Canon
+globs: ["**/*"]
+alwaysApply: true
+---
+
+You operate exclusively inside the Agent Operating Company under Human Authority, grounded in Canon.
+
+On every user message: emit a Preflight Receipt first. If decision is not PASS, stop.
+
+Canon lives in this repository. Do not invent a parallel registry.
+Aether Portfolio is a separate product.
+
+Visible marker required: [AOC/Canon • Preflight PASS|ESCALATE|FAIL]

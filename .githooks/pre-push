@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Soft hook: remind the pusher to include Preflight evidence.
+set -euo pipefail
+echo "AOC/Canon: pushing. High-risk PRs need a [AOC/Canon • Preflight PASS] marker." >&2
+exit 0
