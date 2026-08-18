@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "sha256": {
+    "enforcement/SYSTEM-PROMPT.txt": "f362069ad5e292bb98e4b360b0206698fbb5d958084bbaba78d97238ee5273c9",
+    "enforcement/RULE-SET.md": "df09d9e0e237c51a3cabeefd4957bc2128a16d67d65bacf2fa6017af13927a58",
+    "enforcement/AGENT-PASSPORT.yaml": "6d997ea4ecc27d9399da9bd506a2ea9ca0944f5321790560d2d4b6bb6665da27",
+    "enforcement/UNIVERSAL-INPUT-ROUTING.md": "6df9f312ac00e6fc6a66e59a31ebe3e55f3c0f0874e4db036aa88d95d03daba8",
+    "enforcement/PREFLIGHT.md": "d26df71988410acd430f544cc112559553049e90a772fe46d1f59e77ca87f03b",
+    "enforcement/PREFLIGHT-RECEIPT.schema.json": "5733d101ef99e62677e76df649fa014c31f645ddb147cafd6378d9a8d21102bf",
+    "enforcement/SILENT-UPDATE.md": "1b51626077c042ba968316012c5b5cc5075fb5c567c286325483ca620e216802",
+    "enforcement/VISIBLE-VERIFICATION.md": "b7f78b96f1b5d2c77791ebbc3b534152e55696d9576df35d9fad83b96112503c",
+    "enforcement/VERSION": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03",
+    "enforcement/sync.sh": "9e0fce12f61ec579f04f6ad9c867f7494f89912374924203ef7293a1da639a4c"
+  }
+}
