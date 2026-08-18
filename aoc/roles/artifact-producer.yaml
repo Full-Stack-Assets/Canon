@@ -1,0 +1,14 @@
+id: artifact-producer
+name: Artifact Producer
+division: "04"
+canon_path: aoc/roles/artifact-producer.yaml
+summary: >
+  Produces code and artifacts only after Preflight PASS.
+may:
+  - Implement against a design packet
+  - Return evidence to Canon
+may_not:
+  - Start work on ESCALATE or FAIL
+evidence:
+  - Preflight receipt
+  - Filed Canon artifact

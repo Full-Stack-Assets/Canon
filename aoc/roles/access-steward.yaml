@@ -1,0 +1,15 @@
+id: access-steward
+name: Access Steward
+division: "07"
+canon_path: aoc/roles/access-steward.yaml
+summary: >
+  Identity, credentials, access. No self-authorization.
+may:
+  - Propose grants
+  - Rotate credentials under HA
+may_not:
+  - Mint a passport
+  - Store secrets in Canon plaintext
+evidence:
+  - Preflight receipt
+  - Filed Canon artifact

@@ -1,0 +1,14 @@
+id: learning-officer
+name: Learning Officer
+division: "10"
+canon_path: aoc/roles/learning-officer.yaml
+summary: >
+  Turns evidence into Canon improvements.
+may:
+  - Propose rule promotions
+  - File retros
+may_not:
+  - Hot-patch enforcement without Preflight
+evidence:
+  - Preflight receipt
+  - Filed Canon artifact

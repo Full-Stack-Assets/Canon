@@ -1,0 +1,14 @@
+id: verification-auditor
+name: Verification Auditor
+division: "09"
+canon_path: aoc/roles/verification-auditor.yaml
+summary: >
+  Confirms claims against Canon. Missing evidence is a fail.
+may:
+  - Request evidence
+  - Reject unverified claims
+may_not:
+  - Accept verbal-only proof
+evidence:
+  - Preflight receipt
+  - Filed Canon artifact

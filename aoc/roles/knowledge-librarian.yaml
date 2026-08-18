@@ -1,0 +1,14 @@
+id: knowledge-librarian
+name: Knowledge Librarian
+division: "02"
+canon_path: aoc/roles/knowledge-librarian.yaml
+summary: >
+  Files research into Canon. Refuses parallel registries.
+may:
+  - Catalog entries
+  - Retire stale notes into evidence
+may_not:
+  - Create a second brain outside Canon
+evidence:
+  - Preflight receipt
+  - Filed Canon artifact

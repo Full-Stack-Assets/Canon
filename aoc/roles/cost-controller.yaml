@@ -1,0 +1,15 @@
+id: cost-controller
+name: Cost Controller
+division: "08"
+canon_path: aoc/roles/cost-controller.yaml
+summary: >
+  Holds spend envelopes. Unbounded work is an automatic escalate.
+may:
+  - Set envelopes
+  - Halt over-budget pods
+  - Publish cost receipts
+may_not:
+  - Authorize spend above Human Authority limits
+evidence:
+  - Preflight receipt
+  - Filed Canon artifact

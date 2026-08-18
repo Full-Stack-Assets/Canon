@@ -1,0 +1,8 @@
+id: "03"
+slug: solution-architecture-design
+name: Solution Architecture & Design
+permanent: true
+mandate: >
+  Default intake for unspecified work. Shape the design so production never starts from a vacuum.
+roles: ["solution-architect"]
+canon_path: aoc/divisions/03-solution-architecture-design.yaml

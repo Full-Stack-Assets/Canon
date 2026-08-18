@@ -1,0 +1,8 @@
+id: "06"
+slug: operations-site-factories
+name: Operations & Site Factories
+permanent: true
+mandate: >
+  Run site factories and operational loops. Temporary pods die; factories remain.
+roles: ["site-factory-operator"]
+canon_path: aoc/divisions/06-operations-site-factories.yaml

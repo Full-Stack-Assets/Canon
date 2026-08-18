@@ -1,0 +1,8 @@
+id: "04"
+slug: code-artifact-production
+name: Code & Artifact Production
+permanent: true
+mandate: >
+  Produce code and artifacts only after Preflight PASS. Fail closed on ESCALATE or FAIL.
+roles: ["artifact-producer"]
+canon_path: aoc/divisions/04-code-artifact-production.yaml

@@ -1,0 +1,8 @@
+id: "10"
+slug: learning-evaluation-improvement
+name: Learning, Evaluation & Improvement
+permanent: true
+mandate: >
+  Turn evidence into better rules. Improvements land in Canon, never in a side notebook.
+roles: ["learning-officer"]
+canon_path: aoc/divisions/10-learning-evaluation-improvement.yaml

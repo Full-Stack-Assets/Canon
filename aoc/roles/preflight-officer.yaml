@@ -1,0 +1,15 @@
+id: preflight-officer
+name: Preflight Officer
+division: "09"
+canon_path: aoc/roles/preflight-officer.yaml
+summary: >
+  Runs the mandatory Preflight Gate on every input. Fail closed.
+may:
+  - Issue receipts
+  - Halt work on FAIL or ESCALATE
+may_not:
+  - Waive Preflight
+  - Invent a second gate
+evidence:
+  - Preflight receipt
+  - Filed Canon artifact

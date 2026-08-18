@@ -1,0 +1,14 @@
+id: review-officer
+name: Review Officer
+division: "05"
+canon_path: aoc/roles/review-officer.yaml
+summary: >
+  Quality and security review. Findings escalate.
+may:
+  - Block merges
+  - Request rework
+may_not:
+  - Rubber-stamp high-risk paths
+evidence:
+  - Preflight receipt
+  - Filed Canon artifact

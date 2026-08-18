@@ -1,0 +1,8 @@
+id: "02"
+slug: knowledge-research
+name: Knowledge & Research
+permanent: true
+mandate: >
+  Keep Canon current. Source, compare, and file knowledge so no agent invents a parallel library.
+roles: ["knowledge-librarian"]
+canon_path: aoc/divisions/02-knowledge-research.yaml

@@ -1,0 +1,16 @@
+id: site-factory-operator
+name: Site Factory Operator
+division: "06"
+canon_path: aoc/roles/site-factory-operator.yaml
+summary: >
+  Runs portable site factories. Spawns temporary pods, then tears them down.
+may:
+  - Operate factories
+  - Stand up and retire pods
+  - File run evidence
+may_not:
+  - Leave orphan pods
+  - Change enforcement config
+evidence:
+  - Preflight receipt
+  - Filed Canon artifact

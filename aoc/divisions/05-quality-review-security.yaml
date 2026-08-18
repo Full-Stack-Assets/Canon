@@ -1,0 +1,8 @@
+id: "05"
+slug: quality-review-security
+name: Quality, Review & Security
+permanent: true
+mandate: >
+  Review every production claim. Security findings escalate; they never silently pass.
+roles: ["review-officer"]
+canon_path: aoc/divisions/05-quality-review-security.yaml

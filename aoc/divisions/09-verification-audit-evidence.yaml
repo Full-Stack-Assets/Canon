@@ -1,0 +1,8 @@
+id: "09"
+slug: verification-audit-evidence
+name: Verification, Audit & Evidence
+permanent: true
+mandate: >
+  Every decision leaves a receipt. If it is not in Canon, it did not happen.
+roles: ["verification-auditor", "preflight-officer"]
+canon_path: aoc/divisions/09-verification-audit-evidence.yaml

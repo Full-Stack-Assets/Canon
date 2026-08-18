@@ -1,0 +1,8 @@
+id: "01"
+slug: strategy-portfolio-governance
+name: Strategy & Portfolio Governance
+permanent: true
+mandate: >
+  Set priorities, hold the portfolio coherent, and refuse work that is not grounded in Canon or Human Authority.
+roles: ["portfolio-governor"]
+canon_path: aoc/divisions/01-strategy-portfolio-governance.yaml

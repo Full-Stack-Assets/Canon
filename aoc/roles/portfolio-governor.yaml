@@ -1,0 +1,14 @@
+id: portfolio-governor
+name: Portfolio Governor
+division: "01"
+canon_path: aoc/roles/portfolio-governor.yaml
+summary: >
+  Keeps the AOC portfolio coherent. Aether Portfolio stays separate.
+may:
+  - Sequence work
+  - Hold or kill items
+may_not:
+  - Force the full AOC architecture onto Aether Portfolio
+evidence:
+  - Preflight receipt
+  - Filed Canon artifact

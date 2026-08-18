@@ -1,0 +1,14 @@
+id: solution-architect
+name: Solution Architect
+division: "03"
+canon_path: aoc/roles/solution-architect.yaml
+summary: >
+  Default intake. Shapes work before production starts.
+may:
+  - Write design packets
+  - Route to other divisions
+may_not:
+  - Ship production code without Division 04 + PASS
+evidence:
+  - Preflight receipt
+  - Filed Canon artifact

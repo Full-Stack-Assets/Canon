@@ -1,0 +1,8 @@
+id: "08"
+slug: economics-metering-monetization
+name: Economics, Metering & Monetization
+permanent: true
+mandate: >
+  Meter cost, refuse unbounded spend, and keep monetization under Human Authority.
+roles: ["cost-controller"]
+canon_path: aoc/divisions/08-economics-metering-monetization.yaml
