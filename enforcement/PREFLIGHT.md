@@ -1,35 +1,37 @@
 # Preflight Gate
+Version: 1.0
+Date: 2026-08-18
 
 Mandatory on every input. First output is a Preflight Receipt.
+Missing Preflight is FAIL. Never continue silently on failure.
 
-## Prompt-level form
+## Minimal viable implementation (any platform)
 
-Before any other content, emit a fenced JSON receipt that validates against
-`enforcement/PREFLIGHT-RECEIPT.schema.json`. Then stop if decision is not PASS.
+ON every new user input:
+  1. Create Task Envelope (objective, context, constraints, desired outcome, idempotency key)
+  2. Attempt Canon capability / role / skill resolution
+  3. Run policy screen (Universal Input + risk-tier + data-handling)
+  4. Assign authority ceiling (low | medium | high | escalated | none)
+  5. Declare required evidence
+  6. Emit Preflight Receipt
+  7. Decision:
+       PASS     → continue to execution
+       ESCALATE → surface to Human Authority
+       FAIL     → stop and report
 
-Recommended first-token contract:
+## Three implementation layers
 
-```
-PREFLIGHT_RECEIPT
-{ ...json... }
-```
+Prompt / instruction (easiest)
+  Force a structured Preflight block before real work.
+  Reject or re-prompt if the block is missing or status is not PASS.
 
-If `decision` is `ESCALATE` or `FAIL`, the remainder of the response must be
-the receipt plus a one-line halt. No patches, no files, no "while we wait".
+Tool / function (stronger)
+  Expose run_preflight(task_envelope). Downstream tools refuse to run
+  unless a valid receipt is supplied.
 
-## Tool form
-
-```
-run_preflight({ input: string }) → PreflightReceipt
-```
-
-Reference implementation: `preflight/run_preflight.mjs`.
-
-```sh
-node preflight/run_preflight.mjs "Implement the site-factory-operator RoleSpec"
-```
-
-Non-zero exit on ESCALATE or FAIL so scripts fail closed.
+Platform / agent (strongest)
+  Runtime intercepts every input, runs Preflight programmatically,
+  then instantiates a temporary agent.
 
 ## Fail closed
 
@@ -39,4 +41,6 @@ Non-zero exit on ESCALATE or FAIL so scripts fail closed.
 | ESCALATE | Stop | Present receipt to Human Authority |
 | FAIL | Stop | File receipt. Produce no artifacts |
 
-An agent that continues after ESCALATE or FAIL is out of passport.
+Unmappable to Canon → ESCALATE.
+High-consequence flag → ESCALATE even if other checks pass.
+The receipt itself is the first evidence artifact and must be written to Canon.
