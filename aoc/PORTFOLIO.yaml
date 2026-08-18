@@ -1,0 +1,14 @@
+id: agent-operating-company
+name: Agent Operating Company
+authority: HUMAN_AUTHORITY
+canon: Canon
+separate_products:
+  - id: aether-portfolio
+    note: Do not force the full AOC architecture onto this product.
+permanent_divisions: 10
+execution_layer:
+  - portable-adapters
+  - factories
+  - temporary-agent-pods
+  - evidence-back-to-canon
+rule: every_input_through_aoc_grounded_in_canon

@@ -1,0 +1,21 @@
+HANDOFF BRIEF — Agent Operating Company / Canon / Aether Portfolio
+Date: 2026-08-18
+Status: Enforcement Active
+
+CRITICAL RULE (HIGHEST PRIORITY)
+Every single user input MUST use the Agent Operating Company structure and be grounded in Canon without fail. No exceptions.
+
+NAMING (Locked)
+- Agent Operating Company = overall governed system
+- Canon = second brain / Global Library (single source of truth)
+- Aether Portfolio = separate portfolio product
+
+CANONICAL FLOW FOR EVERY INPUT
+Objective → Task / Work Item → Preflight Gate → Workflow → Evidence written back to Canon
+
+KEY INVARIANTS
+1. Canon is the single source of truth.
+2. Temporary agent instances are task-scoped only.
+3. No runtime may approve its own consequential output.
+4. High-consequence actions require Canon approval records.
+5. Every input is subject to this structure — no exemptions.

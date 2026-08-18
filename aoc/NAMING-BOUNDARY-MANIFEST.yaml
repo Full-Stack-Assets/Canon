@@ -1,0 +1,38 @@
+api_version: aoc/v1
+kind: NamingBoundaryManifest
+metadata:
+  id: AOC-NAMING-001
+  version: 1.0.0
+  date: 2026-08-18
+  status: locked
+
+names:
+  agent_operating_company:
+    short: AOC
+    description: Full governed autonomous system under Human Authority
+  canon:
+    former: buildgraph repository
+    description: Second brain / Global Library (roles, skills, policies, evidence)
+  aether_portfolio:
+    former: BuildGraph OS
+    description: Portfolio command center and relationship lens (separate product)
+
+hierarchy:
+  - HUMAN AUTHORITY
+  - AGENT OPERATING COMPANY
+    - 10 PERMANENT DIVISIONS
+    - CANON
+    - AGENTIC EXECUTION LAYER
+
+invariants:
+  - Canon is the single source of truth
+  - Agent instances are temporary and task-scoped
+  - No runtime may self-approve consequential actions
+  - High-consequence actions require Canon approval records
+  - Aether Portfolio remains a distinct product surface
+
+runtime_guidance: |
+  All portable adapters (GPT, Grok, Gemini, Cursor, Manus, etc.) must
+  resolve roles, skills, and policies from Canon and write evidence
+  and receipts back to Canon. Do not treat Aether Portfolio as the
+  control plane unless explicitly instructed.

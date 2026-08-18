@@ -1,0 +1,34 @@
+# Implementation log
+
+Shipped 2026-08-18 under Human Authority.
+
+## Created
+
+### Phase 1
+- `enforcement/` central directory (prompt, rules, passport, routing, sync)
+
+### Phase 2
+- `enforcement/PREFLIGHT.md` + schema
+- `preflight/run_preflight.mjs` (fail-closed exit codes)
+- `preflight/prompt-preflight.md`
+
+### Phase 3
+- `platforms/cursor|chatgpt|gemini|manus|copilot|clickup`
+
+### Phase 4
+- `.githooks/{commit-msg,pre-commit,pre-push}` (soft)
+- `.github/workflows/aoc-preflight.yml`
+- `.github/PULL_REQUEST_TEMPLATE.md`
+
+### Phase 5
+- `aoc/PORTFOLIO.yaml`
+- ten division manifests
+- RoleSpecs including site-factory-operator and cost-controller
+
+### Phase 6
+- `enforcement/VISIBLE-VERIFICATION.md`
+
+## Next recommended human action
+
+Enable hooks (`git config core.hooksPath .githooks`) and require the
+`aoc-preflight` GitHub check on `main`.

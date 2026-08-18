@@ -1,0 +1,25 @@
+{
+  "api_version": "aoc/v1",
+  "kind": "QuickReference",
+  "date": "2026-08-18",
+  "status": "locked",
+  "names": {
+    "Agent Operating Company": "Overall governed autonomous system under Human Authority",
+    "Canon": "Second brain / Global Library (roles, skills, policies, evidence) — formerly buildgraph repository",
+    "Aether Portfolio": "Portfolio command center and relationship lens — formerly BuildGraph OS"
+  },
+  "hierarchy": [
+    "HUMAN AUTHORITY",
+    "AGENT OPERATING COMPANY",
+    "10 PERMANENT DIVISIONS",
+    "CANON (second brain)",
+    "AGENTIC EXECUTION LAYER"
+  ],
+  "invariants": [
+    "Canon is the single source of truth",
+    "Agent instances are temporary and task-scoped",
+    "No runtime may self-approve consequential actions",
+    "High-consequence actions require Canon approval records",
+    "Aether Portfolio remains a distinct product surface"
+  ]
+}
