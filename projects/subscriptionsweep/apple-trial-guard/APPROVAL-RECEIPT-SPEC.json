@@ -1,0 +1,29 @@
+{
+  "schema": "canon.human-approval.receipt",
+  "version": "1.0.0",
+  "id": "APPROVAL-2026-08-24-SUBSCRIPTIONSWEEP-SPEC-01",
+  "timestamp": "2026-08-24T01:12:41-04:00",
+  "work_item": "WI-2026-08-24-SUBSCRIPTIONSWEEP-APPLE-TRIAL-GUARD",
+  "authority": "HUMAN_AUTHORITY",
+  "decision": "APPROVED",
+  "approved_artifact": "projects/subscriptionsweep/apple-trial-guard/docs/superpowers/specs/2026-08-24-apple-trial-guard-design.md",
+  "approved_branch": "spec/subscriptionsweep-apple-trial-guard-2026-08-24",
+  "approved_head_before_plan": "46e814407b477dbd1313b3fc92f4ac7a60a5f0e0",
+  "approved_scope": [
+    "written specification",
+    "implementation planning",
+    "reversible repository and artifact creation",
+    "local and simulated implementation after plan approval"
+  ],
+  "still_gated": [
+    "production credentials",
+    "live billing",
+    "managed production deployment",
+    "App Store Connect activation",
+    "App Store submission"
+  ],
+  "source": {
+    "channel": "chat",
+    "user_message": "Approved"
+  }
+}
