@@ -1,0 +1,121 @@
+name: materialize-subscriptionsweep-plans
+
+on:
+  push:
+    branches:
+      - spec/subscriptionsweep-apple-trial-guard-2026-08-24
+    paths:
+      - projects/subscriptionsweep/apple-trial-guard/docs/superpowers/plans/.materialize/**
+      - .github/workflows/materialize-subscriptionsweep-plans.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: materialize-subscriptionsweep-plans-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Wait until every archive part exists
+        id: parts
+        shell: bash
+        run: |
+          set -euo pipefail
+          root="projects/subscriptionsweep/apple-trial-guard/docs/superpowers/plans"
+          for part in part-00 part-01 part-02; do
+            if [[ ! -f "$root/.materialize/$part" ]]; then
+              echo "ready=false" >> "$GITHUB_OUTPUT"
+              echo "Awaiting $part"
+              exit 0
+            fi
+          done
+          echo "ready=true" >> "$GITHUB_OUTPUT"
+
+      - name: Decode, verify, and extract exact plan corpus
+        if: steps.parts.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          root="projects/subscriptionsweep/apple-trial-guard/docs/superpowers/plans"
+          work="$RUNNER_TEMP/subscriptionsweep-plans"
+          mkdir -p "$work"
+          cat "$root/.materialize/part-00" \
+              "$root/.materialize/part-01" \
+              "$root/.materialize/part-02" \
+            > "$work/implementation-plans.tar.xz.b64"
+          printf '%s  %s\n' \
+            '061fd6772cdc75c9b7e955058106946b6b2855489836be66f4dbe4a878ea5cda' \
+            "$work/implementation-plans.tar.xz.b64" \
+            | sha256sum --check --strict
+          base64 --decode "$work/implementation-plans.tar.xz.b64" \
+            > "$work/implementation-plans.tar.xz"
+          printf '%s  %s\n' \
+            '0bd28d023cd7b223e2769251de20247cb0216f4e3e1451bf6eb73d5373c812af' \
+            "$work/implementation-plans.tar.xz" \
+            | sha256sum --check --strict
+          tar -tJf "$work/implementation-plans.tar.xz" > "$work/archive-files.txt"
+          cat > "$work/expected-files.txt" <<'EOF'
+          2026-08-24-subscriptionsweep-core-platform.md
+          2026-08-24-subscriptionsweep-integration-release.md
+          2026-08-24-subscriptionsweep-ios.md
+          2026-08-24-subscriptionsweep-receipt-ingestion.md
+          2026-08-24-subscriptionsweep-web-saas.md
+          EOF
+          sort "$work/archive-files.txt" -o "$work/archive-files.txt"
+          sort "$work/expected-files.txt" -o "$work/expected-files.txt"
+          diff -u "$work/expected-files.txt" "$work/archive-files.txt"
+          tar -xJf "$work/implementation-plans.tar.xz" -C "$root"
+
+      - name: Validate materialized Markdown
+        if: steps.parts.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          root="projects/subscriptionsweep/apple-trial-guard/docs/superpowers/plans"
+          expected_lines=7565
+          actual_lines=$(wc -l \
+            "$root/IMPLEMENTATION-PLAN-INDEX.md" \
+            "$root/PLAN-SELF-REVIEW.md" \
+            "$root/2026-08-24-subscriptionsweep-core-platform.md" \
+            "$root/2026-08-24-subscriptionsweep-receipt-ingestion.md" \
+            "$root/2026-08-24-subscriptionsweep-web-saas.md" \
+            "$root/2026-08-24-subscriptionsweep-ios.md" \
+            "$root/2026-08-24-subscriptionsweep-integration-release.md" \
+            | tail -1 | awk '{print $1}')
+          test "$actual_lines" -eq "$expected_lines"
+          ! grep -RInE '\b(TBD|TODO|FIXME|implement later)\b' \
+            "$root"/*.md
+          python3 - <<'PY'
+          from pathlib import Path
+          root = Path('projects/subscriptionsweep/apple-trial-guard/docs/superpowers/plans')
+          files = sorted(root.glob('*.md'))
+          for path in files:
+              text = path.read_text()
+              fences = sum(1 for line in text.splitlines() if line.startswith('```'))
+              if fences % 2:
+                  raise SystemExit(f'unbalanced code fences: {path}')
+          print(f'validated {len(files)} markdown files')
+          PY
+
+      - name: Commit materialized plans
+        if: steps.parts.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add projects/subscriptionsweep/apple-trial-guard/docs/superpowers/plans/*.md
+          if git diff --cached --quiet; then
+            echo 'Plan files already materialized.'
+            exit 0
+          fi
+          git commit -m 'plan(subscriptionsweep): materialize executable plan set'
+          git push origin "HEAD:${GITHUB_REF_NAME}"
