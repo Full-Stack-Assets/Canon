@@ -1,0 +1,44 @@
+{
+  "artifact": "skills/source-product-visual-references",
+  "created_at": "2026-08-24T13:02:52.734Z",
+  "source_inventory": {
+    "filename": "Outfit_System_Image_Search_Inventory(1).xlsx",
+    "sha256": "805d753dfe4acd0b4d96b63a19fa4b824670262c331139d792ad3d9ff9c60d33",
+    "contract_version": "2.1",
+    "observations": {
+      "atomic_item_rows": 1669,
+      "searchable_rows": 836,
+      "generic_or_manual_rows": 833,
+      "verified_pilot_rows": 7
+    }
+  },
+  "canon_preflight_receipt": "a2bfb6b3-3914-439e-a1aa-5fc941eb3581",
+  "buildgraph_preflight": {
+    "decision": "CREATE_NEW",
+    "payload_hash": "97dc2d05915e0bd247f7f06f2db80c294ae3ec9dd7469a9a0ff92449d6e986a0",
+    "evidence_id": "graph:515a238039fcb1f61baa97b052359b241691ce3472af27c4dfe2f230f2988914",
+    "similarity": 0.0595,
+    "waste_risk": "low"
+  },
+  "reuse": {
+    "unchanged": [
+      "Inventory v2.1 field contract",
+      "SKL-006 claim extraction and source citation safeguards",
+      "SKL-007 source quality assessment safeguards",
+      "SKL-010 lineage and provenance safeguards"
+    ],
+    "extended": [
+      "Named-product workflow v2.1 translated into an executable Codex skill"
+    ],
+    "created": [
+      "Skill package",
+      "Structural record validator",
+      "Behavioral unit tests"
+    ]
+  },
+  "consolidation": {
+    "decision": "SHARE_COMPONENT_KEEP_SEPARATE",
+    "rationale": "Reuse the general citation, source-quality, and provenance controls while keeping the domain-specific product-image workflow as its own skill. No existing project or skill met the reuse threshold; no destructive merge or archive is justified."
+  }
+}
+
