@@ -1,0 +1,60 @@
+"{
+  "version": "1.0.0",
+  "schema": "canon.preflight.receipt",
+  "id": "a2bfb6b3-3914-439e-a1aa-5fc941eb3581",
+  "timestamp": "2026-08-24T13:02:52.734Z",
+  "input_digest": "sha256:f75239e92f197695",
+  "input_summary": "Create and register a reusable named-product visual-reference sourcing skill from Outfit System Image Search Inventory v2.1; verify official or reputable ret…",
+  "routed_to": {
+    "authority": "HUMAN_AUTHORITY",
+    "company": "AGENT_OPERATING_COMPANY",
+    "division_id": "09",
+    "division_name": "Verification, Audit & Evidence",
+    "canon_refs": [
+      "aoc/divisions/09"
+    ],
+    "roles": []
+  },
+  "checks": [
+    {
+      "id": "presence",
+      "name": "Input present",
+      "result": "pass",
+      "detail": "324 characters received."
+    },
+    {
+      "id": "routing",
+      "name": "Universal routing",
+      "result": "pass",
+      "detail": "Input entered Agent Operating Company under Human Authority."
+    },
+    {
+      "id": "canon",
+      "name": "Canon grounding",
+      "result": "pass",
+      "detail": "Grounded in Division 09 · Verification, Audit & Evidence."
+    },
+    {
+      "id": "authority",
+      "name": "Human Authority",
+      "result": "pass",
+      "detail": "No agent self-authorization."
+    },
+    {
+      "id": "risk",
+      "name": "Risk screen",
+      "result": "pass",
+      "detail": "No fail-closed or escalate pattern matched."
+    }
+  ],
+  "decision": "PASS",
+  "fail_closed": false,
+  "work_permitted": true,
+  "status_marker": "[AOC/Canon • Preflight PASS]",
+  "notes": [
+    "Work may proceed inside the routed division."
+  ],
+  "enforcement_version": "1.0.0"
+}
+
+"
