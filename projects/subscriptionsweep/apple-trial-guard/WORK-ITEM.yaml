@@ -1,10 +1,10 @@
 id: WI-2026-08-24-SUBSCRIPTIONSWEEP-APPLE-TRIAL-GUARD
 title: SubscriptionSweep - Apple Trial Guard
 record_type: work_item
-status: design_approved_written_spec_pending_review
+status: written_spec_ready_for_human_review
 canonical: true
 created_at: 2026-08-24T00:29:00-04:00
-updated_at: 2026-08-24T00:29:00-04:00
+updated_at: 2026-08-24T00:47:00-04:00
 human_authority:
   approval_recorded: true
   approved_scope:
