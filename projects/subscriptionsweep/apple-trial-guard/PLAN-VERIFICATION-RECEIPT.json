@@ -1,0 +1,69 @@
+{
+  "schema": "canon.plan.verification.receipt",
+  "version": "1.0.0",
+  "id": "PLAN-VERIFY-2026-08-24-SUBSCRIPTIONSWEEP-01",
+  "timestamp": "2026-08-24T01:33:00-04:00",
+  "work_item": "WI-2026-08-24-SUBSCRIPTIONSWEEP-APPLE-TRIAL-GUARD",
+  "decision": "PASS",
+  "branch": "spec/subscriptionsweep-apple-trial-guard-2026-08-24",
+  "materialized_commit": "e18dac506f197c559bce02b24773a1b3171e3d55",
+  "transfer_evidence": {
+    "archive_sha256": "0bd28d023cd7b223e2769251de20247cb0216f4e3e1451bf6eb73d5373c812af",
+    "base64_corpus_sha256": "061fd6772cdc75c9b7e955058106946b6b2855489836be66f4dbe4a878ea5cda",
+    "chunk_count": 11
+  },
+  "plan_summary": {
+    "track_count": 5,
+    "task_count": 45,
+    "markdown_file_count": 7,
+    "markdown_line_count": 7565,
+    "placeholder_matches": 0,
+    "code_fences_balanced": true
+  },
+  "canonical_plan_blobs": [
+    {
+      "path": "projects/subscriptionsweep/apple-trial-guard/docs/superpowers/plans/2026-08-24-subscriptionsweep-core-platform.md",
+      "blob_sha": "f9df61257e7f10c63fb54d3f88ce487174ba9cee"
+    },
+    {
+      "path": "projects/subscriptionsweep/apple-trial-guard/docs/superpowers/plans/2026-08-24-subscriptionsweep-receipt-ingestion.md",
+      "blob_sha": "b236cdf5db69177ac921f07c788c8006f6e4d021"
+    },
+    {
+      "path": "projects/subscriptionsweep/apple-trial-guard/docs/superpowers/plans/2026-08-24-subscriptionsweep-web-saas.md",
+      "blob_sha": "5a6e012189612003c5e96de7dd1ba539e35c2482"
+    },
+    {
+      "path": "projects/subscriptionsweep/apple-trial-guard/docs/superpowers/plans/2026-08-24-subscriptionsweep-ios.md",
+      "blob_sha": "5a24640eb2556619685b0029f6851049be64eb38"
+    },
+    {
+      "path": "projects/subscriptionsweep/apple-trial-guard/docs/superpowers/plans/2026-08-24-subscriptionsweep-integration-release.md",
+      "blob_sha": "ba731d6970c4ab84c3fc5322e9a292a86e74954b"
+    }
+  ],
+  "fresh_verification": {
+    "commands": [
+      "sha256sum implementation-plans.tar.xz implementation-plans.tar.xz.b64",
+      "wc -l IMPLEMENTATION-PLAN-INDEX.md PLAN-SELF-REVIEW.md 2026-08-24-subscriptionsweep-*.md",
+      "grep -RInE '\\b(TBD|TODO|FIXME|implement later)\\b' -- *.md",
+      "count '^### Task ' headings",
+      "check Markdown code-fence parity"
+    ],
+    "results": {
+      "hashes_match_manifest": true,
+      "line_count_matches_manifest": true,
+      "task_count_matches_manifest": true,
+      "placeholder_scan": "none",
+      "code_fence_check": "balanced"
+    }
+  },
+  "authority_boundary": {
+    "implementation_code_started": false,
+    "production_credentials_enabled": false,
+    "live_billing_enabled": false,
+    "production_deployment_started": false,
+    "app_store_submission_started": false
+  },
+  "next_gate": "Human Authority selects Subagent-Driven or Inline Execution."
+}
