@@ -24,13 +24,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Wait until every archive part exists
+      - name: Wait until every archive chunk exists
         id: parts
         shell: bash
         run: |
           set -euo pipefail
           root="projects/subscriptionsweep/apple-trial-guard/docs/superpowers/plans"
-          for part in part-00 part-01 part-02; do
+          for part in chunk-00 chunk-01 chunk-02 chunk-03 chunk-04 chunk-05 chunk-06 chunk-07 chunk-08 chunk-09 chunk-10; do
             if [[ ! -f "$root/.materialize/$part" ]]; then
               echo "ready=false" >> "$GITHUB_OUTPUT"
               echo "Awaiting $part"
@@ -47,9 +47,17 @@ jobs:
           root="projects/subscriptionsweep/apple-trial-guard/docs/superpowers/plans"
           work="$RUNNER_TEMP/subscriptionsweep-plans"
           mkdir -p "$work"
-          cat "$root/.materialize/part-00" \
-              "$root/.materialize/part-01" \
-              "$root/.materialize/part-02" \
+          cat "$root/.materialize/chunk-00" \
+              "$root/.materialize/chunk-01" \
+              "$root/.materialize/chunk-02" \
+              "$root/.materialize/chunk-03" \
+              "$root/.materialize/chunk-04" \
+              "$root/.materialize/chunk-05" \
+              "$root/.materialize/chunk-06" \
+              "$root/.materialize/chunk-07" \
+              "$root/.materialize/chunk-08" \
+              "$root/.materialize/chunk-09" \
+              "$root/.materialize/chunk-10" \
             > "$work/implementation-plans.tar.xz.b64"
           printf '%s  %s\n' \
             '061fd6772cdc75c9b7e955058106946b6b2855489836be66f4dbe4a878ea5cda' \
