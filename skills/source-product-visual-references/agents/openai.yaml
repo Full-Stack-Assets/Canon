@@ -1,8 +1,7 @@
-"interface:
+interface:
   display_name: "Source Product Visual References"
   short_description: "Verify named-product image references"
   default_prompt: "Use $source-product-visual-references to verify this named product and return the required visual-reference fields."
 policy:
   allow_implicit_invocation: true
 
-"

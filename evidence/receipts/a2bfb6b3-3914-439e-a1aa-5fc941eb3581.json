@@ -1,4 +1,4 @@
-"{
+{
   "version": "1.0.0",
   "schema": "canon.preflight.receipt",
   "id": "a2bfb6b3-3914-439e-a1aa-5fc941eb3581",
@@ -57,4 +57,3 @@
   "enforcement_version": "1.0.0"
 }
 
-"

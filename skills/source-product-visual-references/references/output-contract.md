@@ -1,4 +1,4 @@
-"# Output contract
+# Output contract
 
 Use the inventory row as the identity contract. The source page must prove the recorded class; visual resemblance alone is insufficient.
 
@@ -63,4 +63,3 @@ Do not invent additional classes. If no class is supported, do not force a match
 
 For `Generic/Unbranded` or `Manual Only / Omitted` rows, leave both URLs and `Match Class` blank and explain the omission in `Review Notes`.
 
-"

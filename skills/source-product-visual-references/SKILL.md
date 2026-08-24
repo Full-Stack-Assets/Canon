@@ -1,4 +1,4 @@
-"---
+---
 name: source-product-visual-references
 description: Source and verify named fashion or product image references from Google Images discovery and official, reputable retailer, or credible archive landing pages. Use when an inventory row needs a Selected Visual Reference URL, optional Direct Image URL, match class, status, and review notes; do not use to manufacture generic placeholders or generated imagery.
 ---
@@ -36,4 +36,3 @@ Inspect the product name, brand, model or family, color, material, style identif
 
 Read [references/output-contract.md](references/output-contract.md) before producing structured records or updating a workbook. Run `scripts/validate_reference_record.py` on completed JSON or JSONL records when deterministic structural validation is useful. Semantic product identity still requires page review.
 
-"

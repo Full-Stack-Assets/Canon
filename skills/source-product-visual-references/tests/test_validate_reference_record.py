@@ -1,4 +1,4 @@
-"import importlib.util
+import importlib.util
 import unittest
 from pathlib import Path
 
@@ -83,4 +83,3 @@ class ValidateReferenceRecordTests(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 
-"
