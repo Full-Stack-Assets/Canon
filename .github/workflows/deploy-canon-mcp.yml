@@ -2,6 +2,23 @@ name: deploy-canon-mcp
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - README.md
+      - PHASES.md
+      - aoc/**
+      - enforcement/**
+      - evidence/**
+      - mcp/**
+      - platforms/**
+      - preflight/**
+      - scripts/build-mcp-snapshot.mjs
+      - skills/**
+      - package.json
+      - package-lock.json
+      - wrangler.jsonc
+      - .github/workflows/deploy-canon-mcp.yml
 
 permissions:
   contents: read
