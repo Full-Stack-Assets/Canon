@@ -196,6 +196,7 @@ export class CanonIndex {
 
     const documents = [];
     for (const relativePath of [...new Set(candidates)].sort()) {
+      if (relativePath.startsWith("mcp/generated/")) continue;
       const absolutePath = path.resolve(this.root, relativePath);
       if (!absolutePath.startsWith(`${this.root}${path.sep}`)) continue;
       const fileStat = await lstat(absolutePath);
