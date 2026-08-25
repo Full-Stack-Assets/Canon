@@ -28,7 +28,13 @@ Shipped 2026-08-18 under Human Authority.
 ### Phase 6
 - `enforcement/VISIBLE-VERIFICATION.md`
 
+### Phase 7
+- Dependency-free read-only MCP server in `mcp/`
+- Bounded `search`, `fetch`, project, Work Item, decision, and capability tools
+- HTTP, stdio, security-boundary, indexing, and protocol verification tests
+
 ## Next recommended human action
 
-Enable hooks (`git config core.hooksPath .githooks`) and require the
-`aoc-preflight` GitHub check on `main`.
+Review the external MCP hosting and authentication design, then enable hooks
+(`git config core.hooksPath .githooks`) and require the `aoc-preflight` GitHub
+check on `main`.
