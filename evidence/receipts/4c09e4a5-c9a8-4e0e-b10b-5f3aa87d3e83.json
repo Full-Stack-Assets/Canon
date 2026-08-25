@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "schema": "canon.preflight.receipt",
+  "id": "4c09e4a5-c9a8-4e0e-b10b-5f3aa87d3e83",
+  "timestamp": "2026-08-25T20:52:02.373Z",
+  "input_digest": "sha256:ae31ff3658d97080",
+  "input_summary": "Under Human Authority, verify and merge Canon PR 3 if current CI is successful and the branch remains ahead of main without conflicts; keep deployment, OAuth, ChatGPT registration, and write tools gated.",
+  "routed_to": {
+    "authority": "HUMAN_AUTHORITY",
+    "company": "AGENT_OPERATING_COMPANY",
+    "division_id": "04",
+    "division_name": "Code & Artifact Production",
+    "canon_refs": ["aoc/divisions/04"],
+    "roles": []
+  },
+  "checks": [
+    {"id":"presence","name":"Input present","result":"pass","detail":"203 characters received."},
+    {"id":"routing","name":"Universal routing","result":"pass","detail":"Input entered Agent Operating Company under Human Authority."},
+    {"id":"canon","name":"Canon grounding","result":"pass","detail":"Grounded in Division 04 · Code & Artifact Production."},
+    {"id":"authority","name":"Human Authority","result":"pass","detail":"No agent self-authorization."},
+    {"id":"risk","name":"Risk screen","result":"pass","detail":"No fail-closed or escalate pattern matched."}
+  ],
+  "decision": "PASS",
+  "fail_closed": false,
+  "work_permitted": true,
+  "status_marker": "[AOC/Canon • Preflight PASS]",
+  "notes": ["Work may proceed inside the routed division."],
+  "enforcement_version": "1.0.0"
+}
