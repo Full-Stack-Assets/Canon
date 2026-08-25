@@ -1,10 +1,14 @@
 # Soft Git hooks
 
-Enable:
+Install and verify the clone-local configuration plus the repository-backed
+Cursor and Copilot entrypoints:
 
 ```sh
-git config core.hooksPath .githooks
+./enforcement/bootstrap.sh --install
+./enforcement/bootstrap.sh --check
 ```
+
+Manual hook-only fallback: `git config --local core.hooksPath .githooks`.
 
 These hooks **warn** and exit 0.
 

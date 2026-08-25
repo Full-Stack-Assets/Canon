@@ -1,0 +1,58 @@
+{
+  "version": "1.0.0",
+  "schema": "canon.preflight.receipt",
+  "id": "816c8a60-cb6f-428f-ad0e-582b6e0e5550",
+  "timestamp": "2026-08-25T21:29:50.132Z",
+  "input_digest": "sha256:c71f5ba852e28b21",
+  "input_summary": "Verify the Canon repository bootstrap, synchronized operator entrypoints, checksums, and evidence receipt.",
+  "routed_to": {
+    "authority": "HUMAN_AUTHORITY",
+    "company": "AGENT_OPERATING_COMPANY",
+    "division_id": "09",
+    "division_name": "Verification, Audit & Evidence",
+    "canon_refs": [
+      "aoc/divisions/09"
+    ],
+    "roles": []
+  },
+  "checks": [
+    {
+      "id": "presence",
+      "name": "Input present",
+      "result": "pass",
+      "detail": "106 characters received."
+    },
+    {
+      "id": "routing",
+      "name": "Universal routing",
+      "result": "pass",
+      "detail": "Input entered Agent Operating Company under Human Authority."
+    },
+    {
+      "id": "canon",
+      "name": "Canon grounding",
+      "result": "pass",
+      "detail": "Grounded in Division 09 · Verification, Audit & Evidence."
+    },
+    {
+      "id": "authority",
+      "name": "Human Authority",
+      "result": "pass",
+      "detail": "No agent self-authorization."
+    },
+    {
+      "id": "risk",
+      "name": "Risk screen",
+      "result": "pass",
+      "detail": "No fail-closed or escalate pattern matched."
+    }
+  ],
+  "decision": "PASS",
+  "fail_closed": false,
+  "work_permitted": true,
+  "status_marker": "[AOC/Canon • Preflight PASS]",
+  "notes": [
+    "Work may proceed inside the routed division."
+  ],
+  "enforcement_version": "1.0.1"
+}

@@ -1,15 +1,23 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "sha256": {
     "enforcement/SYSTEM-PROMPT.txt": "f362069ad5e292bb98e4b360b0206698fbb5d958084bbaba78d97238ee5273c9",
     "enforcement/RULE-SET.md": "df09d9e0e237c51a3cabeefd4957bc2128a16d67d65bacf2fa6017af13927a58",
     "enforcement/AGENT-PASSPORT.yaml": "6d997ea4ecc27d9399da9bd506a2ea9ca0944f5321790560d2d4b6bb6665da27",
     "enforcement/UNIVERSAL-INPUT-ROUTING.md": "6df9f312ac00e6fc6a66e59a31ebe3e55f3c0f0874e4db036aa88d95d03daba8",
-    "enforcement/PREFLIGHT.md": "d26df71988410acd430f544cc112559553049e90a772fe46d1f59e77ca87f03b",
-    "enforcement/PREFLIGHT-RECEIPT.schema.json": "5733d101ef99e62677e76df649fa014c31f645ddb147cafd6378d9a8d21102bf",
-    "enforcement/SILENT-UPDATE.md": "1b51626077c042ba968316012c5b5cc5075fb5c567c286325483ca620e216802",
+    "enforcement/PREFLIGHT.md": "05b2f016b6cc7c2a414c02c8cf442d07e6359370d1ebea457dae6c888e5775b5",
+    "enforcement/PREFLIGHT-RECEIPT.schema.json": "7769a230f380fd360f7db677d50c3b18e24c056f7553c30ac70f3b826e1d280d",
+    "enforcement/SILENT-UPDATE.md": "5a9903a3eb3040719367592bb35d939c6552bb852778858e9206457458fb974b",
     "enforcement/VISIBLE-VERIFICATION.md": "b7f78b96f1b5d2c77791ebbc3b534152e55696d9576df35d9fad83b96112503c",
-    "enforcement/VERSION": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03",
-    "enforcement/sync.sh": "9e0fce12f61ec579f04f6ad9c867f7494f89912374924203ef7293a1da639a4c"
+    "enforcement/VERSION": "44e161e4495cac2cf7858043e9e6418e9579f0ddcfae826f9a372622968ce066",
+    "enforcement/sync.sh": "9e0fce12f61ec579f04f6ad9c867f7494f89912374924203ef7293a1da639a4c",
+    "enforcement/bootstrap.sh": "2c65203ef22878b0ea2f1b18ff8214ed99177d0c5d21a830f7a909b96f7fa21c",
+    "enforcement/verify-checksums.mjs": "096901409d206b9b8c92a310fd319a0cd8d0bf105b4f1e05be00b68111f20da5",
+    "preflight/run_preflight.mjs": "49dfebadd1d989a5efc435cca1855b34e634be6302a51dbce6708cf5e87822b7",
+    "platforms/cursor/rules.mdc": "5a030b898a58d3887f750a4fb3d25146510b14c0fb706e5d40c0183e5b6a3571",
+    "platforms/copilot/copilot-instructions.md": "f7e53355a907d12ec087ab567e2b5bffbbf1a4c40353d85ff9badf77bbed6626",
+    ".githooks/commit-msg": "d13ba9786c56acca51cf7830bdd5efa6f6df81b952f9b6be4bb99ef5fdd23c38",
+    ".githooks/pre-commit": "9c07e803a60530e084952d754739dff6e21128df6b593b6012ac987797d31631",
+    ".githooks/pre-push": "48d2c4ebf5c284fd7f1f850dc5ad99421fda9c1b9448627d6132dbadbbea8f62"
   }
 }

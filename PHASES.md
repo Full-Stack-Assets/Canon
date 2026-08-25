@@ -34,8 +34,15 @@ Shipped 2026-08-18 under Human Authority.
 - HTTP, stdio, security-boundary, indexing, and protocol verification tests
 - Persistent Cloudflare Worker target with deterministic Canon snapshot
 
+## Repository enforcement checkpoint — 2026-08-25
+
+- Cursor and Copilot repository entrypoints are synchronized.
+- `enforcement/bootstrap.sh` installs and verifies clone-local soft hooks.
+- `aoc-preflight` is active and verifies bootstrap drift on pull requests.
+- Protecting `main` and requiring `aoc-preflight` remain a separate Human
+  Authority approval gate.
+
 ## Next recommended human action
 
-Review the external MCP hosting and authentication design, then enable hooks
-(`git config core.hooksPath .githooks`) and require the `aoc-preflight` GitHub
-check on `main`.
+Review the external MCP hosting/authentication design and separately decide
+whether to approve protection of `main` with required check `aoc-preflight`.

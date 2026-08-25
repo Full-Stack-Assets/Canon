@@ -1,0 +1,84 @@
+{
+  "schema": "canon.repository-enforcement.build-report",
+  "version": "1.0.0",
+  "generated_at": "2026-08-25T21:30:00Z",
+  "repository": "Full-Stack-Assets/Canon",
+  "base": {
+    "branch": "main",
+    "sha": "52169f7f89817dbabaa1119d6e7cd975845d381f"
+  },
+  "authority": {
+    "decision": "APPROVED_PREPARATION",
+    "scope": "Canon only: synchronize Cursor and Copilot entrypoints, add clone bootstrap verification, and open a draft pull request.",
+    "excluded": [
+      "Changing branch protection or repository rulesets",
+      "Requiring checks on main",
+      "Merging the pull request",
+      "Activating non-repository operator settings"
+    ],
+    "preflight_receipt_id": "6003641f-6031-4636-b89e-684bfd635cf7"
+  },
+  "audit": {
+    "git_hooks": {
+      "scripts_present_on_base": true,
+      "base_modes": {
+        ".githooks/commit-msg": "100644",
+        ".githooks/pre-commit": "100644",
+        ".githooks/pre-push": "100644",
+        "enforcement/sync.sh": "100644"
+      },
+      "clone_activation_observable_from_github": false,
+      "finding": "Hook scripts existed but were non-executable; the pre-commit hook checked only .aoc/receipts instead of Canon's evidence/receipts path; clone-local core.hooksPath cannot be proven from GitHub."
+    },
+    "cursor": {
+      "template_present_on_base": true,
+      "live_repository_entrypoint_present_on_base": false
+    },
+    "copilot": {
+      "template_present_on_base": true,
+      "live_repository_entrypoint_present_on_base": false
+    },
+    "github_actions": {
+      "workflow_present": true,
+      "check_name": "aoc-preflight",
+      "latest_observed_success_run": "https://github.com/Full-Stack-Assets/Canon/actions/runs/32898067380"
+    },
+    "main_protection": {
+      "protected": false,
+      "rulesets": [],
+      "changed_by_this_work_item": false
+    },
+    "checksum_manifest": {
+      "base_version": "1.0.0",
+      "stale_entries_found": 4,
+      "finding": "Recorded hashes for PREFLIGHT.md, PREFLIGHT-RECEIPT.schema.json, SILENT-UPDATE.md, and VERSION did not match the checked-out files."
+    }
+  },
+  "implemented": [
+    "Added synchronized .cursor and .github/copilot-instructions.md entrypoints",
+    "Added idempotent enforcement/bootstrap.sh install and read-only check modes",
+    "Corrected executable modes for hooks and shell entrypoints",
+    "Aligned the pre-commit receipt lookup with Canon's evidence/receipts path",
+    "Added deterministic checksum verification and refreshed the manifest",
+    "Made preflight receipts read enforcement/VERSION instead of a duplicated constant",
+    "Added pull-request CI verification for bootstrap drift",
+    "Updated README and PHASES status without claiming main protection"
+  ],
+  "verification": {
+    "shell_syntax": "PASS",
+    "pre_install_negative_check": "PASS",
+    "bootstrap_install": "PASS",
+    "bootstrap_read_only_check": "PASS",
+    "checksum_count": 18,
+    "node_tests": {
+      "passed": 15,
+      "failed": 0
+    },
+    "verification_preflight_receipt_id": "816c8a60-cb6f-428f-ad0e-582b6e0e5550"
+  },
+  "consequential_settings": {
+    "branch_protection": "NOT_CHANGED_APPROVAL_REQUIRED",
+    "rulesets": "NOT_CHANGED_APPROVAL_REQUIRED",
+    "merge": "NOT_PERFORMED"
+  }
+}

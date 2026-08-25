@@ -1,0 +1,58 @@
+{
+  "version": "1.0.0",
+  "schema": "canon.preflight.receipt",
+  "id": "6003641f-6031-4636-b89e-684bfd635cf7",
+  "timestamp": "2026-08-25T21:22:06.983Z",
+  "input_digest": "sha256:e331b31121f5188c",
+  "input_summary": "Human Authority approved a Canon-only draft pull request to sync the repository Cursor and Copilot entrypoints, add clone bootstrap verification, record evidence, and leave main protection unchanged pending separate approval.",
+  "routed_to": {
+    "authority": "HUMAN_AUTHORITY",
+    "company": "AGENT_OPERATING_COMPANY",
+    "division_id": "07",
+    "division_name": "Identity, Credentials & Access",
+    "canon_refs": [
+      "aoc/divisions/07"
+    ],
+    "roles": []
+  },
+  "checks": [
+    {
+      "id": "presence",
+      "name": "Input present",
+      "result": "pass",
+      "detail": "225 characters received."
+    },
+    {
+      "id": "routing",
+      "name": "Universal routing",
+      "result": "pass",
+      "detail": "Input entered Agent Operating Company under Human Authority."
+    },
+    {
+      "id": "canon",
+      "name": "Canon grounding",
+      "result": "pass",
+      "detail": "Grounded in Division 07 · Identity, Credentials & Access."
+    },
+    {
+      "id": "authority",
+      "name": "Human Authority",
+      "result": "pass",
+      "detail": "No agent self-authorization."
+    },
+    {
+      "id": "risk",
+      "name": "Risk screen",
+      "result": "pass",
+      "detail": "No fail-closed or escalate pattern matched."
+    }
+  ],
+  "decision": "PASS",
+  "fail_closed": false,
+  "work_permitted": true,
+  "status_marker": "[AOC/Canon • Preflight PASS]",
+  "notes": [
+    "Work may proceed inside the routed division."
+  ],
+  "enforcement_version": "1.0.0"
+}
