@@ -1,0 +1,100 @@
+{
+  "schema": "canon.task.execution.receipt",
+  "version": "1.0.0",
+  "id": "TASK-6-EXECUTION-RECEIPT-2026-08-25",
+  "work_item": "WI-2026-08-24-SUBSCRIPTIONSWEEP-APPLE-TRIAL-GUARD",
+  "recorded_at": "2026-08-25T18:38:29-04:00",
+  "status": "PASS",
+  "task": "Core Platform Task 6: Implement the PostgreSQL leased-job worker",
+  "implementation": {
+    "repository": "Full-Stack-Assets/SubscriptionSweep",
+    "branch": "feat/release-1-core-platform",
+    "base_commit": "45dfe2b949db6b7829927458cac1127d64a5d772",
+    "commit": "7fce38684a658ff45a06215bc0f3b8f7344d7c31",
+    "pull_request": 1
+  },
+  "behavior": [
+    "atomic PostgreSQL FOR UPDATE SKIP LOCKED leasing",
+    "expired pre-cap lease recovery",
+    "expired final-attempt terminalization with LEASE_EXPIRED_MAX_ATTEMPTS",
+    "bounded exponential retry from 30 seconds to a 15-minute cap",
+    "structured completed, retrying, failed, and idle results",
+    "strict non-retryable malformed UUID payload rejection",
+    "tenant-scoped deterministic RECONCILE_REMINDERS handling"
+  ],
+  "test_driven_evidence": {
+    "original_red": {
+      "database_integration_run": 77,
+      "run_id": 32901529137,
+      "result": "EXPECTED_FAIL",
+      "reason": "worker suites could not import the intentionally absent WorkerRunner"
+    },
+    "remediation_red": {
+      "database_integration_run": 93,
+      "run_id": 32905723558,
+      "result": "EXPECTED_FAIL",
+      "reason": "reproduced final-attempt lease stranding, malformed UUID database fallthrough, and shared-fixture collision"
+    }
+  },
+  "verification": {
+    "node": "24.19.0",
+    "pnpm": "10.17.1",
+    "postgres": "17-alpine",
+    "task_1_workspace_verification": {
+      "run": 99,
+      "run_id": 32906198116,
+      "result": "PASS"
+    },
+    "focused_worker_integration": {
+      "workflow": "Database Integration",
+      "run": 101,
+      "run_id": 32906198157,
+      "result": "PASS",
+      "test_files": 3,
+      "tests": 7
+    },
+    "database_integration": {
+      "run": 101,
+      "run_id": 32906198157,
+      "result": "PASS",
+      "test_files": 6,
+      "tests": 11
+    },
+    "ci": {
+      "run": 209,
+      "run_id": 32906198057,
+      "result": "PASS",
+      "checks": [
+        "frozen-lockfile install",
+        "workspace verifier",
+        "unit tests",
+        "formatting",
+        "lint",
+        "typecheck",
+        "build"
+      ]
+    }
+  },
+  "review": {
+    "initial_result": "NOT_APPROVED",
+    "important_findings": 3,
+    "remediation_result": "APPROVED",
+    "remaining_critical_findings": 0,
+    "remaining_important_findings": 0,
+    "remaining_minor_findings": [
+      "remediation RED summary originally omitted the third fixture-collision failure",
+      "shared-database worker fixtures are serialized but not fully hermetic on a dirty local database",
+      "graceful shutdown and dev/start discoverability remain optional follow-ups"
+    ]
+  },
+  "boundaries": {
+    "production_credentials": false,
+    "live_billing": false,
+    "signing": false,
+    "production_deployment": false,
+    "pull_request_draft": true,
+    "merged": false,
+    "app_store_submission": false
+  },
+  "next_approved_task": "Core Platform Task 7: Add root verification and continuous integration"
+}
