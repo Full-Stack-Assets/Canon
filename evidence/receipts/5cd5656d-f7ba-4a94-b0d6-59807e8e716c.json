@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "schema": "canon.preflight.receipt",
+  "id": "5cd5656d-f7ba-4a94-b0d6-59807e8e716c",
+  "timestamp": "2026-08-25T21:36:29.985Z",
+  "input_digest": "sha256:4ee7fda58d8b8bc0",
+  "input_summary": "Deploy and verify the merged persistent Cloudflare Worker endpoint for the read-only Canon MCP, then record the deployment receipt; keep ChatGPT registration as a user-interface handoff.",
+  "routed_to": {
+    "authority": "HUMAN_AUTHORITY",
+    "company": "AGENT_OPERATING_COMPANY",
+    "division_id": "09",
+    "division_name": "Verification, Audit & Evidence",
+    "canon_refs": ["aoc/divisions/09"],
+    "roles": []
+  },
+  "checks": [
+    {"id":"presence","name":"Input present","result":"pass","detail":"186 characters received."},
+    {"id":"routing","name":"Universal routing","result":"pass","detail":"Input entered Agent Operating Company under Human Authority."},
+    {"id":"canon","name":"Canon grounding","result":"pass","detail":"Grounded in Division 09 · Verification, Audit & Evidence."},
+    {"id":"authority","name":"Human Authority","result":"pass","detail":"No agent self-authorization."},
+    {"id":"risk","name":"Risk screen","result":"pass","detail":"No fail-closed or escalate pattern matched."}
+  ],
+  "decision": "PASS",
+  "fail_closed": false,
+  "work_permitted": true,
+  "status_marker": "[AOC/Canon • Preflight PASS]",
+  "notes": ["Work may proceed inside the routed division."],
+  "enforcement_version": "1.0.0"
+}
