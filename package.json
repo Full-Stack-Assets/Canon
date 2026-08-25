@@ -9,7 +9,13 @@
   "scripts": {
     "mcp": "node mcp/server.mjs",
     "mcp:stdio": "CANON_MCP_TRANSPORT=stdio node mcp/server.mjs",
+    "snapshot": "node scripts/build-mcp-snapshot.mjs",
+    "worker:dev": "wrangler dev",
+    "worker:deploy": "wrangler deploy",
     "test": "node --test",
     "verify": "npm test && node preflight/run_preflight.mjs \"Verify the read-only Canon MCP server implementation and evidence receipt.\""
+  },
+  "devDependencies": {
+    "wrangler": "^4.102.0"
   }
 }
