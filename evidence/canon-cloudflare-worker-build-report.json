@@ -1,0 +1,50 @@
+{
+  "schema": "canon.build_report",
+  "version": "1.0.0",
+  "id": "canon-cloudflare-worker-2026-08-25",
+  "timestamp": "2026-08-25T21:20:07Z",
+  "scope": "Persistent Cloudflare Worker deployment target for the read-only Canon MCP",
+  "status": "pass",
+  "preflight_receipt": "evidence/receipts/4ce59674-f9e2-468f-896e-7e064e40adcf.json",
+  "verification": {
+    "runtime": "Node.js v24.19.0",
+    "wrangler": "4.102.0",
+    "tests": {"total": 15, "passed": 15, "failed": 0},
+    "snapshot": {
+      "documents": 74,
+      "repeat_build_match": true
+    },
+    "worker_bundle": {
+      "dry_run": "pass",
+      "upload_kib": 201.11,
+      "gzip_kib": 55.96,
+      "binding": "CANON_MCP_PUBLIC_READ_ONLY=true"
+    },
+    "commands": [
+      "node scripts/build-mcp-snapshot.mjs",
+      "node --test",
+      "node --check mcp/worker.mjs",
+      "node --check mcp/memory-index.mjs",
+      "node --check scripts/build-mcp-snapshot.mjs",
+      "wrangler deploy --dry-run",
+      "git diff --check"
+    ]
+  },
+  "verified_boundaries": [
+    "The Worker exposes only the existing six read-only MCP tools.",
+    "The canonical snapshot is deterministic and regenerated before every Wrangler deployment.",
+    "Generated snapshots cannot recursively index themselves.",
+    "The endpoint fails closed unless bearer authentication or explicit public read-only mode is configured.",
+    "Unapproved browser origins and oversized requests are rejected.",
+    "The deployment requires no personal device, tunnel, database, or continuously running server.",
+    "ChatGPT Developer mode registration remains a user-interface action."
+  ],
+  "sha256": {
+    "mcp/worker.mjs": "73acb04a73352bed96d22516aae4887a811225fa3a0854609159f1e99dadfc0c",
+    "mcp/memory-index.mjs": "92a58fb6c3022300dfcfeb3ddd1ba3509a0dd32bf0ba92b0f22c79da7d8ee67f",
+    "scripts/build-mcp-snapshot.mjs": "45b2fe6ec35258d0bd1738d8805379b421e8a65ef545e328898cf3faf41a0bf7",
+    "test/mcp-worker.test.mjs": "7b600487a5558948402ed16ac969e955dbbbe84a5c5afa6115e3fa794c16b5e2",
+    "wrangler.jsonc": "bb4de674350391f017deb70f71fb14a8151619a87b5583bf81d5a1db0b733483",
+    "package.json": "8cc8ad97632135c2cdf17768bac45bace24d3c88b58fb1c7a32852e5b362b9bf"
+  }
+}
