@@ -5,7 +5,7 @@ id: portfolio-audit-2026-08-25
 status: active-review
 observed_at: 2026-08-25
 human_authority: user-directed-work-item
-workbook_sha256: 3e07e34a781bb7e54cc798eef8a446257dabfe8fe88eb7a483a0f676a4ecd99d
+workbook_sha256: d08873c21c7d1b24467ab41c6032a9f124289dba96eaf9ce3848fd21855114df
 ---
 
 # AOC Portfolio Audit — 2026-08-25
@@ -41,7 +41,7 @@ Reconcile the portfolio across Canon/Wisebase, ChatGPT Library, current GitHub, 
 ### A — Sell / pursue now
 
 2. **Bid Radar / Permit Pulse** — clearest short-cycle productized-service wedge found in the audit. Bid Radar defines contractor tiers at **$249 / $499 / $799 per month** with explicit ICP, coverage, exclusivity, briefs, alerts, and integrations; Permit Pulse already provides an operating local opportunity tracker. Sell this service before building a larger platform.
-3. **HostGraph + Margin Leak Monitor + SupplierWatch** — strong B2B procurement/revenue-recovery family. HostGraph has a verified production build and six core views; some flows fall back to mock data and the verification record lacks unit/E2E tests. Margin Leak Monitor shows compelling demo economics, but `.example.com` vendor contacts mean reported recoveries must not be treated as independently verified client cash.
+3. **HostGraph + Margin Leak Monitor + SupplierWatch** — strong B2B procurement/revenue-recovery family. HostGraph has a verified production build and six core views; some flows fall back to mock data and the verification record lacks unit/E2E tests. Margin Leak Monitor has a concrete offer at **$299 setup + $199/month** for one-to-five-location restaurant operators. Its Brass Rooster proof story is explicitly labeled **SYNTHETIC DEMONSTRATION**, so modeled savings and credit claims must not be treated as customer revenue or realized recovery.
 4. **DealDiligence** — materially closer to first-dollar than the generic micro-SaaS set. A production/launch package documents **$299 per property**, **$999/month Portfolio**, a **$749/month founding plan**, and live Stripe product/price IDs. Recommended proof gate: sell five per-deal pilots before emphasizing subscription.
 5. **ProductWeld / Full Stack Assets professional services** — direct route to near-term cash because it can sell existing capabilities without waiting for SaaS PMF. Existing sponsor/media packaging includes newsletter placements, sponsored posts, custom content-engine setup, and managed retainers. Audience and sales metrics still require corroboration.
 6. **PQC Discovery & Migration Engine** — high-ticket productized-service candidate with a defined assessment/license model. Sell a fixed-scope assessment before expanding software scope.
@@ -56,12 +56,13 @@ Reconcile the portfolio across Canon/Wisebase, ChatGPT Library, current GitHub, 
 
 - **Ripple City / municipal simulation** — commercialization analysis proposes a $35k–$90k municipal discovery pilot, $18k–$60k/year department SaaS, and $90k–$300k+/year regional/enterprise licensing. These are proposed commercial bands, not observed demand. Pursue one paid/written-interest pilot while keeping synthetic-kernel correctness gates intact.
 - **SubscriptionSweep** — no longer a mere scaffold. Draft PR #1 has 86 commits, 69 changed files, and 4,961 additions across contracts, database, reminder policy, API, tests, and release verification. Still requires user/payment proof; live billing, signing, production deployment, and App Store actions remain gated.
+- **RunwayOS** — distinct from RunwaySignal. It is a working prototype/operator-pilot for reclaiming orphaned SaaS seats after employee offboarding, with tenant boundaries, an `ACTIVE → PENDING_REMOVAL → DEACTIVATED` lifecycle, provider reconciliation paths, exports, API/metrics, and explicit ICPs including fractional CFO firms, VC operating partners, and startup finance/ops. Commercial proof is still missing, and adjacent SaaS-management competition is strong.
 - **RoboticsBenchmarks.com** — Unit 0 exists and Unit 1 draft PR #3 has a core schema/evidence kernel; migrations, immutable revisions/hashing, state guards, collision rules, audit writer, draft importer, and adverse fixtures remain open. Launch a source-backed MVP before monetization expansion.
 - RenewalLens
-- RunwaySignal
+- RunwaySignal — separate 13-week cash-flow concept, not RunwayOS.
 - storekit / StoreForge family
 - AssetForge / DropKit digital products
-- Poly-Pipeline / data products
+- Poly-Pipeline / data products — verified against live Polygon data with a documented sample run of 37,762 fills → 26,469 labeled trades across 676 markets, but no inspected buyer/pricing/payment evidence.
 - Short-squeeze alerting
 - Photobeam / near-term iOS shipping candidates
 - BLAIZE SUNDAY / Songforge OS
@@ -86,6 +87,7 @@ Games, experimental browsers, AI/LLM experiments, creative media projects, broad
 8. **Ripple City** — pursue one paid municipal/consulting/university pilot.
 9. **SubscriptionSweep** — finish approved Release 1 gates, then validate willingness-to-pay.
 10. **RoboticsBenchmarks.com** — finish Unit 1, launch source-backed MVP, then test sponsor/data-license demand.
+11. **RunwayOS** — sell a paid audit/operator pilot; proof gate = 3 paid pilots with verified reclaimed seats and realized savings before broad provider expansion.
 
 ## Consolidation decisions to investigate
 
@@ -94,6 +96,7 @@ Games, experimental browsers, AI/LLM experiments, creative media projects, broad
 - Tradewind Automations / `tradewind-dealflow` are legacy/reuse sources for canonical `tradewind-autonomous-dealflow` unless explicitly reversed.
 - Bid Radar and Permit Pulse share opportunity-source/qualification infrastructure and should reuse collectors, scoring, dedupe, and briefing components.
 - OpportunityOS, AcquisitionFabric, Contra Operator, and Freelancer gateway remain separate architectural layers but should share source contracts, provenance, opportunity identity, and outcome telemetry.
+- **RunwayOS and RunwaySignal are separate products.** RunwayOS is SaaS-seat/offboarding recovery; RunwaySignal is the 13-week cash-flow monitoring concept.
 - FullStackAssets, Full-Stack-Assets.github.io, Full-Stack-Assets, portfolio-hub, portfolio-publisher, and related static web repos require a single canonical source/host map.
 - Storekit, StoreForge, Autonomous-Store, and micro-store-template require consolidation around one commerce factory/runtime.
 - AstroKobi multi-domain repositories should be one brand family unless distinct audience/data evidence supports separate publications.
@@ -116,8 +119,8 @@ The next dollar should come from **selling an existing outcome**, not creating a
 ## External artifacts
 
 - Workbook: `AOC_Portfolio_Audit_2026-08-25.xlsx`
-- Workbook SHA-256: `3e07e34a781bb7e54cc798eef8a446257dabfe8fe88eb7a483a0f676a4ecd99d`
-- Workbook now includes `Revenue Decision Queue` and `Consolidation Map` sheets in addition to full inventory/evidence views.
+- Workbook SHA-256: `d08873c21c7d1b24467ab41c6032a9f124289dba96eaf9ce3848fd21855114df`
+- Workbook includes `Revenue Decision Queue` and `Consolidation Map` sheets in addition to full inventory/evidence views; RunwayOS has been split from RunwaySignal and the Executive Ranking was re-sorted after evidence updates.
 - Wisebase prepared document: `AOC Portfolio Master Registry — 2026-08-25`; final Wisebase persistence cannot be claimed because the exposed Wisebase connector provides preparation but no programmatic final-save action.
 
 ## Next audit tranche
