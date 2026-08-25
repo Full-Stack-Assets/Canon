@@ -93,6 +93,12 @@ Every Wrangler development or deployment build runs the snapshot generator from
 `wrangler.jsonc`, ensuring the bundled content matches the deploying Canon
 checkout. `npm run snapshot` remains available for deterministic local testing.
 
+For persistent account deployment, add `CLOUDFLARE_API_TOKEN` and
+`CLOUDFLARE_ACCOUNT_ID` as GitHub Actions repository secrets, then
+run the `deploy-canon-mcp` workflow. The workflow rebuilds the snapshot, runs
+the full test suite, deploys the Worker, verifies live health plus MCP
+`initialize` and `tools/list`, and uploads a deployment receipt artifact.
+
 ## Indexed boundary
 
 Only bounded UTF-8 source files under the known Canon directories are indexed.
