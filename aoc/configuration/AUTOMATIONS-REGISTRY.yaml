@@ -1,0 +1,159 @@
+version: 1.0.0
+schema: aoc.automation.inventory
+status: observed_projection
+observed_at: 2026-08-25T21:30:39Z
+authoritative_runtime: ChatGPT Automations
+canon_role: inventory_and_governance_projection
+timezone: America/New_York
+mutation_policy: human_approval_required
+observability_notes:
+  - All sixteen records omitted next_run_time at inspection.
+  - Recent last_run_time values verified that the nine enabled records were executing.
+  - A null next_run_time is treated as an observability limitation, not proof of failure.
+integrations_verified:
+  - Gmail profile and search
+  - Microsoft Outlook profile and search
+  - GitHub profile and repository access
+  - public web research capability
+automations:
+  - id: 6a8db60431f48191b146f0c6bd1385f8
+    title: Acquisition Reply Gate Watch
+    enabled: true
+    timing_mode: condition_watch
+    schedule: "DTSTART:20260825T153528Z;RRULE:FREQ=HOURLY"
+    category: acquisition_reply
+    source_dependencies: [outlook, public_acquisition_sources, optional_esign_or_broker_workflow]
+    notification_policy: decision_or_human_authority_gate_only
+  - id: 6a85a3b1bb6c8191978a69499e9ae96c
+    title: P0 Acquisition Gate Watch
+    enabled: true
+    timing_mode: condition_watch
+    schedule: "DTSTART:20260819T123909Z;RRULE:FREQ=HOURLY;INTERVAL=12"
+    category: acquisition_discovery
+    source_dependencies: [public_web, acquisition_marketplaces, capital_sources]
+    notification_policy: qualifying_priority_zero_or_time_sensitive_gate_only
+  - id: 6a7cdb349d548191a233927740b5d886
+    title: Zero-Cash Acquisition Scan
+    enabled: true
+    timing_mode: flexible_schedule
+    schedule: "DTSTART:20260813T080000;RRULE:FREQ=DAILY"
+    category: acquisition_discovery
+    source_dependencies: [public_web, acquisition_marketplaces, capital_sources]
+    notification_policy: new_evidence_backed_candidates_only
+  - id: 6a8d4b776ad481918022003ceabcdbfc
+    title: MA/RI Dom Lead Watch
+    enabled: true
+    timing_mode: condition_watch
+    schedule: "DTSTART:20260825T080051Z;RRULE:FREQ=HOURLY"
+    category: specialized_public_lead_monitoring
+    source_dependencies: [public_web]
+    notification_policy: genuinely_new_qualified_candidate_only
+  - id: 6a86cb0b5b2881919dd49bf3f9251eb3
+    title: Frontier Daily Briefing
+    enabled: true
+    timing_mode: flexible_schedule
+    schedule: "DTSTART:20260821T080000;RRULE:FREQ=DAILY"
+    category: executive_briefing
+    source_dependencies: [public_web, primary_research_sources]
+    notification_policy: scheduled_five_signal_briefing
+  - id: 6a741408765881919e642cd5d51323ff
+    title: DNA Case Update
+    enabled: true
+    timing_mode: condition_watch
+    schedule: "DTSTART:20260807T120000Z;RRULE:FREQ=WEEKLY;BYDAY=FR;BYHOUR=8;BYMINUTE=0;BYSECOND=0"
+    category: public_case_monitoring
+    source_dependencies: [public_web, official_statements]
+    notification_policy: meaningful_new_result_or_official_update_only
+  - id: 6a69bcca1f688191b56c84b6fa27069d
+    title: Frontier Autonomy Watch
+    enabled: true
+    timing_mode: condition_watch
+    schedule: "DTSTART:20260730T090000;RRULE:FREQ=DAILY"
+    category: frontier_ai_monitoring
+    source_dependencies: [public_web, primary_research_sources, security_advisories]
+    notification_policy: substantive_verified_autonomy_development_only
+  - id: 6a83901fe8608191b3eb0f9c6abd3ba2
+    title: AI Frontier Monitor
+    enabled: true
+    timing_mode: condition_watch
+    schedule: "DTSTART:20260817T225107Z;RRULE:FREQ=HOURLY;INTERVAL=6"
+    category: frontier_ai_monitoring
+    source_dependencies: [public_web, primary_research_sources, security_advisories]
+    notification_policy: substantive_new_development_only
+  - id: 6a7d58c343d081918281ef17ac0d52b7
+    title: All-Inbox Opportunity Reply Check
+    enabled: true
+    timing_mode: flexible_schedule
+    schedule: "DTSTART:20260813T080000;RRULE:FREQ=DAILY"
+    category: opportunity_inbox
+    source_dependencies: [gmail, outlook, other_connected_inboxes_if_available]
+    notification_policy: substantive_reply_or_decision_gate_only
+  - id: 6a81ac87177c8191ad92ebd85c7384fa
+    title: Gig Work Firehose
+    enabled: false
+    timing_mode: condition_watch
+    schedule: "DTSTART:20260816T090000;RRULE:FREQ=HOURLY"
+    category: opportunity_discovery
+    source_dependencies: [public_web, marketplaces, email]
+    notification_policy: disabled
+  - id: 6a8405dffc188191bc01705551f23f6f
+    title: Career Confidence Sprint
+    enabled: false
+    timing_mode: flexible_schedule
+    schedule: "DTSTART:20260818T080000;RRULE:FREQ=DAILY"
+    category: career_support
+    source_dependencies: []
+    notification_policy: disabled
+  - id: Automation_db31a30a75f88191912009d0a0c9f070
+    title: Weekly finances update
+    enabled: false
+    timing_mode: flexible_schedule
+    schedule: "DTSTART:20260729T180709Z;RRULE:FREQ=WEEKLY;BYDAY=SA;BYHOUR=8;BYMINUTE=0;BYSECOND=0"
+    category: financial_summary
+    source_dependencies: [financial_sources_if_connected]
+    notification_policy: disabled
+  - id: 6a85900e30c48191a28f87d3ccaf0f75
+    title: Retroactive Auto-Apply Sweep
+    enabled: false
+    timing_mode: exact_schedule
+    schedule: "DTSTART:20260819T111522Z"
+    category: opportunity_execution
+    source_dependencies: [marketplaces, portfolio_evidence]
+    notification_policy: disabled_completed_one_time_record
+  - id: 6a7c520d1f148191b413a1f456176d54
+    title: Investor/Task Reply Alert
+    enabled: false
+    timing_mode: condition_watch
+    schedule: "DTSTART:20260812T110025Z;RRULE:FREQ=HOURLY"
+    category: opportunity_inbox
+    source_dependencies: [email]
+    notification_policy: disabled
+  - id: 6a7c2f5b36088191adf875f9b91861c3
+    title: Contra Opportunity Watch
+    enabled: false
+    timing_mode: condition_watch
+    schedule: "DTSTART:20260812T083223Z;RRULE:FREQ=HOURLY;INTERVAL=6"
+    category: opportunity_discovery
+    source_dependencies: [contra]
+    notification_policy: disabled
+  - id: 6a74a175c4d88191809d424dae451f49
+    title: Email Attention Scan
+    enabled: false
+    timing_mode: condition_watch
+    schedule: "DTSTART:20260806T150105Z;RRULE:FREQ=HOURLY"
+    category: inbox_triage
+    source_dependencies: [email]
+    notification_policy: disabled
+overlap_groups:
+  - id: acquisition_discovery
+    members: [6a85a3b1bb6c8191978a69499e9ae96c, 6a7cdb349d548191a233927740b5d886]
+    proposed_boundary: P0 watch handles high-threshold time-sensitive candidates; daily scan provides broader discovery.
+    mutation_status: review_required
+  - id: frontier_intelligence
+    members: [6a86cb0b5b288191b3eb0f9c6abd3ba2, 6a69bcca1f688191b56c84b6fa27069d, 6a83901fe8608191b3eb0f9c6abd3ba2]
+    proposed_boundary: AI Frontier Monitor is the broad signal ledger; Autonomy Watch is a specialized subset; Daily Briefing is a scheduled consumer.
+    mutation_status: review_required
+  - id: opportunity_inbox
+    members: [6a8db60431f48191b146f0c6bd1385f8, 6a7d58c343d081918281ef17ac0d52b7, 6a7c520d1f148191b413a1f456176d54, 6a74a175c4d88191809d424dae451f49]
+    proposed_boundary: Acquisition Reply Gate Watch handles acquisition decisions; All-Inbox handles other opportunity replies; disabled legacy scans remain historical.
+    mutation_status: review_required

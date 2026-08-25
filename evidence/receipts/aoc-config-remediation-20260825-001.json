@@ -1,0 +1,60 @@
+{
+  "version": "1.0.0",
+  "schema": "canon.preflight.receipt",
+  "id": "aoc-config-remediation-20260825-001",
+  "timestamp": "2026-08-25T21:30:39Z",
+  "input_digest": "sha256:5e9c588b1d5fe1eea4e2945300f5e19c82c65bd5f02e4e40d8f449316b288ab1",
+  "input_summary": "Remediate the verified AOC configuration baseline using review branches and draft pull requests while keeping Automation mutations and repository-protection changes approval-gated.",
+  "routed_to": {
+    "authority": "HUMAN_AUTHORITY",
+    "company": "AGENT_OPERATING_COMPANY",
+    "division_id": "03",
+    "division_name": "Governance, Risk & Compliance",
+    "canon_refs": [
+      "enforcement/PREFLIGHT.md",
+      "aoc/PORTFOLIO.yaml"
+    ],
+    "roles": []
+  },
+  "checks": [
+    {
+      "id": "presence",
+      "name": "Input present",
+      "result": "pass",
+      "detail": "Human Authority instructed the runtime to proceed with the documented remediation plan."
+    },
+    {
+      "id": "routing",
+      "name": "Universal routing",
+      "result": "pass",
+      "detail": "The Work Item entered the Agent Operating Company configuration and governance path."
+    },
+    {
+      "id": "canon",
+      "name": "Canon grounding",
+      "result": "pass",
+      "detail": "Live Canon enforcement, portfolio, repository, integration, and Automation state were inspected before mutation."
+    },
+    {
+      "id": "authority",
+      "name": "Human Authority",
+      "result": "pass",
+      "detail": "Review branches, draft pull requests, and the internal Airtable projection are authorized; Automation edits and repository protection remain gated."
+    },
+    {
+      "id": "risk",
+      "name": "Risk screen",
+      "result": "pass",
+      "detail": "No direct main-branch writes, production deployments, publications, payments, messages, branch-protection changes, or Automation mutations are permitted in this Work Item."
+    }
+  ],
+  "decision": "PASS",
+  "fail_closed": false,
+  "work_permitted": true,
+  "status_marker": "[AOC/Canon • Preflight PASS]",
+  "notes": [
+    "All repository changes must remain reviewable and unmerged.",
+    "Any blocked provider or permission boundary must be reported without fabrication."
+  ],
+  "enforcement_version": "1.0.0"
+}
