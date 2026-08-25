@@ -81,9 +81,25 @@ Surfaces must show exactly one of:
 
 or, if no receipt yet, `[AOC/Canon • Preflight REQUIRED]`.
 
+## Phase 7 — Read-only MCP access
+
+The dependency-free server in [`mcp/`](mcp/) exposes bounded `search`, `fetch`,
+and typed canonical lookup tools over Streamable HTTP at `POST /mcp` or stdio.
+All tools are declared read-only, return source links, and preserve evidence gaps.
+
+```sh
+npm test
+npm run mcp
+```
+
+Deployment, OAuth, ChatGPT registration, and any future write tools remain
+Human Authority gates. See [`mcp/README.md`](mcp/README.md) for the operating
+boundary and configuration.
+
 ## Next human actions
 
 1. Clone this repo and run `git config core.hooksPath .githooks`.
 2. Copy enforcement into each operator surface: `./enforcement/sync.sh --target cursor`.
 3. Protect `main` and require the `aoc-preflight` check.
-4. Keep Aether Portfolio in its own repository.
+4. Review and approve the MCP deployment/authentication path before external exposure.
+5. Keep Aether Portfolio in its own repository.

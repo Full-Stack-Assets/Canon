@@ -1,0 +1,15 @@
+{
+  "name": "@full-stack-assets/canon",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "mcp": "node mcp/server.mjs",
+    "mcp:stdio": "CANON_MCP_TRANSPORT=stdio node mcp/server.mjs",
+    "test": "node --test",
+    "verify": "npm test && node preflight/run_preflight.mjs \"Verify the read-only Canon MCP server implementation and evidence receipt.\""
+  }
+}

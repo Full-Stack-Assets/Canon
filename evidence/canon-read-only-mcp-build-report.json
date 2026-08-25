@@ -1,0 +1,49 @@
+{
+  "schema": "canon.build_report",
+  "version": "1.0.0",
+  "id": "canon-read-only-mcp-2026-08-25",
+  "timestamp": "2026-08-25T17:44:57.674Z",
+  "scope": "Dependency-free, read-only Canon MCP server",
+  "status": "pass",
+  "preflight_receipts": [
+    "evidence/receipts/3b3157bf-aa19-4f69-9c2c-bc795e557aaf.json",
+    "evidence/receipts/febe7086-c3af-4315-8b6e-5d5f63837639.json"
+  ],
+  "verification": {
+    "runtime": "Node.js v24.19.0",
+    "commands": [
+      "node --test",
+      "node --check mcp/canon-index.mjs",
+      "node --check mcp/tools.mjs",
+      "node --check mcp/protocol.mjs",
+      "node --check mcp/server.mjs",
+      "git diff --check"
+    ],
+    "tests": {
+      "total": 10,
+      "passed": 10,
+      "failed": 0
+    }
+  },
+  "verified_boundaries": [
+    "All six tools advertise read-only, non-destructive, closed-world annotations.",
+    "Search returns bounded, source-linked results and fetch resolves only indexed Canon documents.",
+    "Typed getters preserve evidence gaps instead of manufacturing records from prose.",
+    "Traversal, symlink, hidden-directory, unknown-extension, oversized-file, and out-of-root access are excluded.",
+    "Unapproved browser origins are rejected.",
+    "Configured bearer tokens are enforced with an authentication challenge.",
+    "Non-loopback serving fails closed without a bearer token or explicit public read-only mode.",
+    "Deployment, OAuth, ChatGPT registration, and write tools remain outside this build."
+  ],
+  "sha256": {
+    "mcp/canon-index.mjs": "f6a285374be9cef5c4ea7ca491d3f5e5fde540f8dec4bcea1cd1f792a5314e3b",
+    "mcp/protocol.mjs": "60c3ef3a3175cc07b0331d320a8c8e288b22e6cc70c9566a74aafc6eb68e165c",
+    "mcp/server.mjs": "afa676019ce9568349ea8e80820a45eb010d7c1056939f4279765973acbca5e8",
+    "mcp/tools.mjs": "750273b4f7040fde6f989e018909df4415d30d309803acbbe082993989739606",
+    "mcp/README.md": "9fe3c0ad8f5a872b02c69aba9f8d009df6889a4644ec5c6ace910bbe3f56dc01",
+    "test/canon-index.test.mjs": "131aaa6fc88dc5cf116e64a52bb379ff8e144e507580ed6caec59aadafc4a6da",
+    "test/mcp-http.test.mjs": "a6b14d6acfc4c12dd3d58695c061b1b7fa7ced1154cdbaf694f5ebe822774684",
+    "test/mcp-protocol.test.mjs": "cc3edcdb60bda9e916090cebae69e4ce410524728cc88cec3051c806a3857e83",
+    "package.json": "74281e10ae572cd17358c78b1d5fe1e18400d9c53d90b366315f44c4cd32d1a4"
+  }
+}

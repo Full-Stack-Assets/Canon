@@ -1,0 +1,58 @@
+{
+  "version": "1.0.0",
+  "schema": "canon.preflight.receipt",
+  "id": "febe7086-c3af-4315-8b6e-5d5f63837639",
+  "timestamp": "2026-08-25T17:44:57.674Z",
+  "input_digest": "sha256:98f795e24dd36118",
+  "input_summary": "Verify the read-only Canon MCP server implementation, security boundary, test results, and build evidence before handoff.",
+  "routed_to": {
+    "authority": "HUMAN_AUTHORITY",
+    "company": "AGENT_OPERATING_COMPANY",
+    "division_id": "04",
+    "division_name": "Code & Artifact Production",
+    "canon_refs": [
+      "aoc/divisions/04"
+    ],
+    "roles": []
+  },
+  "checks": [
+    {
+      "id": "presence",
+      "name": "Input present",
+      "result": "pass",
+      "detail": "121 characters received."
+    },
+    {
+      "id": "routing",
+      "name": "Universal routing",
+      "result": "pass",
+      "detail": "Input entered Agent Operating Company under Human Authority."
+    },
+    {
+      "id": "canon",
+      "name": "Canon grounding",
+      "result": "pass",
+      "detail": "Grounded in Division 04 · Code & Artifact Production."
+    },
+    {
+      "id": "authority",
+      "name": "Human Authority",
+      "result": "pass",
+      "detail": "No agent self-authorization."
+    },
+    {
+      "id": "risk",
+      "name": "Risk screen",
+      "result": "pass",
+      "detail": "No fail-closed or escalate pattern matched."
+    }
+  ],
+  "decision": "PASS",
+  "fail_closed": false,
+  "work_permitted": true,
+  "status_marker": "[AOC/Canon • Preflight PASS]",
+  "notes": [
+    "Work may proceed inside the routed division."
+  ],
+  "enforcement_version": "1.0.0"
+}
