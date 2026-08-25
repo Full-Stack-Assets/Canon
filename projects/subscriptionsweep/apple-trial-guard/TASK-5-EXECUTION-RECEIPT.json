@@ -1,0 +1,57 @@
+{
+  "schema": "canon.task.execution.receipt",
+  "version": "1.0.0",
+  "id": "TASK-5-EXECUTION-RECEIPT-2026-08-25",
+  "work_item": "WI-2026-08-24-SUBSCRIPTIONSWEEP-APPLE-TRIAL-GUARD",
+  "recorded_at": "2026-08-25T12:45:00-04:00",
+  "status": "PASS",
+  "task": "Core Platform Task 5: Expose the core Fastify API with fail-closed demo authentication",
+  "implementation": {
+    "repository": "Full-Stack-Assets/SubscriptionSweep",
+    "branch": "feat/release-1-core-platform",
+    "commit": "45dfe2b949db6b7829927458cac1127d64a5d772",
+    "pull_request": 1
+  },
+  "repaired_prerequisites": [
+    "canonical pnpm lockfile",
+    "append-only policy/jobs migration",
+    "ReminderPolicyRepository",
+    "JobRepository"
+  ],
+  "verification": {
+    "node": "24.19.0",
+    "pnpm": "10.17.1",
+    "postgres": "17-alpine",
+    "task_1_workspace_verification": {
+      "run": 85,
+      "result": "PASS"
+    },
+    "database_integration": {
+      "run": 75,
+      "result": "PASS"
+    },
+    "ci": {
+      "run": 180,
+      "result": "PASS",
+      "checks": [
+        "frozen-lockfile install",
+        "workspace verifier",
+        "unit tests",
+        "formatting",
+        "lint",
+        "typecheck",
+        "build"
+      ]
+    }
+  },
+  "boundaries": {
+    "production_credentials": false,
+    "live_billing": false,
+    "signing": false,
+    "production_deployment": false,
+    "merged": false,
+    "app_store_submission": false,
+    "apple_authentication": "FAIL_CLOSED"
+  },
+  "next_approved_task": "Core Platform Task 6: Implement the PostgreSQL leased-job worker"
+}

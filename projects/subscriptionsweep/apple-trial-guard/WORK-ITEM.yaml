@@ -1,0 +1,78 @@
+id: WI-2026-08-24-SUBSCRIPTIONSWEEP-APPLE-TRIAL-GUARD
+title: SubscriptionSweep - Apple Trial Guard
+record_type: work_item
+status: written_spec_ready_for_human_review
+canonical: true
+created_at: 2026-08-24T00:29:00-04:00
+updated_at: 2026-08-24T00:47:00-04:00
+human_authority:
+  approval_recorded: true
+  approved_scope:
+    - canonical design specification
+    - implementation planning
+    - reversible repository and artifact creation
+    - local and simulated development
+  approval_required_later:
+    - Apple Developer account credentials and signing
+    - production mailbox OAuth credentials
+    - production deployment credentials
+    - App Store submission
+    - live billing activation
+objective: >
+  Build a native iPhone app and companion SaaS that detects a newly started
+  Apple-billed subscription from permitted receipt or confirmation sources,
+  creates cancellation reminders before the trial end or renewal, and hands
+  cancellation control to Apple's native subscription-management interface.
+customer:
+  primary: Individual Apple customers who use trials or recurring App Store subscriptions.
+  secondary: Households that need a shared renewal and cancellation calendar.
+expensive_problem: Forgotten trials and subscription renewals create avoidable recurring charges.
+desired_outcome: >
+  Every supported subscription signup produces an evidence-backed subscription
+  record and an actionable reminder without claiming direct visibility into all
+  subscriptions on the user's Apple Account.
+constraints:
+  - StoreKit transaction history is scoped to purchases for the developer's own app.
+  - No Apple Account password collection or Apple account screen scraping.
+  - No automatic cancellation.
+  - No cancellation-success claim without explicit user confirmation or future authoritative evidence.
+  - Full email bodies are not retained by default.
+  - Permission denial must degrade gracefully.
+  - External credentials and irreversible release actions remain fail-closed.
+deliverables:
+  - canonical design specification
+  - implementation plan
+  - SwiftUI iOS application
+  - TypeScript SaaS control plane
+  - deterministic Apple receipt parser and fixture corpus
+  - reminder policy and delivery engine
+  - privacy, deletion, audit, and verification controls
+  - test and release evidence
+acceptance_criteria:
+  - A valid synthetic Apple subscription receipt creates one normalized subscription.
+  - Ambiguous dates enter NEEDS_CONFIRMATION and are not silently inferred.
+  - Duplicate receipt ingestion is idempotent.
+  - Trial reminders include 48-hour and 24-hour safeguards.
+  - The iOS action opens Apple's subscription-management sheet.
+  - Notification and Reminders permission denial does not break the product.
+  - Disconnecting a source prevents future ingestion.
+  - Account deletion removes stored source data, tokens, subscriptions, and reminders.
+  - Verification distinguishes simulated, credential-blocked, and production-verified behavior.
+buildgraph:
+  decision: EXTEND_EXISTING
+  canonical_concept: SubscriptionSweep
+  related_asset: RenewalLens
+  implementation_namespace_decision: CREATE_NEW
+  create_new_justification: >
+    No SubscriptionSweep or RenewalLens implementation repository exists in the
+    connected GitHub estate. Reusing an unrelated repository would damage project
+    boundaries. Generic starter patterns may be reused without making the starter
+    repository canonical.
+authority_ceiling: medium
+data_classification: confidential
+evidence_required:
+  - Apple primary documentation for StoreKit, EventKit, UserNotifications, and App Review rules.
+  - Repository commit hashes.
+  - Automated parser, scheduler, deduplication, permission, and deletion test results.
+  - Deployment and App Store receipts before any production claim.
+exact_next_gate: Human review of the committed written specification, followed by an implementation plan.

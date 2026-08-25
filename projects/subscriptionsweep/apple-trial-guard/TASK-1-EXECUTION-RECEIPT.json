@@ -1,0 +1,47 @@
+{
+  "schema": "canon.execution.task.receipt",
+  "version": "1.0.0",
+  "work_item": "WI-2026-08-24-SUBSCRIPTIONSWEEP-APPLE-TRIAL-GUARD",
+  "plan_track": "core-platform",
+  "task": 1,
+  "task_name": "Create the private repository and reproducible workspace",
+  "execution_mode": "SUBAGENT_DRIVEN_SELECTED_RUNTIME_FALLBACK",
+  "status": "BLOCKED_EXTERNAL_BOUNDARY",
+  "local_checkpoint": {
+    "branch": "feat/release-1-core-platform",
+    "commit": "c0a2a55635729de94b7de05c8293cf02fccaa0d2",
+    "files_committed": 15,
+    "tar_sha256": "c7eeafa8b89c845ac7c9ba419796b2954e363e796a4e4c94a0b7e6bc5ac0ac7b",
+    "git_bundle_sha256": "dc78d73f01b92f988dc0f48845f0e963617286873b76c7386e273b4ae054b2f4"
+  },
+  "verified": [
+    "Workspace contract structure matches Node 24, private package, engine range, and pnpm 10.17.1 requirements.",
+    "Local git branch is feat/release-1-core-platform.",
+    "A reversible local checkpoint commit exists."
+  ],
+  "blocked": [
+    {
+      "id": "github-create-repository",
+      "detail": "Connected GitHub toolset can read and mutate existing repositories but exposes no repository-creation action. Full-Stack-Assets/SubscriptionSweep returns 404 and therefore cannot receive implementation commits yet."
+    },
+    {
+      "id": "generic-subagent-dispatch",
+      "detail": "This ChatGPT runtime does not expose a generic code-subagent dispatch tool. The selected Subagent-Driven process can be preserved as a governance mode, but actual fresh-worker dispatch is not technically available in this surface."
+    },
+    {
+      "id": "node24-runtime",
+      "detail": "Local container runtime is Node v22.16.0; Task 1 requires Node 24.x."
+    },
+    {
+      "id": "package-registry-network",
+      "detail": "Corepack cannot download pnpm@10.17.1 because registry.npmjs.org is unreachable from the execution container. pnpm-lock.yaml cannot be truthfully generated and Vitest/ESLint/Prettier cannot be installed or executed."
+    }
+  ],
+  "verification_results": {
+    "workspace_contract_structure": "PASS",
+    "verify_workspace": "FAIL_EXPECTED_MISSING_PNPM_LOCK",
+    "pnpm_prepare_10_17_1": "FAIL_NETWORK",
+    "full_task_acceptance": "NOT_MET"
+  },
+  "next_safe_action": "Create the private Full-Stack-Assets/SubscriptionSweep repository through a GitHub surface with repository-create permission, then run Task 1 in a Node 24 environment with npm registry access and push the checkpoint only after fresh verification."
+}

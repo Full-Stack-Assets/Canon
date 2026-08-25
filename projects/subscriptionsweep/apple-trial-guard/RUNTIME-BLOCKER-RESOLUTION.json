@@ -1,0 +1,39 @@
+{
+  "work_item": "WI-2026-08-24-SUBSCRIPTIONSWEEP-APPLE-TRIAL-GUARD",
+  "resolved_at": "2026-08-24T03:04:00-04:00",
+  "status": "RESOLVED",
+  "implementation_repository": "Full-Stack-Assets/SubscriptionSweep",
+  "implementation_branch": "feat/release-1-core-platform",
+  "verified_commit": "2790dd5fef971f307f5b80f5306d37a9ce555717",
+  "pull_request": 1,
+  "runtime_surface": "GitHub Actions",
+  "verified_runtime": {
+    "node": "24.19.0",
+    "npm": "11.17.0",
+    "pnpm": "10.17.1"
+  },
+  "evidence": {
+    "npm_registry": "PASS",
+    "frozen_lockfile_install": "PASS",
+    "workspace_verifier": "PASS",
+    "workspace_test": "PASS",
+    "format_check": "PASS",
+    "lint": "PASS",
+    "typecheck": "PASS",
+    "build": "PASS",
+    "task1_runtime_workflow_run": 32699896775,
+    "full_ci_workflow_run": 32699896779
+  },
+  "rulings": [
+    {
+      "issue": "The approved plan pinned typescript@6.0.0, but that package version is not published in npm.",
+      "decision": "Pin typescript@6.0.0-beta for Release 1 Task 1 rather than adopting TypeScript 7.",
+      "reason": "Preserves the approved TypeScript 6 boundary while using a package version that exists in the registry."
+    },
+    {
+      "issue": "The ChatGPT execution container is Node 22 and has no external DNS.",
+      "decision": "Use GitHub Actions as the authoritative Node 24/package-registry verification surface.",
+      "reason": "The repository CI is reproducible, source-controlled, and directly verifies the required runtime without weakening constraints."
+    }
+  ]
+}

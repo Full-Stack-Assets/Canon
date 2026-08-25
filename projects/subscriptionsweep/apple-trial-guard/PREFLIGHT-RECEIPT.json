@@ -1,0 +1,76 @@
+{
+  "version": "1.0.0",
+  "schema": "canon.preflight.receipt",
+  "id": "PFR-2026-08-24-SUBSWEEP-001",
+  "timestamp": "2026-08-24T00:29:00-04:00",
+  "input_digest": "sha256:d5f2cc46b9ef04967e71aa565dee808fcf58c85b1ab3db9d7c2edd5f09867e25",
+  "input_summary": "Human Authority approved the SubscriptionSweep Apple Trial Guard design and authorized progression into canonical specification and implementation planning.",
+  "routed_to": {
+    "authority": "HUMAN_AUTHORITY",
+    "company": "AGENT_OPERATING_COMPANY",
+    "division_id": "03",
+    "division_name": "Solution Architecture and Design",
+    "canon_refs": [
+      "enforcement/PREFLIGHT.md",
+      "enforcement/PREFLIGHT-RECEIPT.schema.json",
+      "aoc/divisions/03-solution-architecture-design.yaml",
+      "SubscriptionSweep concept",
+      "RenewalLens related asset"
+    ],
+    "roles": [
+      "product-architect",
+      "ios-application-engineer",
+      "saas-platform-engineer",
+      "privacy-security-reviewer",
+      "independent-verifier"
+    ]
+  },
+  "checks": [
+    {
+      "id": "canon-resolution",
+      "name": "Canon capability and project resolution",
+      "result": "pass",
+      "detail": "The request maps to the existing SubscriptionSweep concept and reusable RenewalLens reminder/renewal capability family."
+    },
+    {
+      "id": "reuse-gate",
+      "name": "BuildGraph reuse and duplication screen",
+      "result": "pass",
+      "detail": "EXTEND_EXISTING is selected. A dedicated implementation namespace is justified because no implementation repository exists."
+    },
+    {
+      "id": "authority",
+      "name": "Human Authority and action boundary",
+      "result": "pass",
+      "detail": "The user explicitly approved the design. Reversible specification and planning writes are authorized; credentials, live billing, deployment, signing, and submission remain gated."
+    },
+    {
+      "id": "apple-platform-boundary",
+      "name": "Apple API feasibility boundary",
+      "result": "pass",
+      "detail": "The design does not claim universal Apple Account subscription access. Detection uses permitted source ingestion and cancellation uses Apple's native management interface."
+    },
+    {
+      "id": "privacy",
+      "name": "Sensitive data handling",
+      "result": "warn",
+      "detail": "Mailbox and receipt data are confidential. The design requires read-minimized access, token encryption, source minimization, deletion controls, and untrusted-content handling."
+    },
+    {
+      "id": "external-dependencies",
+      "name": "External credentials and irreversible actions",
+      "result": "warn",
+      "detail": "Apple signing, mailbox OAuth, production deployment, live billing, and App Store submission cannot be verified until credentials and explicit release authority are supplied."
+    }
+  ],
+  "decision": "PASS",
+  "fail_closed": true,
+  "work_permitted": true,
+  "status_marker": "[AOC/Canon • Preflight PASS]",
+  "notes": [
+    "No production capability claim is permitted from design artifacts alone.",
+    "Implementation must preserve VERIFIED, INFERRED, and NEEDS_CONFIRMATION evidence states.",
+    "The next gate is review of the committed written specification."
+  ],
+  "enforcement_version": "1.0"
+}
