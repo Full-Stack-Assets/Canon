@@ -4,8 +4,12 @@
  * exit 0 PASS | 2 ESCALATE | 1 FAIL
  */
 import { createHash, randomUUID } from "node:crypto";
+import { readFileSync } from "node:fs";
 
-const VERSION = "1.0.0";
+const VERSION = readFileSync(
+  new URL("../enforcement/VERSION", import.meta.url),
+  "utf8",
+).trim();
 
 const DIVISIONS = [
   ["01", "Strategy & Portfolio Governance", ["strategy", "portfolio", "priority", "charter", "scope"]],

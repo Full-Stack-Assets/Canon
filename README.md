@@ -55,10 +55,17 @@ Manus, Copilot, ClickUp, plus the Actions workflow.
 Soft hooks in [`.githooks/`](.githooks/). Enable with:
 
 ```sh
-git config core.hooksPath .githooks
+./enforcement/bootstrap.sh --install
 ```
 
-Required check: [`.github/workflows/aoc-preflight.yml`](.github/workflows/aoc-preflight.yml).
+The bootstrap enables `core.hooksPath` for the current clone, synchronizes the
+repository-backed Cursor and Copilot entrypoints, and verifies executable modes,
+file parity, and the central checksum manifest. Re-run the read-only check with
+`./enforcement/bootstrap.sh --check`.
+
+PR check workflow: [`.github/workflows/aoc-preflight.yml`](.github/workflows/aoc-preflight.yml).
+It is eligible to become a required check only after separate approval of
+`main` protection.
 
 To make `commit-msg` a **hard** blocker later, set `AOC_HOOKS_HARD=1` (documented
 in `.githooks/README.md`).
@@ -99,10 +106,24 @@ Deployment, OAuth, ChatGPT registration, and any future write tools remain
 Human Authority gates. See [`mcp/README.md`](mcp/README.md) for the operating
 boundary and configuration.
 
+## Central enforcement status
+
+| Control | Current evidence | Status |
+| --- | --- | --- |
+| Hook implementation | Three soft hooks are committed with executable modes; bootstrap verifies them | Ready per clone |
+| Hook activation | `bootstrap.sh --install` writes clone-local `core.hooksPath` | Must run once in each clone |
+| Cursor | `.cursor/SYSTEM.md` and always-applied `.cursor/rules/aoc.mdc` are synchronized | Active in this repository |
+| Copilot | `.github/copilot-instructions.md` is synchronized | Active in this repository |
+| GitHub Actions | `aoc-preflight` exists, runs on pull requests, and verifies bootstrap drift | Active |
+| `main` protection | No branch protection or ruleset is configured | **Pending Human Authority approval** |
+| ChatGPT, Gemini, Manus, ClickUp | Canon contains prepared packs only | External activation not claimed |
+
 ## Next human actions
 
-1. Clone this repo and run `git config core.hooksPath .githooks`.
-2. Copy enforcement into each operator surface: `./enforcement/sync.sh --target cursor`.
-3. Protect `main` and require the `aoc-preflight` check.
+1. Run `./enforcement/bootstrap.sh --install` once in every new Canon clone.
+2. Separately approve or reject protecting `main` with required check
+   `aoc-preflight`; no repository-protection setting is changed by bootstrap.
+3. Activate the prepared non-repository operator packs only in their respective
+   external settings surfaces.
 4. Review and approve the MCP deployment/authentication path before external exposure.
 5. Keep Aether Portfolio in its own repository.

@@ -12,6 +12,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Verify repository enforcement bootstrap
+        run: |
+          set -euo pipefail
+          ./enforcement/bootstrap.sh --install
+          git diff --exit-code -- \
+            .cursor/SYSTEM.md \
+            .cursor/rules/aoc.mdc \
+            .github/copilot-instructions.md
       - name: Require Preflight evidence on high-risk paths
         env:
           PR_BODY: ${{ github.event.pull_request.body }}
