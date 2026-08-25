@@ -1,0 +1,79 @@
+name: deploy-canon-mcp
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-canon-mcp-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy and verify Canon MCP
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build snapshot and run tests
+        run: |
+          npm run snapshot
+          npm test
+
+      - name: Deploy Worker
+        id: deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          npx wrangler deploy 2>&1 | tee deploy.log
+          endpoint="$(grep -Eo 'https://[^[:space:]]+\.workers\.dev' deploy.log | tail -n 1)"
+          test -n "$endpoint"
+          echo "endpoint=$endpoint" >> "$GITHUB_OUTPUT"
+
+      - name: Verify live health and MCP protocol
+        env:
+          ENDPOINT: ${{ steps.deploy.outputs.endpoint }}
+        run: |
+          set -euo pipefail
+          curl --fail-with-body --silent --show-error "$ENDPOINT/healthz" | tee health.json
+          curl --fail-with-body --silent --show-error \
+            -H 'content-type: application/json' \
+            --data '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"github-actions-verifier","version":"1.0.0"}}}' \
+            "$ENDPOINT/mcp" | tee initialize.json
+          curl --fail-with-body --silent --show-error \
+            -H 'content-type: application/json' \
+            --data '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}' \
+            "$ENDPOINT/mcp" | tee tools.json
+          node -e 'const fs=require("node:fs"); const h=JSON.parse(fs.readFileSync("health.json")); const i=JSON.parse(fs.readFileSync("initialize.json")); const t=JSON.parse(fs.readFileSync("tools.json")); if(h.status!=="ok") throw new Error("health check failed"); if(!i.result?.serverInfo) throw new Error("initialize failed"); if(t.result?.tools?.length!==6) throw new Error(`expected 6 tools, received ${t.result?.tools?.length}`);'
+
+      - name: Publish deployment evidence
+        env:
+          ENDPOINT: ${{ steps.deploy.outputs.endpoint }}
+        run: |
+          node -e 'const fs=require("node:fs"); const evidence={schema:"canon.mcp.deployment.receipt",timestamp:new Date().toISOString(),repository:process.env.GITHUB_REPOSITORY,commit:process.env.GITHUB_SHA,workflow_run:`${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`,endpoint:`${process.env.ENDPOINT}/mcp`,health:`${process.env.ENDPOINT}/healthz`,health_response:JSON.parse(fs.readFileSync("health.json")),initialize_response:JSON.parse(fs.readFileSync("initialize.json")),tool_count:JSON.parse(fs.readFileSync("tools.json")).result.tools.length,transport:"streamable-http",access:"public-read-only"}; fs.writeFileSync("canon-mcp-deployment-receipt.json",JSON.stringify(evidence,null,2)+"\n");'
+          {
+            echo '## Canon MCP deployment'
+            echo
+            echo "- Endpoint: $ENDPOINT/mcp"
+            echo "- Health: $ENDPOINT/healthz"
+            echo '- Verification: PASS (health, initialize, six tools)'
+            echo '- Access: public read-only'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: canon-mcp-deployment-receipt
+          path: canon-mcp-deployment-receipt.json
+          if-no-files-found: error
