@@ -10,6 +10,7 @@ async function fixture() {
   await mkdir(path.join(root, "aoc", "projects"), { recursive: true });
   await mkdir(path.join(root, "aoc", "decisions"), { recursive: true });
   await mkdir(path.join(root, "evidence", "receipts"), { recursive: true });
+  await mkdir(path.join(root, "mcp", "generated"), { recursive: true });
   await mkdir(path.join(root, "aoc", ".private"), { recursive: true });
   await writeFile(path.join(root, "README.md"), "# Test Canon\nAuthoritative records.\n");
   await writeFile(
@@ -25,6 +26,10 @@ async function fixture() {
     JSON.stringify({ schema: "canon.preflight.receipt", id: "receipt-1" }),
   );
   await writeFile(path.join(root, "aoc", ".private", "secret.md"), "# Excluded\n");
+  await writeFile(
+    path.join(root, "mcp", "generated", "canon-snapshot.mjs"),
+    "export const SHOULD_NOT_BE_INDEXED = true;\n",
+  );
   await writeFile(path.join(root, "aoc", "projects", "unknown.bin"), "excluded");
   await writeFile(path.join(root, "aoc", "projects", "oversized.md"), "x".repeat(513 * 1024));
   await symlink(
@@ -46,6 +51,7 @@ test("indexes allowed Canon files and returns source-backed search results", asy
   assert.match(results[0].url, /^https:\/\/example\.test\/canon\//);
   assert.ok(results.length <= 10);
   assert.equal(index.documents.some((document) => document.path.includes(".private")), false);
+  assert.equal(index.documents.some((document) => document.path.startsWith("mcp/generated/")), false);
   assert.equal(index.documents.some((document) => document.path.endsWith("linked.yaml")), false);
   assert.equal(index.documents.some((document) => document.path.endsWith("unknown.bin")), false);
   assert.equal(index.documents.some((document) => document.path.endsWith("oversized.md")), false);

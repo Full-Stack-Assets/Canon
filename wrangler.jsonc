@@ -1,0 +1,16 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "canon-read-only-mcp",
+  "main": "mcp/worker.mjs",
+  "compatibility_date": "2026-08-25",
+  "workers_dev": true,
+  "upload_source_maps": true,
+  "minify": true,
+  "build": {
+    "command": "node scripts/build-mcp-snapshot.mjs",
+    "watch_dir": ["aoc", "enforcement", "evidence", "mcp", "platforms", "preflight", "skills"]
+  },
+  "vars": {
+    "CANON_MCP_PUBLIC_READ_ONLY": "true"
+  }
+}

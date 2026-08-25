@@ -70,6 +70,29 @@ endpoint behind an approved HTTPS service. Register the resulting URL ending in
 and no write tools. Public deployment, OAuth configuration, and ChatGPT
 registration remain Human Authority gates.
 
+## Persistent Cloudflare Worker
+
+The Worker entry point embeds a deterministic, repository-built Canon snapshot,
+so it needs no filesystem, database, tunnel, or continuously running personal
+device. The snapshot excludes `mcp/generated/` to prevent recursive inclusion.
+
+```sh
+npm install
+npm run snapshot
+npm run worker:dev
+npm run worker:deploy
+```
+
+[`wrangler.jsonc`](../wrangler.jsonc) explicitly enables public read-only mode
+for the public Canon repository. To require a shared bearer token instead, remove
+that variable and store `CANON_MCP_BEARER_TOKEN` as a Worker secret. OAuth is not
+included. After deployment, verify `GET /healthz`, inspect `POST /mcp`, and add
+the resulting HTTPS URL ending in `/mcp` to ChatGPT Developer mode.
+
+Every Wrangler development or deployment build runs the snapshot generator from
+`wrangler.jsonc`, ensuring the bundled content matches the deploying Canon
+checkout. `npm run snapshot` remains available for deterministic local testing.
+
 ## Indexed boundary
 
 Only bounded UTF-8 source files under the known Canon directories are indexed.

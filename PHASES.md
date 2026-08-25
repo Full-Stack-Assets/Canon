@@ -32,6 +32,7 @@ Shipped 2026-08-18 under Human Authority.
 - Dependency-free read-only MCP server in `mcp/`
 - Bounded `search`, `fetch`, project, Work Item, decision, and capability tools
 - HTTP, stdio, security-boundary, indexing, and protocol verification tests
+- Persistent Cloudflare Worker target with deterministic Canon snapshot
 
 ## Next recommended human action
 
