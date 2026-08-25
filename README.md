@@ -86,10 +86,13 @@ or, if no receipt yet, `[AOC/Canon • Preflight REQUIRED]`.
 The dependency-free server in [`mcp/`](mcp/) exposes bounded `search`, `fetch`,
 and typed canonical lookup tools over Streamable HTTP at `POST /mcp` or stdio.
 All tools are declared read-only, return source links, and preserve evidence gaps.
+It also includes a persistent Cloudflare Worker target with a deterministic
+build-time Canon snapshot, avoiding tunnels and always-on personal infrastructure.
 
 ```sh
 npm test
 npm run mcp
+npm run worker:deploy
 ```
 
 Deployment, OAuth, ChatGPT registration, and any future write tools remain
