@@ -1,0 +1,81 @@
+{
+  "schema": "canon.task.execution.receipt",
+  "version": "1.0.0",
+  "id": "TASK-7-EXECUTION-RECEIPT-2026-08-26",
+  "work_item": "WI-2026-08-24-SUBSCRIPTIONSWEEP-APPLE-TRIAL-GUARD",
+  "recorded_at": "2026-08-26T06:02:02Z",
+  "status": "PASS",
+  "task": "Core Platform Task 7: Add root verification and continuous integration",
+  "implementation": {
+    "repository": "Full-Stack-Assets/SubscriptionSweep",
+    "branch": "feat/release-1-core-platform",
+    "base_commit": "7fce38684a658ff45a06215bc0f3b8f7344d7c31",
+    "verified_source_commit": "036df4b636423ac3b0fdbee3ffd261d8c42ba7cf",
+    "reviewed_evidence_head": "96b232baea009bcb12822a45fadcae3b09f15696",
+    "pull_request": 1
+  },
+  "behavior": [
+    "one-command release verification with pnpm verify:release",
+    "workspace, formatting, lint, typecheck, unit-test, migration, integration-test, and build gates",
+    "fail-fast execution with deterministic PASS or FAIL receipt",
+    "import-safe testable verifier orchestration",
+    "PostgreSQL 17 continuous integration service",
+    "always-uploaded verification receipt artifact"
+  ],
+  "test_driven_evidence": {
+    "red_commit": "2b3341936d33edc13a5474e12383938970614afe",
+    "ci_run": 211,
+    "run_id": 32934919324,
+    "result": "EXPECTED_FAIL",
+    "reason": "five focused verifier contract tests failed against the placeholder before production changes"
+  },
+  "verification": {
+    "node": "24.19.0",
+    "pnpm": "10.17.1",
+    "postgres": "17-alpine",
+    "ci": {
+      "run": 219,
+      "run_id": 32935779759,
+      "result": "PASS",
+      "unit_test_files": 7,
+      "unit_tests": 15
+    },
+    "database_integration": {
+      "run": 111,
+      "run_id": 32935779811,
+      "result": "PASS",
+      "test_files": 6,
+      "tests": 11
+    },
+    "task_1_workspace_verification": {
+      "run": 104,
+      "run_id": 32935779719,
+      "result": "PASS"
+    },
+    "receipt": {
+      "artifact_id": 9594795093,
+      "result": "PASS",
+      "command_count": 8,
+      "all_exit_codes": 0,
+      "source_commit": "843dced721e87fa1a81a94fdd211775c3cd723a3",
+      "source_commit_kind": "GitHub pull-request merge checkout"
+    }
+  },
+  "review": {
+    "result": "APPROVED",
+    "critical_findings": 0,
+    "important_findings": 0,
+    "correctness_defects": 0
+  },
+  "boundaries": {
+    "production_credentials": false,
+    "live_billing": false,
+    "signing": false,
+    "production_deployment": false,
+    "environment_promotion": false,
+    "pull_request_draft": true,
+    "merged": false,
+    "app_store_submission": false
+  },
+  "next_approved_task": null
+}
