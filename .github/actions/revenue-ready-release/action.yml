@@ -1,0 +1,14 @@
+name: Revenue-Ready Release Gate
+description: Blocks commercial releases without the complete evidence-backed revenue chain.
+inputs:
+  manifest:
+    description: Repository-relative path to the revenue-readiness evidence manifest.
+    required: false
+    default: .aoc/revenue-ready-release.json
+runs:
+  using: composite
+  steps:
+    - name: Validate revenue-ready release evidence
+      shell: bash
+      run: node "$GITHUB_ACTION_PATH/validate.mjs" "$GITHUB_WORKSPACE/${{ inputs.manifest }}"
+

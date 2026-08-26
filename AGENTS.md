@@ -21,6 +21,18 @@ These provider-neutral instructions apply to every agent and automation working 
 
 Capability routing and automation tiers are authoritative in `enforcement/CAPABILITY-ROUTING.md`. Conditional plugins activate only when relevant; avoid redundant tool fan-out.
 
+## Revenue-ready release gate
+
+- Every commercial portfolio project must satisfy
+  `aoc/revenue/REVENUE-READY-RELEASE-GATE.md` before its first customer-facing
+  iteration and every later commercial release.
+- A missing or non-PASS `.aoc/revenue-ready-release.json` is a release blocker.
+- Do not relabel prototypes, experiments, internal drafts, or synthetic proof as
+  released, complete, launch-ready, or revenue-ready.
+- Run the portable revenue-ready validator automatically for release work.
+- A gate PASS never grants authority to deploy, publish, bill, collect payment,
+  merge, or take another consequential action.
+
 ## Human Authority gates
 
 Do not independently merge protected branches, change repository rules or access, deploy or expose the MCP server, configure OAuth, add write-capable Canon tools, publish material policy changes, delete canonical history, or expand any runtime's authority.
@@ -42,3 +54,4 @@ The capability router additionally gates production deployment, consequential re
 - Never store credentials, tokens, private keys, or unnecessary personal data.
 - Do not invent parallel registries when Canon already defines the concept.
 - Treat projections in Notion, Wisebase, Airtable, Library, and Drive according to `aoc/configuration/STORAGE-AUTHORITY.md` once that contract is merged.
+

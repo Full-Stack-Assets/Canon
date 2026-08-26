@@ -50,3 +50,13 @@ R20. High-consequence actions require an approval record stored in Canon.
 
 R21. High-risk paths (enforcement/, .githooks/, .github/workflows/, aoc/PORTFOLIO.yaml) require Preflight evidence on the change.
 R22. Soft Git hooks warn. They become hard blockers only when Human Authority flips them (see .githooks/README.md).
+
+
+## 8. Commercial release readiness
+
+R23. Every commercial portfolio project MUST pass `POL-REV-001` before its first customer-facing iteration and every later commercial release.
+R24. Missing, stale, synthetic, placeholder, BLOCKED, or FAIL evidence blocks release. There is no partial or inferred PASS.
+R25. A pre-release prototype, experiment, research build, or internal draft MUST NOT be represented as released, complete, launch-ready, or revenue-ready.
+R26. The revenue-ready gate does not authorize production deployment, billing, payment collection, publication, merge, legal commitment, or any other consequential action.
+R27. Only Human Authority may authorize a scoped exception; the exception must be recorded in Canon and never converts unresolved evidence into PASS.
+

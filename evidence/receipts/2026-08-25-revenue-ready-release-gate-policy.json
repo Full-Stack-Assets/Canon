@@ -1,0 +1,54 @@
+{
+  "version": "1.0.0",
+  "schema": "canon.preflight.receipt",
+  "id": "aoc-revenue-ready-release-gate-20260825-001",
+  "timestamp": "2026-08-26T02:04:27Z",
+  "input_digest": "sha256:human-authority-directive-20260825",
+  "input_summary": "Require every commercial portfolio project to pass the complete revenue chain before its first releasable iteration.",
+  "routed_to": {
+    "authority": "HUMAN_AUTHORITY",
+    "company": "AGENT_OPERATING_COMPANY",
+    "division_id": "08",
+    "division_name": "Economics, Metering & Monetization",
+    "canon_refs": [
+      "aoc/revenue/2026-08-25-revenue-execution-pack-v1.md",
+      "aoc/revenue/REVENUE-READY-RELEASE-GATE.md"
+    ],
+    "roles": []
+  },
+  "checks": [
+    {
+      "id": "authority",
+      "name": "Human Authority directive",
+      "result": "pass",
+      "detail": "Human Authority explicitly directed that the complete revenue chain be mandatory from the first commercial iteration."
+    },
+    {
+      "id": "scope",
+      "name": "Bounded implementation scope",
+      "result": "pass",
+      "detail": "Authorized work is limited to a canonical policy, portable validator, templates, tests, and a reviewable draft pull request."
+    },
+    {
+      "id": "consequence",
+      "name": "Consequential action boundary",
+      "result": "pass",
+      "detail": "No production deployment, payment collection, public product release, repository-protection change, or merge is authorized by this receipt."
+    },
+    {
+      "id": "verification",
+      "name": "Verification requirement",
+      "result": "pass",
+      "detail": "The validator must fail closed on missing, blocked, failed, or placeholder evidence and must pass the automated test suite."
+    }
+  ],
+  "decision": "PASS",
+  "fail_closed": false,
+  "work_permitted": true,
+  "status_marker": "[AOC/Canon • Preflight PASS]",
+  "notes": [
+    "Preparation and draft pull-request creation are permitted.",
+    "Merging the material policy change remains a separate Human Authority gate."
+  ],
+  "enforcement_version": "1.1.0"
+}

@@ -16,4 +16,9 @@ decision is not PASS, stop.
 Canon lives in this repository. Do not invent a parallel registry.
 Aether Portfolio is a separate product.
 
+Before any commercial release, require a PASS under
+`aoc/revenue/REVENUE-READY-RELEASE-GATE.md`. Missing or non-PASS evidence blocks
+release from the first customer-facing iteration onward.
+
 Visible marker required: [AOC/Canon • Preflight PASS|ESCALATE|FAIL]
+

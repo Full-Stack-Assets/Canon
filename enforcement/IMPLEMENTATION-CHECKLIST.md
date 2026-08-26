@@ -10,6 +10,7 @@ indicator must exist across applications.
 - [ ] Evidence and receipts are written back to Canon
 - [ ] Visible UI indicator confirms the structure is active for the current input
 - [ ] Bypass attempts are blocked or escalated (never silent success)
+- [ ] Commercial release paths invoke POL-REV-001 from the first customer-facing iteration
 
 ## Platform-specific
 
@@ -67,3 +68,4 @@ A platform is compliant only when:
 3. A visible, user-verifiable indicator exists.
 4. Evidence reaches Canon.
 5. Bypass is not possible without escalation.
+

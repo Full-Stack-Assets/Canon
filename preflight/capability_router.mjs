@@ -54,6 +54,18 @@ const BUNDLES = [
     verification: ["design_source_check", "tests_when_code_changes"],
   },
   {
+    id: "REVENUE_RELEASE",
+    match: /\b(revenue[- ]ready|commercial release|first iteration|customer-facing iteration|mvp|launch|paid pilot)\b/i,
+    required_skills: ["superpowers:verification-before-completion"],
+    preferred_plugins: ["GitHub", "Stripe", "Data Analytics"],
+    conditional_plugins: ["Pipedrive", "Airtable"],
+    verification: [
+      "revenue_ready_release_gate",
+      "payment_path_verification",
+      "fulfillment_path_verification",
+    ],
+  },
+  {
     id: "RESEARCH_GROUNDED",
     match: /\b(research|source|paper|literature|fact-check|verify claim|evidence review)\b/i,
     required_skills: [],
@@ -78,6 +90,7 @@ export const ACTION_POLICY = Object.freeze({
   draft_generation: "automatic_no_interaction",
   work_item_classification: "automatic_no_interaction",
   capability_routing: "automatic_no_interaction",
+  revenue_ready_release_validation: "automatic_no_interaction",
 
   issue_creation: "automatic_bounded",
   branch_creation: "automatic_bounded",
@@ -152,3 +165,4 @@ export function resolveExecutionPlan(raw) {
     fallback_rule: "If a preferred capability is unavailable, use the highest-confidence available adapter and record the fallback; never silently replace authoritative evidence with model inference.",
   };
 }
+
