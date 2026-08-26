@@ -1,0 +1,28 @@
+{
+  "schema": "canon.remediation.receipt",
+  "version": "1.0.0",
+  "id": "cloudflare-account-resolution-remediation-2026-08-26",
+  "timestamp": "2026-08-26T05:34:30Z",
+  "work_item": "Harden the manual Canon MCP production deployment after Cloudflare authentication/account routing failures.",
+  "authority": "HUMAN_AUTHORITY",
+  "observed_failures": [
+    {
+      "workflow_run": 32910161334,
+      "finding": "Manual deployment reached Wrangler with no CLOUDFLARE_API_TOKEN or account ID configured and failed before deployment."
+    },
+    {
+      "workflow_run": 32920840017,
+      "finding": "Later deployment had Cloudflare credentials present but failed at /accounts/<configured>/workers/services/canon-read-only-mcp with Cloudflare error 7003, consistent with a stale or inaccessible configured account identifier."
+    }
+  ],
+  "root_cause": "The workflow forced CLOUDFLARE_ACCOUNT_ID from a repository secret. Wrangler treats that static value as authoritative before its own API-backed account selection, so a stale account ID prevented recovery.",
+  "remediation": [
+    "Keep production deployment workflow_dispatch-only.",
+    "Provide CLOUDFLARE_API_TOKEN to Wrangler but omit the stale static account ID.",
+    "Run wrangler whoami --json before deployment to fail early when authentication is invalid.",
+    "Allow Wrangler to fetch accessible accounts and auto-select when exactly one account is available; non-interactive ambiguous account selection remains fail-closed.",
+    "Add a regression test preventing CLOUDFLARE_ACCOUNT_ID from being reintroduced into the deployment workflow."
+  ],
+  "production_deployment_performed": false,
+  "status": "implementation_pending_ci_verification"
+}
