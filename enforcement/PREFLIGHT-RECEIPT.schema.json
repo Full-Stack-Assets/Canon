@@ -49,6 +49,30 @@
       "pattern": "^\\[AOC/Canon • Preflight (PASS|ESCALATE|FAIL)\\]$"
     },
     "notes": { "type": "array", "items": { "type": "string" } },
+    "execution_plan": {
+      "type": "object",
+      "required": [
+        "capability_bundles", "required_skills", "preferred_plugins", "conditional_plugins",
+        "verification", "automation_level", "bounded_actions", "human_authority_gates",
+        "action_policy", "invocation_rule", "fallback_rule"
+      ],
+      "properties": {
+        "capability_bundles": { "type": "array", "items": { "type": "string" } },
+        "required_skills": { "type": "array", "items": { "type": "string" } },
+        "preferred_plugins": { "type": "array", "items": { "type": "string" } },
+        "conditional_plugins": { "type": "array", "items": { "type": "string" } },
+        "verification": { "type": "array", "items": { "type": "string" } },
+        "automation_level": { "enum": ["automatic_no_interaction", "automatic_bounded", "human_authority_gate"] },
+        "bounded_actions": { "type": "array", "items": { "type": "string" } },
+        "human_authority_gates": { "type": "array", "items": { "type": "string" } },
+        "action_policy": {
+          "type": "object",
+          "additionalProperties": { "enum": ["automatic_no_interaction", "automatic_bounded", "human_authority_gate"] }
+        },
+        "invocation_rule": { "type": "string" },
+        "fallback_rule": { "type": "string" }
+      }
+    },
     "enforcement_version": { "type": "string" }
   }
 }

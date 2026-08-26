@@ -6,11 +6,15 @@ Every single user input — without exception — takes this path.
 INPUT
   → Agent Operating Company (never a raw model, never a side channel)
     → Preflight Gate (mandatory)
-      → PASS     → routed Division + Canon refs → Agentic Execution Layer
-      → ESCALATE → STOP. Receipt to Human Authority.
+      → capability bundle + action-policy resolution
+      → PASS     → auto-invoke required skills/plugins → routed Division → Agentic Execution Layer
+      → ESCALATE → STOP before gated action. Receipt to Human Authority.
       → FAIL     → STOP. Receipt to Canon evidence. No artifacts.
+    → Verification
     → Evidence filed back to Canon (Division 09)
 ```
+
+Explicit `@Plugin` / `@Skill` mentions are optional hints. The runtime must resolve implied capabilities automatically.
 
 ## Classification
 
@@ -28,6 +32,10 @@ INPUT
 | learn, eval, improve, retro | 10 Learning, Evaluation & Improvement |
 
 Unspecified work defaults to Division 03.
+
+## Capability resolution
+
+After division routing, resolve `enforcement/CAPABILITY-ROUTING.md`. Required skills and preferred plugins engage automatically when available. Conditional plugins engage only when their evidence domain is relevant. The action-policy tier determines whether execution is automatic, bounded automatic, or Human Authority gated.
 
 ## Grounding
 

@@ -5,6 +5,7 @@
  */
 import { createHash, randomUUID } from "node:crypto";
 import { readFileSync } from "node:fs";
+import { resolveExecutionPlan } from "./capability_router.mjs";
 
 const VERSION = readFileSync(
   new URL("../enforcement/VERSION", import.meta.url),
@@ -41,8 +42,9 @@ const ESCALATE = [
 export function runPreflight(raw) {
   const input = String(raw ?? "").replace(/\s+/g, " ").trim();
   const checks = [];
+  const executionPlan = resolveExecutionPlan(input);
   if (!input) {
-    return finalize(input, [{ id: "presence", name: "Input present", result: "fail", detail: "Empty input cannot be routed." }], "FAIL", DIVISIONS[2], ["Fail closed: nothing to ground in Canon."]);
+    return finalize(input, [{ id: "presence", name: "Input present", result: "fail", detail: "Empty input cannot be routed." }], "FAIL", DIVISIONS[2], ["Fail closed: nothing to ground in Canon."], executionPlan);
   }
   checks.push({ id: "presence", name: "Input present", result: "pass", detail: `${input.length} characters received.` });
   checks.push({ id: "routing", name: "Universal routing", result: "pass", detail: "Input entered Agent Operating Company under Human Authority." });
@@ -63,21 +65,25 @@ export function runPreflight(raw) {
 
   const failHit = FAIL.find(([re]) => re.test(input));
   const escHit = ESCALATE.find(([re]) => re.test(input));
+  const authorityGateHit = executionPlan.human_authority_gates.length > 0;
   if (failHit) checks.push({ id: "risk", name: "Risk screen", result: "fail", detail: failHit[1] });
   else if (escHit) checks.push({ id: "risk", name: "Risk screen", result: "warn", detail: escHit[1] });
+  else if (authorityGateHit) checks.push({ id: "risk", name: "Risk screen", result: "warn", detail: `Human Authority gate required: ${executionPlan.human_authority_gates.join(", ")}.` });
   else checks.push({ id: "risk", name: "Risk screen", result: "pass", detail: "No fail-closed or escalate pattern matched." });
 
   let decision = "PASS";
   if (checks.some((c) => c.result === "fail") || failHit) decision = "FAIL";
-  else if (checks.some((c) => c.result === "warn") || escHit) decision = "ESCALATE";
+  else if (checks.some((c) => c.result === "warn") || escHit || authorityGateHit) decision = "ESCALATE";
 
   const notes = decision === "PASS"
-    ? ["Work may proceed inside the routed division."]
-    : ["Fail closed: work must stop. Do not produce artifacts."];
-  return finalize(input, checks, decision, routed, notes);
+    ? ["Work may proceed inside the routed division using the resolved execution plan."]
+    : decision === "ESCALATE"
+      ? ["Stop before gated actions and request Human Authority approval; ungated analysis may be preserved as evidence only."]
+      : ["Fail closed: work must stop. Do not produce artifacts."];
+  return finalize(input, checks, decision, routed, notes, executionPlan);
 }
 
-function finalize(input, checks, decision, routed, notes) {
+function finalize(input, checks, decision, routed, notes, executionPlan = resolveExecutionPlan(input)) {
   const work = decision === "PASS";
   return {
     version: "1.0.0",
@@ -100,6 +106,7 @@ function finalize(input, checks, decision, routed, notes) {
     work_permitted: work,
     status_marker: `[AOC/Canon • Preflight ${decision}]`,
     notes,
+    execution_plan: executionPlan,
     enforcement_version: VERSION,
   };
 }

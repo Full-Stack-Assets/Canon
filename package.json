@@ -13,7 +13,8 @@
     "worker:dev": "wrangler dev",
     "worker:deploy": "wrangler deploy",
     "test": "node --test",
-    "verify": "npm test && node preflight/run_preflight.mjs \"Verify the read-only Canon MCP server implementation and evidence receipt.\""
+    "static": "node --check preflight/run_preflight.mjs && node --check preflight/capability_router.mjs",
+    "verify": "npm test && npm run static && node preflight/run_preflight.mjs \"Verify the read-only Canon MCP server implementation and evidence receipt.\""
   },
   "devDependencies": {
     "wrangler": "^4.102.0"
