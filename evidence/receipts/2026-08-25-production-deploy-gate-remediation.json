@@ -1,0 +1,20 @@
+{
+  "schema": "canon.governance.remediation.receipt",
+  "version": "1.0.0",
+  "date": "2026-08-25",
+  "work_item": "Enforce the approved Human Authority gate for Canon MCP production deployment.",
+  "authority": "HUMAN_AUTHORITY",
+  "authority_basis": "The approved automation policy explicitly places production deployment behind Human Authority, and Human Authority instructed execution to proceed.",
+  "triggering_evidence": {
+    "merge_commit": "dffed2b64baf1bcf929de6fd7fb71d361769511b",
+    "workflow_run": "32920840017",
+    "observed_behavior": "A push to main automatically triggered deploy-canon-mcp because the workflow contained a push trigger covering enforcement and preflight paths.",
+    "deployment_result": "FAILED_BEFORE_PUBLISH",
+    "cloudflare_error_code": 7003
+  },
+  "remediation": {
+    "change": "Remove the push trigger from deploy-canon-mcp and retain workflow_dispatch as the only production deployment trigger.",
+    "regression_test": "test/deploy-gate.test.mjs",
+    "scope": "Smallest change required to align runtime behavior with the approved Human Authority gate."
+  }
+}
