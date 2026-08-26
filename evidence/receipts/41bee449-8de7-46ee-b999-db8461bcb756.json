@@ -1,0 +1,111 @@
+{
+  "version": "1.0.0",
+  "schema": "canon.preflight.receipt",
+  "id": "41bee449-8de7-46ee-b999-db8461bcb756",
+  "timestamp": "2026-08-26T05:10:43Z",
+  "input_digest": "sha256:a863323d2cec4c0b42370362d7102192183b464e79a34b86a2b8d04b65ef729e",
+  "input_summary": "Verify and record successful activation of the approved balanced GitHub ruleset for Canon main.",
+  "routed_to": {
+    "authority": "HUMAN_AUTHORITY",
+    "company": "AGENT_OPERATING_COMPANY",
+    "division_id": "03",
+    "division_name": "Solution Architecture & Design",
+    "canon_refs": [
+      "AGENTS.md",
+      "enforcement/PREFLIGHT.md",
+      "aoc/configuration/GITHUB-MAIN-PROTECTION.json"
+    ],
+    "roles": [
+      "solution-architect"
+    ]
+  },
+  "checks": [
+    {
+      "id": "authority",
+      "name": "Human Authority",
+      "result": "pass",
+      "detail": "Human Authority approved the balanced main-branch protection policy before activation."
+    },
+    {
+      "id": "target",
+      "name": "Ruleset target",
+      "result": "pass",
+      "detail": "The only active repository ruleset targets refs/heads/main and no other branch."
+    },
+    {
+      "id": "pull-request",
+      "name": "Pull request required",
+      "result": "pass",
+      "detail": "The ruleset requires pull requests with zero mandatory approving reviews."
+    },
+    {
+      "id": "status-check",
+      "name": "Required status check",
+      "result": "pass",
+      "detail": "The exact aoc-preflight context from GitHub Actions integration 15368 is required; strict up-to-date mode is disabled."
+    },
+    {
+      "id": "ref-safety",
+      "name": "Reference safety",
+      "result": "pass",
+      "detail": "Deletion and non-fast-forward updates are restricted."
+    },
+    {
+      "id": "bypass",
+      "name": "Administrator bypass",
+      "result": "pass",
+      "detail": "Permanent bypass is limited to RepositoryRole actor 5, the repository administrator role."
+    },
+    {
+      "id": "cleanup",
+      "name": "Extraneous ruleset cleanup",
+      "result": "pass",
+      "detail": "The empty aoc-preflight branch ruleset is absent."
+    }
+  ],
+  "decision": "PASS",
+  "fail_closed": false,
+  "work_permitted": true,
+  "status_marker": "[AOC/Canon • Preflight PASS]",
+  "notes": [
+    "This receipt supersedes the current-state conclusion of blocked receipt 0fa9cfc4-9f69-4e6a-a846-46c43f4844f1 without replacing that historical evidence.",
+    "The earlier receipt remains evidence of the connector permission boundary at its timestamp and must not be interpreted as current protection state.",
+    "The live ruleset was read and verified; this documentation update does not mutate repository protection."
+  ],
+  "execution_plan": {
+    "capability_bundles": [
+      "SECURE_BUILD"
+    ],
+    "required_skills": [],
+    "preferred_plugins": [
+      "GitHub"
+    ],
+    "conditional_plugins": [],
+    "verification": [
+      "live_ruleset_read",
+      "schema_validation",
+      "repository_tests"
+    ],
+    "automation_level": "automatic_bounded",
+    "bounded_actions": [
+      "prepare_review_branch",
+      "open_draft_pull_request"
+    ],
+    "human_authority_gates": [
+      "repository_protection_mutation",
+      "merge_to_main"
+    ],
+    "action_policy": {
+      "repository_reading": "automatic_no_interaction",
+      "verification": "automatic_no_interaction",
+      "draft_generation": "automatic_no_interaction",
+      "branch_creation": "automatic_bounded",
+      "private_drafts": "automatic_bounded",
+      "repository_protection_mutation": "human_authority_gate",
+      "consequential_release_merge": "human_authority_gate"
+    },
+    "invocation_rule": "Use the connected GitHub surface for live state and preserve consequential setting changes behind Human Authority.",
+    "fallback_rule": "If live settings cannot be read, report the exact permission boundary and do not infer protection state."
+  },
+  "enforcement_version": "1.2.0"
+}
