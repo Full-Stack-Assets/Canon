@@ -29,3 +29,15 @@ test("keeps consequential production deployment behind Human Authority", () => {
   assert.ok(receipt.execution_plan.human_authority_gates.includes("production_deployment"));
   assert.equal(receipt.execution_plan.action_policy.production_deployment, "human_authority_gate");
 });
+
+
+test("routes first commercial iterations through the mandatory revenue gate", () => {
+  const receipt = runPreflight("Prepare the first customer-facing iteration for commercial release.");
+  assert.ok(receipt.execution_plan.capability_bundles.includes("REVENUE_RELEASE"));
+  assert.ok(receipt.execution_plan.verification.includes("revenue_ready_release_gate"));
+  assert.equal(
+    receipt.execution_plan.action_policy.revenue_ready_release_validation,
+    "automatic_no_interaction",
+  );
+});
+

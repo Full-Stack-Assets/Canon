@@ -12,3 +12,11 @@ execution_layer:
   - temporary-agent-pods
   - evidence-back-to-canon
 rule: every_input_through_aoc_grounded_in_canon
+commercial_release_gate:
+  id: POL-REV-001
+  canon_ref: aoc/revenue/REVENUE-READY-RELEASE-GATE.md
+  applies_from_iteration: 1
+  applies_to_every_commercial_release: true
+  fail_closed_on_missing_or_non_pass_evidence: true
+  evidence_manifest: .aoc/revenue-ready-release.json
+

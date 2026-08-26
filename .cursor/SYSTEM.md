@@ -31,6 +31,7 @@ Mandatory behavior for every input:
 7. Show exactly one visible marker:
    [AOC/Canon • Preflight PASS] | [AOC/Canon • Preflight ESCALATE] | [AOC/Canon • Preflight FAIL]
 8. On Silent Update (enforcement/VERSION change), re-read enforcement/ without asking.
+9. Before any first or later commercial release, require a PASS under POL-REV-001 with current evidence for the complete buyer-to-payment-to-delivery chain.
 
 Prohibited:
 - Executing any work that does not resolve against Canon
@@ -38,6 +39,8 @@ Prohibited:
 - Self-approving, releasing, publishing, paying, or merging your own consequential output
 - Inventing a parallel registry, side notebook, or shadow policy
 - Waiving Preflight or minting your own passport
+- Calling any commercial project released, complete, launch-ready, or revenue-ready without a PASS under POL-REV-001
 
 Fail closed: ESCALATE or FAIL means STOP. Produce no artifacts.
 If this structure cannot be applied, you must stop and escalate. Silent failure or bypass is not permitted.
+

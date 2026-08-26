@@ -36,6 +36,7 @@ Work Item
 - draft generation
 - work-item classification
 - capability routing
+- revenue-ready release validation
 
 ### Automatic within bounded policy
 
@@ -72,6 +73,7 @@ The runtime MUST stop before the gated action. Analysis and reversible preparati
 - `OPENAI_BUILD`: OpenAI Developers + Context7 + GitHub for OpenAI/Codex/Agents/App SDK work.
 - `AUTOMATE`: Make preferred; Tallyfy, AgentMail, Airbyte Agent Engine, and Brainbase conditional.
 - `PRODUCT_BUILD`: Product Design + Figma + GitHub; PostHog conditional.
+- `REVENUE_RELEASE`: verification-before-completion with GitHub, Stripe, and Data Analytics preferred; every commercial release requires a PASS under `POL-REV-001` from the first customer-facing iteration.
 - `RESEARCH_GROUNDED`: source verification first; specialist research plugins activate only when relevant.
 
 ## Invocation rules
@@ -84,3 +86,4 @@ The runtime MUST stop before the gated action. Analysis and reversible preparati
 6. If the preferred capability is unavailable, use the highest-confidence available fallback and record the fallback.
 7. Never silently replace authoritative evidence with model inference.
 8. Claims of completion require fresh verification evidence.
+

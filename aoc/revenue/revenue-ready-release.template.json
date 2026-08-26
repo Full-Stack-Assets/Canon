@@ -1,0 +1,234 @@
+{
+  "api_version": "aoc/v1",
+  "kind": "RevenueReadyReleaseEvidence",
+  "policy_id": "POL-REV-001",
+  "policy_version": "1.0.0",
+  "project_id": "replace-me",
+  "release": {
+    "iteration": 1,
+    "candidate": "replace-me",
+    "evaluated_at": "replace-me"
+  },
+  "decision": "BLOCKED",
+  "criteria": {
+    "specific_buyer": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "urgent_problem": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "compelling_offer": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "pricing_model": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "proof": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "customer_source": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "acquisition_channel": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "conversion_mechanism": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "payment_infrastructure": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "fulfillment_system": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "onboarding": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "customer_support": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "retention_mechanism": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "expansion_path": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "unit_economics": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "measurement": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "legal_operational_basics": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "automation": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "accountability": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "continuous_demand_validation": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    }
+  },
+  "first_dollar_stack": {
+    "painful_problem": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "defined_buyer": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "fixed_offer": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "price": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "proof_asset": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "qualified_lead_source": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "sales_path": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "payment_path": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "fulfillment_path": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    },
+    "direct_outreach_and_follow_up": {
+      "status": "BLOCKED",
+      "owner": "replace-me",
+      "evidence_refs": [],
+      "notes": "replace-me",
+      "validated_at": "replace-me"
+    }
+  },
+  "attestations": {
+    "claims_source_backed": false,
+    "no_synthetic_customer_proof": false,
+    "payment_path_verified": false,
+    "paying_demand_verified": false,
+    "human_authority_gates_preserved": false
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://canon.aoc/aoc/revenue/revenue-ready-release.schema.json",
+  "title": "RevenueReadyReleaseEvidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "api_version",
+    "kind",
+    "policy_id",
+    "policy_version",
+    "project_id",
+    "release",
+    "decision",
+    "criteria",
+    "first_dollar_stack",
+    "attestations"
+  ],
+  "properties": {
+    "api_version": { "const": "aoc/v1" },
+    "kind": { "const": "RevenueReadyReleaseEvidence" },
+    "policy_id": { "const": "POL-REV-001" },
+    "policy_version": { "const": "1.0.0" },
+    "project_id": { "type": "string", "minLength": 1 },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["iteration", "candidate", "evaluated_at"],
+      "properties": {
+        "iteration": { "type": "integer", "minimum": 1 },
+        "candidate": { "type": "string", "minLength": 1 },
+        "evaluated_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "decision": { "enum": ["PASS", "BLOCKED", "FAIL"] },
+    "criteria": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "specific_buyer",
+        "urgent_problem",
+        "compelling_offer",
+        "pricing_model",
+        "proof",
+        "customer_source",
+        "acquisition_channel",
+        "conversion_mechanism",
+        "payment_infrastructure",
+        "fulfillment_system",
+        "onboarding",
+        "customer_support",
+        "retention_mechanism",
+        "expansion_path",
+        "unit_economics",
+        "measurement",
+        "legal_operational_basics",
+        "automation",
+        "accountability",
+        "continuous_demand_validation"
+      ],
+      "properties": {
+        "specific_buyer": { "$ref": "#/$defs/check" },
+        "urgent_problem": { "$ref": "#/$defs/check" },
+        "compelling_offer": { "$ref": "#/$defs/check" },
+        "pricing_model": { "$ref": "#/$defs/check" },
+        "proof": { "$ref": "#/$defs/check" },
+        "customer_source": { "$ref": "#/$defs/check" },
+        "acquisition_channel": { "$ref": "#/$defs/check" },
+        "conversion_mechanism": { "$ref": "#/$defs/check" },
+        "payment_infrastructure": { "$ref": "#/$defs/check" },
+        "fulfillment_system": { "$ref": "#/$defs/check" },
+        "onboarding": { "$ref": "#/$defs/check" },
+        "customer_support": { "$ref": "#/$defs/check" },
+        "retention_mechanism": { "$ref": "#/$defs/check" },
+        "expansion_path": { "$ref": "#/$defs/check" },
+        "unit_economics": { "$ref": "#/$defs/check" },
+        "measurement": { "$ref": "#/$defs/check" },
+        "legal_operational_basics": { "$ref": "#/$defs/check" },
+        "automation": { "$ref": "#/$defs/check" },
+        "accountability": { "$ref": "#/$defs/check" },
+        "continuous_demand_validation": { "$ref": "#/$defs/check" }
+      }
+    },
+    "first_dollar_stack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "painful_problem",
+        "defined_buyer",
+        "fixed_offer",
+        "price",
+        "proof_asset",
+        "qualified_lead_source",
+        "sales_path",
+        "payment_path",
+        "fulfillment_path",
+        "direct_outreach_and_follow_up"
+      ],
+      "properties": {
+        "painful_problem": { "$ref": "#/$defs/check" },
+        "defined_buyer": { "$ref": "#/$defs/check" },
+        "fixed_offer": { "$ref": "#/$defs/check" },
+        "price": { "$ref": "#/$defs/check" },
+        "proof_asset": { "$ref": "#/$defs/check" },
+        "qualified_lead_source": { "$ref": "#/$defs/check" },
+        "sales_path": { "$ref": "#/$defs/check" },
+        "payment_path": { "$ref": "#/$defs/check" },
+        "fulfillment_path": { "$ref": "#/$defs/check" },
+        "direct_outreach_and_follow_up": { "$ref": "#/$defs/check" }
+      }
+    },
+    "attestations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claims_source_backed",
+        "no_synthetic_customer_proof",
+        "payment_path_verified",
+        "paying_demand_verified",
+        "human_authority_gates_preserved"
+      ],
+      "properties": {
+        "claims_source_backed": { "type": "boolean" },
+        "no_synthetic_customer_proof": { "type": "boolean" },
+        "payment_path_verified": { "type": "boolean" },
+        "paying_demand_verified": { "type": "boolean" },
+        "human_authority_gates_preserved": { "type": "boolean" }
+      }
+    }
+  },
+  "$defs": {
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "owner", "evidence_refs", "notes", "validated_at"],
+      "properties": {
+        "status": { "enum": ["PASS", "BLOCKED", "FAIL"] },
+        "owner": { "type": "string" },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": { "type": "string" },
+        "validated_at": { "type": "string" }
+      }
+    }
+  }
+}
+

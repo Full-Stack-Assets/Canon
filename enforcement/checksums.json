@@ -1,25 +1,35 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "sha256": {
-    "enforcement/SYSTEM-PROMPT.txt": "f362069ad5e292bb98e4b360b0206698fbb5d958084bbaba78d97238ee5273c9",
-    "enforcement/RULE-SET.md": "df09d9e0e237c51a3cabeefd4957bc2128a16d67d65bacf2fa6017af13927a58",
+    "enforcement/SYSTEM-PROMPT.txt": "758ac836d0065da6cf934d4376ee59280998551aff2e49e90945e998c22dd292",
+    "enforcement/RULE-SET.md": "43de1ff85574aa7b816ba6bb3e7311f88d6159539bd724808f7c3e6cb75d55ea",
     "enforcement/AGENT-PASSPORT.yaml": "6d997ea4ecc27d9399da9bd506a2ea9ca0944f5321790560d2d4b6bb6665da27",
     "enforcement/UNIVERSAL-INPUT-ROUTING.md": "de98fa4cbab19ced0c6da4569b96e3dcb493b440cd49f1c96f1ed324460633a3",
     "enforcement/PREFLIGHT.md": "251f975f38c16d92c06d56d9394cb44c2a4131fc5c3c2b3ff555464dd6fedc75",
     "enforcement/PREFLIGHT-RECEIPT.schema.json": "870ed05488eb08e75d3dec62e92610514e69e72fb75af2237c59e854fec084a9",
     "enforcement/SILENT-UPDATE.md": "5a9903a3eb3040719367592bb35d939c6552bb852778858e9206457458fb974b",
     "enforcement/VISIBLE-VERIFICATION.md": "b7f78b96f1b5d2c77791ebbc3b534152e55696d9576df35d9fad83b96112503c",
-    "enforcement/VERSION": "1575e1af4a95f12f70b4ee6a6adce8160953d93ea17dc2611b90883ccc3ad3b8",
+    "enforcement/VERSION": "3da4ae6c21b55b84f06752d04cd033e189900e15f9b2526c1d89ebd3edefa704",
     "enforcement/sync.sh": "9e0fce12f61ec579f04f6ad9c867f7494f89912374924203ef7293a1da639a4c",
     "enforcement/bootstrap.sh": "2c65203ef22878b0ea2f1b18ff8214ed99177d0c5d21a830f7a909b96f7fa21c",
     "enforcement/verify-checksums.mjs": "096901409d206b9b8c92a310fd319a0cd8d0bf105b4f1e05be00b68111f20da5",
     "preflight/run_preflight.mjs": "27efbea7918948d82287471911af6d97e988f5ad28a6afd1b2e006509739f324",
-    "platforms/cursor/rules.mdc": "5a030b898a58d3887f750a4fb3d25146510b14c0fb706e5d40c0183e5b6a3571",
-    "platforms/copilot/copilot-instructions.md": "f7e53355a907d12ec087ab567e2b5bffbbf1a4c40353d85ff9badf77bbed6626",
+    "platforms/cursor/rules.mdc": "0bab9c221a87109206a169d7b0b78aad09cd9e4ce08ac6d58c883969ec16f87e",
+    "platforms/copilot/copilot-instructions.md": "d89f19d686621dae67bdf6579740e833c6b57704e970593626e3c1a6cae19b37",
     ".githooks/commit-msg": "d13ba9786c56acca51cf7830bdd5efa6f6df81b952f9b6be4bb99ef5fdd23c38",
     ".githooks/pre-commit": "9c07e803a60530e084952d754739dff6e21128df6b593b6012ac987797d31631",
     ".githooks/pre-push": "48d2c4ebf5c284fd7f1f850dc5ad99421fda9c1b9448627d6132dbadbbea8f62",
-    "enforcement/CAPABILITY-ROUTING.md": "ab97e4cd12cb8e1b4b1aa4940796ed322dab662fba67a1a40fa6088a79f64869",
-    "preflight/capability_router.mjs": "44e84b85f3c6533dacd7e50c7bd6bdffe8da0a8c133282ab47bbd79dd5e57d47"
+    "enforcement/CAPABILITY-ROUTING.md": "ea2c302de1411a05c976ba50b482957248d081b9d554c724ce767303e65fa4d6",
+    "preflight/capability_router.mjs": "9a49a7d4bc99293d83f2e9f37633b1e6be1e7e84b9ba60dc9e4d2a4f120ce766",
+    "aoc/revenue/REVENUE-READY-RELEASE-GATE.md": "f35d48138161ca7cf5c7e109dac575c67a10e3239bc677033e7395087f43564e",
+    "aoc/revenue/revenue-ready-release.schema.json": "5e3de1d407ec16fc70417e8299dbb0e91361df7049cbdbe599d723952f591a04",
+    "aoc/revenue/revenue-ready-release.template.json": "bfe5364f8c08a0f9d4327d81209f658a4902ca05013cd1042021d42c4c47fc33",
+    ".github/actions/revenue-ready-release/action.yml": "036df6bb662e1f05c0c8671927dd40cab1d41f4fd3144b7914fd0df5fd0cfb50",
+    ".github/actions/revenue-ready-release/validate.mjs": "4a5525f24f6d6b685118ef8bcdd4553211f3e2de2e6e846475b03bded31879df",
+    "aoc/revenue/templates/revenue-ready-release.yml": "640bd18a94d0084faf0aab1782e9f87e5539b3c6a7665b39ebffd11f5a5ca8d5",
+    "aoc/PORTFOLIO.yaml": "81d83644e55d39e6d302ef159b8ab016050c119d0a1f78997b84c96d7997a994",
+    "AGENTS.md": "df59d1da488dd0f1854d169a0edfbaa675b3dc1e75f20ed386e3831928cee6b6",
+    "enforcement/IMPLEMENTATION-CHECKLIST.md": "b279bc11fed45d421897106a3fea8e485288028a709c3e906f4343c47e5d8eca"
   }
 }
+

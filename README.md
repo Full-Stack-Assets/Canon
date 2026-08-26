@@ -106,6 +106,15 @@ Deployment, OAuth, ChatGPT registration, and any future write tools remain
 Human Authority gates. See [`mcp/README.md`](mcp/README.md) for the operating
 boundary and configuration.
 
+## Revenue-ready release gate
+
+Every commercial portfolio project must pass the evidence-backed
+[Revenue-Ready First-Iteration Release Gate](aoc/revenue/REVENUE-READY-RELEASE-GATE.md)
+before its first customer-facing iteration and every later commercial release.
+A missing or non-PASS `.aoc/revenue-ready-release.json` blocks release.
+The repository includes a schema, failing-by-default template, portable GitHub
+Action, and automated validator tests.
+
 ## Central enforcement status
 
 | Control | Current evidence | Status |
@@ -129,3 +138,4 @@ boundary and configuration.
    external settings surfaces.
 4. Review and approve the MCP deployment/authentication path before external exposure.
 5. Keep Aether Portfolio in its own repository.
+
