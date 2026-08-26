@@ -20,6 +20,6 @@
     ".githooks/pre-commit": "9c07e803a60530e084952d754739dff6e21128df6b593b6012ac987797d31631",
     ".githooks/pre-push": "48d2c4ebf5c284fd7f1f850dc5ad99421fda9c1b9448627d6132dbadbbea8f62",
     "enforcement/CAPABILITY-ROUTING.md": "ab97e4cd12cb8e1b4b1aa4940796ed322dab662fba67a1a40fa6088a79f64869",
-    "preflight/capability_router.mjs": "7182e9a85f1f57a3a59a7b4466c994fc12cd79f816bfd5e3b5fb76611bf580b5"
+    "preflight/capability_router.mjs": "44e84b85f3c6533dacd7e50c7bd6bdffe8da0a8c133282ab47bbd79dd5e57d47"
   }
 }
