@@ -23,6 +23,14 @@
     "Allow Wrangler to fetch accessible accounts and auto-select when exactly one account is available; non-interactive ambiguous account selection remains fail-closed.",
     "Add a regression test preventing CLOUDFLARE_ACCOUNT_ID from being reintroduced into the deployment workflow."
   ],
+  "verification": {
+    "workflow_run": 32934597718,
+    "full_test_suite": "pass",
+    "static_checks": "pass",
+    "lint_gate": "pass",
+    "enforcement_bootstrap": "pass",
+    "high_risk_path_receipt_gate": "pass"
+  },
   "production_deployment_performed": false,
-  "status": "implementation_pending_ci_verification"
+  "status": "verified"
 }
