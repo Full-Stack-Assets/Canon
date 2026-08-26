@@ -1,0 +1,57 @@
+{
+  "schema": "canon.github.branch-protection",
+  "version": "1.0.0",
+  "repository": "Full-Stack-Assets/Canon",
+  "branch": "main",
+  "authority": {
+    "status": "APPROVED_BY_HUMAN_AUTHORITY",
+    "approved_at": "2026-08-26T01:58:19Z",
+    "approval_scope": "Balanced protection: require pull requests and the exact aoc-preflight check; block force pushes and deletion; retain administrator bypass."
+  },
+  "github_rest": {
+    "method": "PUT",
+    "endpoint": "/repos/Full-Stack-Assets/Canon/branches/main/protection",
+    "body": {
+      "required_status_checks": {
+        "strict": false,
+        "contexts": [
+          "aoc-preflight"
+        ]
+      },
+      "enforce_admins": false,
+      "required_pull_request_reviews": {
+        "dismiss_stale_reviews": false,
+        "require_code_owner_reviews": false,
+        "required_approving_review_count": 0,
+        "require_last_push_approval": false
+      },
+      "restrictions": null,
+      "required_linear_history": false,
+      "allow_force_pushes": false,
+      "allow_deletions": false,
+      "block_creations": false,
+      "required_conversation_resolution": false,
+      "lock_branch": false,
+      "allow_fork_syncing": true
+    }
+  },
+  "observed_before_activation": {
+    "base_sha": "dffed2b64baf1bcf929de6fd7fb71d361769511b",
+    "repository_rulesets": [],
+    "branch_protection_read": "BLOCKED_RESOURCE_NOT_ACCESSIBLE_BY_INTEGRATION",
+    "connector_administration_permission": "read",
+    "activation_status": "BLOCKED_PENDING_ADMIN_WRITE_CAPABILITY"
+  },
+  "verification": {
+    "required_check_context": "aoc-preflight",
+    "required_check_source": ".github/workflows/aoc-preflight.yml",
+    "post_activation_requirements": [
+      "GET /repos/Full-Stack-Assets/Canon/branches/main/protection returns enabled protection",
+      "required_status_checks.contexts contains exactly aoc-preflight for the approved policy",
+      "enforce_admins.enabled is false",
+      "required_pull_request_reviews is enabled",
+      "allow_force_pushes.enabled is false",
+      "allow_deletions.enabled is false"
+    ]
+  }
+}
