@@ -64,8 +64,7 @@ file parity, and the central checksum manifest. Re-run the read-only check with
 `./enforcement/bootstrap.sh --check`.
 
 PR check workflow: [`.github/workflows/aoc-preflight.yml`](.github/workflows/aoc-preflight.yml).
-It is eligible to become a required check only after separate approval of
-`main` protection.
+The active `main` ruleset requires its exact `aoc-preflight` check context.
 
 To make `commit-msg` a **hard** blocker later, set `AOC_HOOKS_HARD=1` (documented
 in `.githooks/README.md`).
@@ -124,16 +123,14 @@ Action, and automated validator tests.
 | Cursor | `.cursor/SYSTEM.md` and always-applied `.cursor/rules/aoc.mdc` are synchronized | Active in this repository |
 | Copilot | `.github/copilot-instructions.md` is synchronized | Active in this repository |
 | GitHub Actions | `aoc-preflight` exists, runs on pull requests, and verifies bootstrap drift | Active |
-| `main` protection | Balanced policy approved; exact payload recorded in `aoc/configuration/GITHUB-MAIN-PROTECTION.json` | **Activation blocked: GitHub administration write access required** |
+| `main` protection | Active ruleset requires pull requests and `aoc-preflight`, restricts deletion and force pushes, and retains administrator bypass | **Active and verified** |
 | ChatGPT, Gemini, Manus, ClickUp | Canon contains prepared packs only | External activation not claimed |
 
 ## Next human actions
 
 1. Run `./enforcement/bootstrap.sh --install` once in every new Canon clone.
-2. Apply the approved payload in
-   `aoc/configuration/GITHUB-MAIN-PROTECTION.json` using an authenticated GitHub
-   principal with repository administration write access, then run its listed
-   post-activation verification. Bootstrap does not change repository settings.
+2. Re-verify the active `main` ruleset after any repository-administration
+   change; bootstrap does not change repository settings.
 3. Activate the prepared non-repository operator packs only in their respective
    external settings surfaces.
 4. Review and approve the MCP deployment/authentication path before external exposure.

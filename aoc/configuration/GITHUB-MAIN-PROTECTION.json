@@ -1,6 +1,6 @@
 {
   "schema": "canon.github.branch-protection",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "repository": "Full-Stack-Assets/Canon",
   "branch": "main",
   "authority": {
@@ -8,50 +8,70 @@
     "approved_at": "2026-08-26T01:58:19Z",
     "approval_scope": "Balanced protection: require pull requests and the exact aoc-preflight check; block force pushes and deletion; retain administrator bypass."
   },
-  "github_rest": {
-    "method": "PUT",
-    "endpoint": "/repos/Full-Stack-Assets/Canon/branches/main/protection",
-    "body": {
-      "required_status_checks": {
-        "strict": false,
-        "contexts": [
-          "aoc-preflight"
-        ]
+  "implementation": {
+    "status": "ACTIVE_VERIFIED",
+    "observed_at": "2026-08-26T05:10:43Z",
+    "base_sha": "fbf248d5fac714333c1dbf3b4fe72030eda1e5a7",
+    "mechanism": "repository_ruleset",
+    "ruleset": {
+      "id": 21530435,
+      "name": "main",
+      "target": "branch",
+      "enforcement": "active",
+      "source": "https://api.github.com/repos/Full-Stack-Assets/Canon/rulesets/21530435",
+      "conditions": {
+        "include": [
+          "refs/heads/main"
+        ],
+        "exclude": []
       },
-      "enforce_admins": false,
-      "required_pull_request_reviews": {
-        "dismiss_stale_reviews": false,
-        "require_code_owner_reviews": false,
-        "required_approving_review_count": 0,
-        "require_last_push_approval": false
+      "rules": {
+        "pull_request": {
+          "required": true,
+          "required_approving_review_count": 0
+        },
+        "required_status_checks": {
+          "strict_required_status_checks_policy": false,
+          "checks": [
+            {
+              "context": "aoc-preflight",
+              "integration_id": 15368
+            }
+          ]
+        },
+        "deletion": {
+          "restricted": true
+        },
+        "non_fast_forward": {
+          "blocked": true
+        }
       },
-      "restrictions": null,
-      "required_linear_history": false,
-      "allow_force_pushes": false,
-      "allow_deletions": false,
-      "block_creations": false,
-      "required_conversation_resolution": false,
-      "lock_branch": false,
-      "allow_fork_syncing": true
+      "bypass": [
+        {
+          "actor_type": "RepositoryRole",
+          "actor_id": 5,
+          "resolved_role": "admin",
+          "bypass_mode": "always"
+        }
+      ]
     }
   },
-  "observed_before_activation": {
-    "base_sha": "dffed2b64baf1bcf929de6fd7fb71d361769511b",
-    "repository_rulesets": [],
-    "branch_protection_read": "BLOCKED_RESOURCE_NOT_ACCESSIBLE_BY_INTEGRATION",
-    "connector_administration_permission": "read",
-    "activation_status": "BLOCKED_PENDING_ADMIN_WRITE_CAPABILITY"
-  },
   "verification": {
+    "decision": "PASS",
+    "branch_reports_protected": true,
+    "target_is_main_only": true,
+    "pull_requests_required": true,
     "required_check_context": "aoc-preflight",
     "required_check_source": ".github/workflows/aoc-preflight.yml",
-    "post_activation_requirements": [
-      "GET /repos/Full-Stack-Assets/Canon/branches/main/protection returns enabled protection",
-      "required_status_checks.contexts contains exactly aoc-preflight for the approved policy",
-      "enforce_admins.enabled is false",
-      "required_pull_request_reviews is enabled",
-      "allow_force_pushes.enabled is false",
-      "allow_deletions.enabled is false"
-    ]
+    "require_branches_up_to_date": false,
+    "force_pushes_blocked": true,
+    "deletions_restricted": true,
+    "administrator_bypass_retained": true,
+    "extraneous_rulesets": []
+  },
+  "lineage": {
+    "prepared_payload_version": "1.0.0",
+    "blocked_receipt_id": "0fa9cfc4-9f69-4e6a-a846-46c43f4844f1",
+    "completion_receipt_id": "41bee449-8de7-46ee-b999-db8461bcb756"
   }
 }
