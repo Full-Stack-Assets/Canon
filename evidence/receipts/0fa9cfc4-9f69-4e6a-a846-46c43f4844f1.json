@@ -1,0 +1,62 @@
+{
+  "version": "1.0.0",
+  "schema": "canon.preflight.receipt",
+  "id": "0fa9cfc4-9f69-4e6a-a846-46c43f4844f1",
+  "timestamp": "2026-08-26T01:58:19Z",
+  "input_digest": "sha256:36ae46896f9a8f1082d4e1a719279c67d0a4885f637c263524f13bed3b0e0348",
+  "input_summary": "Apply balanced protection to Canon main: require pull requests and aoc-preflight; block force pushes and deletion; administrators retain bypass.",
+  "routed_to": {
+    "authority": "HUMAN_AUTHORITY",
+    "company": "AGENT_OPERATING_COMPANY",
+    "division_id": "03",
+    "division_name": "Governance, Risk & Compliance",
+    "canon_refs": [
+      "AGENTS.md",
+      "enforcement/PREFLIGHT.md",
+      "aoc/configuration/STORAGE-AUTHORITY.md"
+    ],
+    "roles": []
+  },
+  "checks": [
+    {
+      "id": "presence",
+      "name": "Input present",
+      "result": "pass",
+      "detail": "Human Authority selected the balanced Canon main-branch protection policy."
+    },
+    {
+      "id": "canon",
+      "name": "Canon grounding",
+      "result": "pass",
+      "detail": "Current main, the aoc-preflight workflow, repository rulesets, prior enforcement evidence, and storage authority were inspected."
+    },
+    {
+      "id": "authority",
+      "name": "Human Authority",
+      "result": "pass",
+      "detail": "The repository access-control mutation was explicitly approved by Human Authority."
+    },
+    {
+      "id": "permission",
+      "name": "Technical permission",
+      "result": "fail",
+      "detail": "The connected GitHub integration exposes repository administration read access but no branch-protection or ruleset write capability."
+    },
+    {
+      "id": "preparation",
+      "name": "Smallest safe continuation",
+      "result": "pass",
+      "detail": "The exact classic branch-protection REST payload and deterministic post-activation checks were prepared without claiming activation."
+    }
+  ],
+  "decision": "ESCALATE",
+  "fail_closed": true,
+  "work_permitted": true,
+  "status_marker": "[AOC/Canon • Human Authority APPROVED • Activation BLOCKED]",
+  "notes": [
+    "No repository protection setting was changed.",
+    "Activation requires an authenticated GitHub principal with Administration: write on Full-Stack-Assets/Canon.",
+    "The browser was not used to circumvent the connector permission boundary."
+  ],
+  "enforcement_version": "1.1.0"
+}

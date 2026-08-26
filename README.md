@@ -115,14 +115,16 @@ boundary and configuration.
 | Cursor | `.cursor/SYSTEM.md` and always-applied `.cursor/rules/aoc.mdc` are synchronized | Active in this repository |
 | Copilot | `.github/copilot-instructions.md` is synchronized | Active in this repository |
 | GitHub Actions | `aoc-preflight` exists, runs on pull requests, and verifies bootstrap drift | Active |
-| `main` protection | No branch protection or ruleset is configured | **Pending Human Authority approval** |
+| `main` protection | Balanced policy approved; exact payload recorded in `aoc/configuration/GITHUB-MAIN-PROTECTION.json` | **Activation blocked: GitHub administration write access required** |
 | ChatGPT, Gemini, Manus, ClickUp | Canon contains prepared packs only | External activation not claimed |
 
 ## Next human actions
 
 1. Run `./enforcement/bootstrap.sh --install` once in every new Canon clone.
-2. Separately approve or reject protecting `main` with required check
-   `aoc-preflight`; no repository-protection setting is changed by bootstrap.
+2. Apply the approved payload in
+   `aoc/configuration/GITHUB-MAIN-PROTECTION.json` using an authenticated GitHub
+   principal with repository administration write access, then run its listed
+   post-activation verification. Bootstrap does not change repository settings.
 3. Activate the prepared non-repository operator packs only in their respective
    external settings surfaces.
 4. Review and approve the MCP deployment/authentication path before external exposure.
