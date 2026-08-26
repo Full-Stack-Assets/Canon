@@ -1,0 +1,63 @@
+{
+  "schema": "canon.action_receipt",
+  "version": "1.0.0",
+  "id": "aoc-config-remediation-20260825-001",
+  "timestamp": "2026-08-26T01:28:40Z",
+  "authority": "HUMAN_AUTHORITY",
+  "action": "configuration_governance_remediation",
+  "result": "success_with_gated_followups",
+  "preflight_receipt": "evidence/receipts/aoc-config-remediation-20260825-001.json",
+  "github": {
+    "branch": "aoc/config-governance-baseline-20260825",
+    "files_verified_by_provider_readback": 11,
+    "pull_requests": [
+      {"repository": "Full-Stack-Assets/Canon", "number": 6, "state": "merged", "merged_by_this_runtime": false},
+      {"repository": "Full-Stack-Assets/OpportunityOS", "number": 27, "state": "open_draft"},
+      {"repository": "Full-Stack-Assets/HostGraph-Procurement-Command-Center", "number": 11, "state": "merged", "merged_by_this_runtime": false},
+      {"repository": "Full-Stack-Assets/Roboticsbenchmarks.com", "number": 8, "state": "open_draft"},
+      {"repository": "Full-Stack-Assets/SubscriptionSweep", "number": 2, "state": "open_draft"},
+      {"repository": "Full-Stack-Assets/BLAIZE-SUNDAY", "number": 22, "state": "open_draft"},
+      {"repository": "Full-Stack-Assets/BeyondMythos.com", "number": 25, "state": "open_draft"},
+      {"repository": "Full-Stack-Assets/buildgraph", "number": 14, "state": "open_draft"}
+    ]
+  },
+  "airtable": {
+    "base_id": "appONqCXghJoM8hbQ",
+    "name": "AOC Portfolio Projection",
+    "authority": "projection_only",
+    "verified_record_counts": {
+      "Projects": 9,
+      "Automations": 16,
+      "Integrations": 12,
+      "Storage Boundaries": 10
+    },
+    "write_action_ids": [
+      "actIQw9VOdXoMXTpX",
+      "actj0kOnE2KUmEWjh",
+      "actOcRejC5C5uLFNu",
+      "actfdUCGIKXjRdSPZ"
+    ]
+  },
+  "verification": {
+    "canon_storage_contract_on_main": true,
+    "canon_automation_registry_on_main": true,
+    "canon_agents_on_main": true,
+    "hostgraph_agents_on_main": true,
+    "airtable_readback_complete": true,
+    "codereliability_repository_search": "No accessible Full-Stack-Assets repository matched CodeReliability or code reliability; the portfolio projection records the project as planned after the RoboticsBenchmarks handoff."
+  },
+  "unchanged_by_this_work_item": [
+    "Automation enabled states, schedules, triggers, and prompts",
+    "GitHub branch protection and repository rulesets",
+    "Production deployments and publication workflows",
+    "Financial settings, prices, payments, and Stripe state",
+    "Credentials, OAuth configuration, and connector authorization"
+  ],
+  "remaining_gates": [
+    "Human Authority approval for any Automation consolidation or mutation",
+    "Human Authority approval plus a capable GitHub administration surface for branch protection",
+    "Merge decisions for the six remaining draft pull requests",
+    "A native callable Pipedrive connector",
+    "Creation of a CodeReliability repository when the workstream is activated"
+  ]
+}
