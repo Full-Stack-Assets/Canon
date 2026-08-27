@@ -1,0 +1,44 @@
+{
+  "schema": "aoc.acquisition_reply_action_receipt",
+  "version": "1.0.0",
+  "timestamp": "2026-08-27T23:42:05Z",
+  "work_item": "Acquisition Reply Gate Watch",
+  "target": {
+    "listing": "0101-485046",
+    "broker": "Transworld Business Advisors",
+    "contact": "Moche Hazout"
+  },
+  "inbound": {
+    "received_at": "2026-08-27T23:00:29Z",
+    "type": "esign_envelope",
+    "status": "SUBSTANTIVE_GATE"
+  },
+  "public_verification": {
+    "physical_inventory": 0,
+    "remote_candidate_evidence": ["relocatable", "cloud-based", "fully scalable"],
+    "proof_of_funds_requirement_publicly_listed": true,
+    "source": "public Transworld listing"
+  },
+  "decision": "DO_NOT_SIGN_YET",
+  "gates": [
+    "explicit remote-operation continuity confirmation missing",
+    "complete NDA text not yet inspectable"
+  ],
+  "actions": [
+    {
+      "type": "reply",
+      "sent_at": "2026-08-27T23:40:59Z",
+      "purpose": "request remote-operability confirmation and a complete pre-sign NDA copy"
+    }
+  ],
+  "prohibited_actions_confirmed_not_taken": [
+    "NDA signature",
+    "LOI",
+    "proof-of-funds representation",
+    "financing acceptance",
+    "fee payment",
+    "guarantee",
+    "collateral agreement"
+  ],
+  "next_condition": "If the broker confirms remote operation, no buyer-required physical presence, and no physical inventory, and supplies complete agreement terms, review every clause and execute only if the ordinary NDA criteria pass."
+}
