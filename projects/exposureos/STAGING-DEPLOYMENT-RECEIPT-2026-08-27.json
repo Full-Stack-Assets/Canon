@@ -1,0 +1,58 @@
+{
+  "api_version": "aoc/v1",
+  "kind": "DeploymentReceipt",
+  "work_item_id": "WI-2026-08-27-EXPOSUREOS-V0",
+  "recorded_date": "2026-08-27",
+  "environment": "staging_pre_release",
+  "provider": "AppDeploy",
+  "application": {
+    "name": "ExposureOS",
+    "app_id": "exposureos-ryoy79",
+    "url": "https://exposureos-ryoy79.v2.appdeploy.ai/",
+    "architecture": "frontend+backend",
+    "release_label": "Private Beta / Pre-release"
+  },
+  "deployment_evidence": {
+    "initial_validation_attempt": "BLOCKED by one template diff anchor before build; no runtime claim made from that attempt",
+    "corrected_deployment": "ACCEPTED",
+    "status_check_1": "READY",
+    "status_check_2": "READY",
+    "frontend_error_log": [],
+    "backend_error_log": [],
+    "e2e_attachment": null,
+    "e2e_status": "UNVERIFIED",
+    "qa_snapshot": null
+  },
+  "implemented_staging_scope": [
+    "Public Exposure Scan with evidence-linked findings and dimension scoring",
+    "SSRF/private-network target rejection and redirect revalidation",
+    "robots-aware retrieval and crawl-blocked/Not-observed semantics",
+    "isolated synthetic tenant sandbox with persistent backend storage",
+    "Business Intelligence Profile editor",
+    "mobile Lead Inbox and persistent lead-state changes",
+    "governed follow-up approval state machine",
+    "Reputation Engine eligibility guard for synthetic/demo customer records",
+    "Exposure Action Queue",
+    "Revenue Ledger separating DETECTED, PIPELINE, BOOKED and REALIZED",
+    "Core/Growth/Agency pricing with non-charging activation request",
+    "Support, privacy and terms placeholders marked for review",
+    "user-visible deterministic Verification surface"
+  ],
+  "safety_and_authority": {
+    "live_billing": "DISABLED",
+    "payment_collection": "DISABLED",
+    "external_message_sending": "DISABLED_FAIL_CLOSED",
+    "public_prospect_outreach": "NOT_AUTHORIZED_NOT_PERFORMED",
+    "demo_data": "SYNTHETIC_AND_VISIBLY_LABELED",
+    "review_sentiment_gating": "PROHIBITED",
+    "commercial_release": "NOT_AUTHORIZED"
+  },
+  "verification_result": {
+    "deployment_runtime": "PASS",
+    "frontend_backend_error_logs": "PASS_ZERO_ERRORS_AT_TWO_TERMINAL_STATUS_CHECKS",
+    "automated_e2e": "UNVERIFIED_NO_RUN_ATTACHED_BY_PROVIDER",
+    "overall_staging_gate": "CONDITIONAL_PASS",
+    "rationale": "The staging runtime is deployed and READY with zero surfaced frontend/backend errors. The provider did not attach an automated E2E result, therefore full acceptance-test PASS is not claimed."
+  },
+  "next_gate": "Execute or obtain a fresh end-to-end QA run against the deployed staging surface, then review the first prospect outreach batch and live-billing activation separately under Human Authority."
+}
