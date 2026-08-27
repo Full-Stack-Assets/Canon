@@ -1,0 +1,83 @@
+id: WI-2026-08-27-WORLDLINE-4D-CAUSAL-KERNEL
+title: Worldline - 4D Causal World Model Kernel
+record_type: work_item
+status: written_spec_ready_for_human_review
+canonical: false
+created_at: 2026-08-27T07:04:00-04:00
+updated_at: 2026-08-27T07:09:35-04:00
+human_authority:
+  approval_recorded: true
+  approval_receipt: evidence/receipts/2026-08-27-worldline-4d-causal-kernel-design-approval.json
+  approved_scope:
+    - architecture design specification
+    - reversible review-branch artifact creation
+    - written specification self-review
+  approval_required_later:
+    - written specification acceptance
+    - implementation plan acceptance
+    - promotion of any new agent-generated transition mechanism to APPROVED_EXECUTABLE
+    - merge to main
+    - production persistence migration
+    - production deployment
+    - authority-policy changes
+objective: >
+  Make Worldline's deterministic causal kernel the only authority that can admit
+  canonical world-state revisions while allowing AI coding agents to propose
+  versioned executable transition mechanisms and generative renderers to depict
+  admitted states without direct canonical mutation authority.
+repository:
+  implementation: Full-Stack-Assets/WorldGen
+  design_branch: design/worldline-4d-causal-kernel-2026-08-27
+  design_commit: 2a7eaa93d87ef876dadd96aa0b7ced8f70d19e05
+  design_spec: docs/superpowers/specs/2026-08-27-worldline-4d-causal-kernel-design.md
+  draft_pull_request: https://github.com/Full-Stack-Assets/WorldGen/pull/26
+constraints:
+  - Canonical history is append-only and content-addressed.
+  - No public unchecked canonical-state mutation API may exist.
+  - Agent-generated mechanisms begin as CANDIDATE and cannot self-promote.
+  - Proposal producer and verifier identities remain independently attributable.
+  - Generated or simulated artifacts cannot self-upgrade to OBSERVED truth.
+  - Renderers and projection adapters receive no canonical write capability.
+  - Session/view changes cannot change canonical revision identity.
+  - Production persistence remains unchanged until separately approved.
+research_evidence:
+  - name: Code World Model - Coding Agent as World Brain
+    status: external_research_evidence
+    reference: https://huggingface.co/papers/2608.25927
+    use: motivates executable-state and visual-render separation, not coding-agent authority
+  - name: JIT-Agent - Scaling Harness Intelligence via Just-in-Time Harness Evolution
+    status: external_research_evidence
+    reference: https://huggingface.co/papers/2608.25593
+    use: motivates harness and runtime provenance as part of proposal-producer identity
+deliverables:
+  - reviewed architecture specification
+  - implementation plan after written-spec approval
+  - deterministic canonical serialization and hashing
+  - immutable canonical revision lineage
+  - typed Transition IR and bounded deterministic executor
+  - transition proposal and receipt contracts
+  - independent replay verifier
+  - epistemic admission and promotion gates
+  - renderer envelope and render receipt boundary
+  - model, harness, memory, skill, tool, and runtime provenance
+  - adverse tests and repository verification evidence
+acceptance_criteria:
+  - The same base revision, approved mechanism, normalized inputs, seed, and kernel version replay to the same state digest.
+  - Parent revisions remain immutable after child admission.
+  - Stale-base and undeclared-write proposals fail closed.
+  - An unapproved agent-generated mechanism cannot execute canonically.
+  - A renderer cannot mutate or promote canonical state.
+  - Generated or simulated output cannot become OBSERVED without an authorized evidence-ingest path.
+  - Harness changes change proposal-producer identity.
+  - Every accepted revision preserves revision-to-receipt-to-mechanism-to-producer lineage.
+  - Existing Worldline epistemic and deterministic replay guarantees remain intact or become stronger.
+authority_ceiling: medium
+data_classification: internal
+evidence_required:
+  - Canon preflight and Human Authority approval receipts.
+  - WorldGen design and implementation commit hashes.
+  - Deterministic replay and state-hash test results.
+  - Transition-gate adverse test results.
+  - Renderer non-mutation test results.
+  - Repository typecheck, test, and production-build results before implementation completion claims.
+exact_next_gate: Human review of WorldGen draft PR #26 written specification, followed by implementation planning only after explicit approval.
