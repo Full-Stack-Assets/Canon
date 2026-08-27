@@ -1,0 +1,89 @@
+{
+  "version": "1.0.0",
+  "schema": "canon.preflight.receipt",
+  "id": "PFR-55a8c3981b7a",
+  "timestamp": "2026-08-27T23:42:00Z",
+  "input_digest": "sha256:e0319bccf3b4a9aec3d675bdb6752c39b77c4a8bf657a166fc27447c4941a849",
+  "input_summary": "Monitor acquisition reply threads under remote-business/no-inventory scope; advance only verified remote targets; sign only ordinary authorized NDAs after complete terms review; notify only on decision or Human Authority gates.",
+  "routed_to": {
+    "authority": "HUMAN_AUTHORITY",
+    "company": "AGENT_OPERATING_COMPANY",
+    "division_id": "01",
+    "division_name": "Strategy & Portfolio Governance",
+    "canon_refs": [
+      "aoc/divisions/01-strategy-portfolio-governance.yaml",
+      "enforcement/PREFLIGHT.md",
+      "enforcement/CAPABILITY-ROUTING.md",
+      "aoc/configuration/AUTOMATIONS-REGISTRY.yaml"
+    ],
+    "roles": ["portfolio-governor"]
+  },
+  "checks": [
+    {
+      "id": "scope",
+      "name": "Remote-only acquisition scope",
+      "result": "pass",
+      "detail": "Monitor or advance only remote or remotely operable no-inventory targets; the current Transworld target remains a remote candidate pending explicit confirmation of operational continuity."
+    },
+    {
+      "id": "authority",
+      "name": "Human Authority delegation",
+      "result": "pass",
+      "detail": "Current Human Authority instruction delegates nonbinding acquisition follow-up and ordinary NDA execution only when remote qualification and complete-term checks pass."
+    },
+    {
+      "id": "nda",
+      "name": "NDA execution boundary",
+      "result": "warn",
+      "detail": "A new e-sign envelope was received, but complete NDA text is not exposed by available mail tools and remote-operability confirmation is still missing."
+    },
+    {
+      "id": "risk",
+      "name": "Consequential action screen",
+      "result": "pass",
+      "detail": "No LOI, proof-of-funds representation, financing acceptance, fee, guarantee, collateral agreement, or document signature was executed."
+    }
+  ],
+  "decision": "PASS",
+  "fail_closed": false,
+  "work_permitted": true,
+  "status_marker": "[AOC/Canon • Preflight PASS]",
+  "notes": [
+    "Monitoring, public verification, and a bounded clarification reply are permitted; the NDA signature remains fail-closed until remote qualification and complete agreement review are satisfied."
+  ],
+  "execution_plan": {
+    "capability_bundles": ["RESEARCH_GROUNDED"],
+    "required_skills": ["inbox monitoring", "public-source verification", "acquisition NDA gate review"],
+    "preferred_plugins": ["Microsoft_Outlook_Email", "GitHub"],
+    "conditional_plugins": ["public web", "e-sign broker workflow"],
+    "verification": [
+      "verify sender, timestamp, and message content",
+      "verify public listing remote/no-inventory claims",
+      "verify outbound follow-up receipt",
+      "review complete NDA before signature"
+    ],
+    "automation_level": "automatic_bounded",
+    "bounded_actions": [
+      "monitor connected inboxes",
+      "verify public listing facts",
+      "send nonbinding clarification follow-up under current Human Authority delegation"
+    ],
+    "human_authority_gates": [
+      "non-standard NDA clause",
+      "missing required signer field",
+      "proof-of-funds or financial-capability attestation",
+      "LOI or financing commitment",
+      "guarantee, collateral, or fee"
+    ],
+    "action_policy": {
+      "monitoring": "automatic_no_interaction",
+      "source_verification": "automatic_no_interaction",
+      "clarification_followup": "automatic_bounded",
+      "ordinary_nda_after_all_checks": "automatic_bounded",
+      "nonstandard_legal_commitment": "human_authority_gate"
+    },
+    "invocation_rule": "Use authoritative inbox and public listing evidence; do not infer missing remote-operability or legal terms.",
+    "fallback_rule": "If the secure NDA body cannot be inspected, request a pre-sign copy and do not sign."
+  },
+  "enforcement_version": "1.1"
+}
