@@ -1,0 +1,110 @@
+id: WI-2026-08-27-EXPOSUREOS-V0
+title: ExposureOS - Local Visibility and Revenue Recovery Platform
+record_type: work_item
+status: implementation_authorized_pre_release
+canonical: true
+created_at: 2026-08-27T14:39:00-04:00
+updated_at: 2026-08-27T14:39:00-04:00
+human_authority:
+  approval_recorded: true
+  approval_source: "User approved the previously presented ExposureOS course of action with: Proceed with the suggested course of action"
+  approved_scope:
+    - canonical design specification
+    - implementation planning
+    - reversible repository and artifact creation
+    - application build and test execution
+    - private or staging deployment
+    - creation of non-charging pricing surfaces and payment-readiness integration points
+  approval_required_later:
+    - live billing activation or collection of funds
+    - production/public commercial launch
+    - external outbound marketing messages sent to prospects
+    - consequential third-party account mutations not strictly required for staging
+objective: >
+  Build ExposureOS as a multi-tenant SaaS for high-value local home-service
+  businesses that measures discoverability, identifies conversion leakage,
+  recovers inbound opportunities through governed follow-up, improves legitimate
+  review operations, and attributes resulting pipeline and closed revenue.
+primary_buyer:
+  role: Owner-operator, general manager, or marketing lead with purchasing authority.
+  initial_verticals:
+    - HVAC
+    - plumbing
+    - roofing
+    - electrical
+  business_profile: 2-25 employees, meaningful inbound lead volume, high customer lifetime value, local-search dependence, no sophisticated internal growth team.
+expensive_problem: >
+  Local service businesses spend heavily to generate discovery and inbound leads,
+  then lose revenue through weak online visibility, slow or missing follow-up,
+  stale reputation signals, and poor attribution.
+fixed_offer:
+  free: Exposure Scan
+  core: "$299/location/month target price; not billing-authorized yet"
+  growth: "$599/location/month target price; not billing-authorized yet"
+  agency: "$1,499+/month target starting point; quote-based and not billing-authorized yet"
+first_release_surfaces:
+  - Exposure Scan
+  - Business Intelligence Profile
+  - Lead Inbox
+  - Governed Follow-up Automations
+  - Reputation Engine
+  - Exposure Action Queue
+  - Revenue Ledger
+constraints:
+  - No fabricated reviews, testimonials, customer activity, revenue, or attribution.
+  - Demo and synthetic data must be visibly labeled.
+  - Review solicitation must not be conditioned on positive sentiment.
+  - External messages default to draft/approval mode until an account-level policy explicitly allows sending.
+  - Public profile mutations must pass generated -> reviewed -> approved -> executed -> verified state gates.
+  - Attribution must expose confidence when causality is uncertain.
+  - No production/commercial release claim until POL-REV-001 passes or Human Authority records a specific exception.
+  - No live billing activation without Human Authority approval.
+  - Mobile-first usability is required for iPhone Safari and the ChatGPT/Replit handoff path.
+deliverables:
+  - governed Canon project record and receipts
+  - versioned product design specification
+  - implementation plan
+  - runnable multi-tenant web application
+  - persistence and seeded demo workspace
+  - exposure scanner for permitted public website signals
+  - lead/reputation/action/revenue workflows
+  - pricing and payment-readiness surface
+  - audit log and approval gates
+  - automated verification suite
+  - staging deployment receipt
+  - revenue-ready-release manifest marked PASS/BLOCKED/FAIL from evidence
+acceptance_criteria:
+  - A user can submit a website URL and receive an evidence-linked Exposure Scan without invented external-business facts.
+  - A tenant can maintain its canonical business profile and service/location data.
+  - Leads can be created, prioritized, advanced through a pipeline, and assigned a next action.
+  - Follow-up actions can be generated and approved without being silently sent.
+  - Review requests are only generated for legitimate customer records and contain no sentiment gating.
+  - Exposure actions move through proposed, approved, executed, and verified states.
+  - Revenue Ledger separates detected value, pipeline value, booked value, and realized value.
+  - Demo data is unmistakably labeled as demo/synthetic.
+  - Tenant boundaries and authorization are enforced for stored records.
+  - Critical workflows have automated tests and a reproducible verification receipt.
+  - The staging application is reachable and usable on mobile.
+  - Revenue-ready gate truthfully remains BLOCKED until real payment/demand evidence and all required commercial criteria exist.
+buildgraph:
+  decision: CREATE_NEW
+  canonical_concept: ExposureOS
+  implementation_namespace_decision: CREATE_NEW
+  reuse:
+    - shared AOC governance and receipt patterns from Canon
+    - generic SaaS authentication, persistence, audit, and billing-adapter patterns only
+  create_new_justification: >
+    No ExposureOS repository or equivalent local-visibility plus revenue-recovery
+    product exists in the connected GitHub estate. Reusing OpportunityOS or an
+    unrelated product would collapse project boundaries.
+authority_ceiling: medium
+data_classification: confidential
+evidence_required:
+  - source-backed market and competitor research
+  - application preview/staging URL
+  - automated test results
+  - database and tenant-isolation verification
+  - action-gate verification
+  - payment-path verification before billing activation
+  - cleared payment receipt or executed payable commitment before commercial PASS
+exact_next_gate: Build and verify the staging product, then evaluate POL-REV-001 without inflating readiness claims.
