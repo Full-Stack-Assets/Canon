@@ -1,0 +1,174 @@
+{
+  "api_version": "aoc/v1",
+  "kind": "RevenueReadyReleaseEvidence",
+  "policy_id": "POL-REV-001",
+  "policy_version": "1.0.0",
+  "project_id": "ExposureOS",
+  "release": {
+    "iteration": 1,
+    "candidate": "ExposureOS private-beta staging v0",
+    "evaluated_at": "2026-08-27"
+  },
+  "decision": "BLOCKED",
+  "criteria": {
+    "specific_buyer": {
+      "status": "PASS",
+      "owner": "WI-2026-08-27-EXPOSUREOS-V0",
+      "evidence_refs": ["projects/exposureos/WORK-ITEM.yaml"],
+      "notes": "Initial buyer is explicitly 2-25 employee HVAC, plumbing, roofing and electrical owner-operators, GMs and marketing leads.",
+      "validated_at": "2026-08-27"
+    },
+    "urgent_problem": {
+      "status": "PASS",
+      "owner": "WI-2026-08-27-EXPOSUREOS-V0",
+      "evidence_refs": ["projects/exposureos/MARKET-EVIDENCE-2026-08-27.md"],
+      "notes": "Source-backed evidence supports customer-acquisition difficulty, high home-service lead costs, and growing multi-surface discovery/reputation complexity. This is market-problem evidence, not willingness-to-pay proof.",
+      "validated_at": "2026-08-27"
+    },
+    "compelling_offer": {
+      "status": "PASS",
+      "owner": "WI-2026-08-27-EXPOSUREOS-V0",
+      "evidence_refs": ["projects/exposureos/WORK-ITEM.yaml", "projects/exposureos/docs/superpowers/specs/2026-08-27-exposureos-v0-design.md"],
+      "notes": "Fixed product promise and seven-surface offer are defined. Customer conversion remains unvalidated.",
+      "validated_at": "2026-08-27"
+    },
+    "pricing_model": {
+      "status": "PASS",
+      "owner": "WI-2026-08-27-EXPOSUREOS-V0",
+      "evidence_refs": ["projects/exposureos/BILLING-ARCHITECTURE-V0.md"],
+      "notes": "Core $299/location/month, Growth $599/location/month, Agency from $1,499/month are defined target prices. Live billing is intentionally disabled.",
+      "validated_at": "2026-08-27"
+    },
+    "proof": {
+      "status": "BLOCKED",
+      "owner": "WI-2026-08-27-EXPOSUREOS-V0",
+      "evidence_refs": ["projects/exposureos/STAGING-DEPLOYMENT-RECEIPT-2026-08-27.json"],
+      "notes": "A runtime-clean staging product exists, but no real customer outcome, permissioned case study, or attached automated E2E run exists yet.",
+      "validated_at": "2026-08-27"
+    },
+    "customer_source": {
+      "status": "PASS",
+      "owner": "WI-2026-08-27-EXPOSUREOS-V0",
+      "evidence_refs": ["projects/exposureos/PILOT-COHORT-2026-08-27.md"],
+      "notes": "A source-qualified Massachusetts beachhead and pilot selection method are documented; no outreach has been sent.",
+      "validated_at": "2026-08-27"
+    },
+    "acquisition_channel": {
+      "status": "PASS",
+      "owner": "WI-2026-08-27-EXPOSUREOS-V0",
+      "evidence_refs": ["projects/exposureos/GO-TO-MARKET-V0.md"],
+      "notes": "Free scanner, precision account-based outreach, evidence media, proprietary benchmarks and agency distribution are specified with gating metrics.",
+      "validated_at": "2026-08-27"
+    },
+    "conversion_mechanism": {
+      "status": "PASS",
+      "owner": "WI-2026-08-27-EXPOSUREOS-V0",
+      "evidence_refs": ["projects/exposureos/STAGING-DEPLOYMENT-RECEIPT-2026-08-27.json"],
+      "notes": "Staging exposes Free Exposure Scan -> report -> Request activation. Activation is deliberately non-charging.",
+      "validated_at": "2026-08-27"
+    },
+    "payment_infrastructure": {
+      "status": "BLOCKED",
+      "owner": "Human Authority",
+      "evidence_refs": ["projects/exposureos/BILLING-ARCHITECTURE-V0.md"],
+      "notes": "Stripe architecture is designed but no live Product, Price, Checkout or subscription path has been activated. Live billing requires explicit approval.",
+      "validated_at": "2026-08-27"
+    },
+    "fulfillment_system": {
+      "status": "BLOCKED",
+      "owner": "WI-2026-08-27-EXPOSUREOS-V0",
+      "evidence_refs": ["projects/exposureos/STAGING-DEPLOYMENT-RECEIPT-2026-08-27.json"],
+      "notes": "Core fulfillment surfaces are deployed and runtime-clean, but full E2E acceptance remains unverified because the deployment provider attached no E2E run.",
+      "validated_at": "2026-08-27"
+    },
+    "onboarding": {
+      "status": "BLOCKED",
+      "owner": "WI-2026-08-27-EXPOSUREOS-V0",
+      "evidence_refs": ["projects/exposureos/docs/superpowers/specs/2026-08-27-exposureos-v0-design.md"],
+      "notes": "Synthetic sandbox bootstrapping exists; production customer onboarding and integration credential intake are not verified.",
+      "validated_at": "2026-08-27"
+    },
+    "customer_support": {
+      "status": "BLOCKED",
+      "owner": "WI-2026-08-27-EXPOSUREOS-V0",
+      "evidence_refs": ["projects/exposureos/STAGING-DEPLOYMENT-RECEIPT-2026-08-27.json"],
+      "notes": "Support surface is explicitly a private-beta placeholder; production support channel and service posture are not committed.",
+      "validated_at": "2026-08-27"
+    },
+    "retention_mechanism": {
+      "status": "BLOCKED",
+      "owner": "WI-2026-08-27-EXPOSUREOS-V0",
+      "evidence_refs": ["projects/exposureos/GO-TO-MARKET-V0.md"],
+      "notes": "Recurring value loop is designed around monitoring, recovery, reputation and attribution, but retention has no real-customer evidence.",
+      "validated_at": "2026-08-27"
+    },
+    "expansion_path": {
+      "status": "PASS",
+      "owner": "WI-2026-08-27-EXPOSUREOS-V0",
+      "evidence_refs": ["projects/exposureos/GO-TO-MARKET-V0.md", "projects/exposureos/BILLING-ARCHITECTURE-V0.md"],
+      "notes": "Location expansion, Growth tier and Agency/multi-location distribution are explicitly sequenced after direct-customer proof.",
+      "validated_at": "2026-08-27"
+    },
+    "unit_economics": {
+      "status": "BLOCKED",
+      "owner": "WI-2026-08-27-EXPOSUREOS-V0",
+      "evidence_refs": ["projects/exposureos/GO-TO-MARKET-V0.md"],
+      "notes": "Gross-margin, CAC-payback and churn targets exist but have no actual customer cohort evidence.",
+      "validated_at": "2026-08-27"
+    },
+    "measurement": {
+      "status": "PASS",
+      "owner": "WI-2026-08-27-EXPOSUREOS-V0",
+      "evidence_refs": ["projects/exposureos/STAGING-DEPLOYMENT-RECEIPT-2026-08-27.json", "projects/exposureos/GO-TO-MARKET-V0.md"],
+      "notes": "Product ledger separates DETECTED, PIPELINE, BOOKED and REALIZED while GTM defines weekly funnel and economics metrics. Demo data is excluded from real totals.",
+      "validated_at": "2026-08-27"
+    },
+    "legal_operational_basics": {
+      "status": "BLOCKED",
+      "owner": "Human Authority / Legal Review",
+      "evidence_refs": ["projects/exposureos/WORK-ITEM.yaml", "projects/exposureos/STAGING-DEPLOYMENT-RECEIPT-2026-08-27.json"],
+      "notes": "No fake-review/sentiment-gating rules and action authority are defined, but production privacy, terms, tax, refund/cancellation and outbound-compliance posture require review.",
+      "validated_at": "2026-08-27"
+    },
+    "automation": {
+      "status": "BLOCKED",
+      "owner": "WI-2026-08-27-EXPOSUREOS-V0",
+      "evidence_refs": ["projects/exposureos/STAGING-DEPLOYMENT-RECEIPT-2026-08-27.json"],
+      "notes": "Governed state machines are deployed, but real external adapters intentionally fail closed and therefore production automation is not activated.",
+      "validated_at": "2026-08-27"
+    },
+    "accountability": {
+      "status": "PASS",
+      "owner": "WI-2026-08-27-EXPOSUREOS-V0",
+      "evidence_refs": ["projects/exposureos/PREFLIGHT-RECEIPT.json", "projects/exposureos/STAGING-DEPLOYMENT-RECEIPT-2026-08-27.json"],
+      "notes": "Authority boundaries, fail-closed external effects, state transition guards and audit receipts are part of the project and deployed staging posture.",
+      "validated_at": "2026-08-27"
+    },
+    "continuous_demand_validation": {
+      "status": "BLOCKED",
+      "owner": "Human Authority / Commercial Work Item",
+      "evidence_refs": [],
+      "notes": "No cleared customer payment or executed payable commitment exists. Policy requires this criterion before commercial PASS.",
+      "validated_at": "2026-08-27"
+    }
+  },
+  "first_dollar_stack": {
+    "painful_problem": {"status":"PASS","owner":"WI-2026-08-27-EXPOSUREOS-V0","evidence_refs":["projects/exposureos/MARKET-EVIDENCE-2026-08-27.md"],"notes":"Source-backed acquisition/lead-economics pain is documented.","validated_at":"2026-08-27"},
+    "defined_buyer": {"status":"PASS","owner":"WI-2026-08-27-EXPOSUREOS-V0","evidence_refs":["projects/exposureos/WORK-ITEM.yaml"],"notes":"Initial buyer and vertical boundaries are explicit.","validated_at":"2026-08-27"},
+    "fixed_offer": {"status":"PASS","owner":"WI-2026-08-27-EXPOSUREOS-V0","evidence_refs":["projects/exposureos/docs/superpowers/specs/2026-08-27-exposureos-v0-design.md"],"notes":"Seven-surface offer and promise are fixed for v0.","validated_at":"2026-08-27"},
+    "price": {"status":"PASS","owner":"WI-2026-08-27-EXPOSUREOS-V0","evidence_refs":["projects/exposureos/BILLING-ARCHITECTURE-V0.md"],"notes":"Target plan prices are fixed for validation; live collection remains disabled.","validated_at":"2026-08-27"},
+    "proof_asset": {"status":"BLOCKED","owner":"WI-2026-08-27-EXPOSUREOS-V0","evidence_refs":["projects/exposureos/STAGING-DEPLOYMENT-RECEIPT-2026-08-27.json"],"notes":"A working staging demonstration exists, but no real customer before/after result or permissioned proof asset exists yet.","validated_at":"2026-08-27"},
+    "qualified_lead_source": {"status":"PASS","owner":"WI-2026-08-27-EXPOSUREOS-V0","evidence_refs":["projects/exposureos/PILOT-COHORT-2026-08-27.md"],"notes":"Pilot prospect sourcing method and initial cohort research exist.","validated_at":"2026-08-27"},
+    "sales_path": {"status":"PASS","owner":"WI-2026-08-27-EXPOSUREOS-V0","evidence_refs":["projects/exposureos/GO-TO-MARKET-V0.md"],"notes":"Verified scan -> report -> activation request -> diagnostic/onboarding path is defined.","validated_at":"2026-08-27"},
+    "payment_path": {"status":"BLOCKED","owner":"Human Authority","evidence_refs":["projects/exposureos/BILLING-ARCHITECTURE-V0.md"],"notes":"Live Stripe path intentionally not activated or verified.","validated_at":"2026-08-27"},
+    "fulfillment_path": {"status":"BLOCKED","owner":"WI-2026-08-27-EXPOSUREOS-V0","evidence_refs":["projects/exposureos/STAGING-DEPLOYMENT-RECEIPT-2026-08-27.json"],"notes":"Runtime-clean staging exists, but automated E2E fulfillment evidence is still missing.","validated_at":"2026-08-27"},
+    "direct_outreach_and_follow_up": {"status":"BLOCKED","owner":"Human Authority","evidence_refs":["projects/exposureos/GO-TO-MARKET-V0.md"],"notes":"Outreach system is planned but the first external batch has not been approved or sent.","validated_at":"2026-08-27"}
+  },
+  "attestations": {
+    "claims_source_backed": true,
+    "no_synthetic_customer_proof": true,
+    "payment_path_verified": false,
+    "paying_demand_verified": false,
+    "human_authority_gates_preserved": true
+  }
+}
