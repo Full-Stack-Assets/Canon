@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "schema": "canon.action.receipt",
+  "id": "worldline-4d-causal-kernel-design-approval-2026-08-27",
+  "timestamp": "2026-08-27T11:04:00Z",
+  "work_item": "Worldline / 4D Causal World Model deterministic causal-kernel architecture",
+  "authority": "HUMAN_AUTHORITY",
+  "action": "ARCHITECTURE_DESIGN_APPROVAL",
+  "decision": "APPROVED",
+  "approved_design": {
+    "repository": "Full-Stack-Assets/WorldGen",
+    "branch": "design/worldline-4d-causal-kernel-2026-08-27",
+    "spec_path": "docs/superpowers/specs/2026-08-27-worldline-4d-causal-kernel-design.md",
+    "spec_commit": "2a7eaa93d87ef876dadd96aa0b7ced8f70d19e05"
+  },
+  "authority_boundaries": [
+    "Approval authorizes writing and reviewing the architecture specification.",
+    "Approval does not authorize merge to main, production deployment, database migration, authority expansion, or automatic promotion of new transition-mechanism versions.",
+    "Implementation planning remains gated on Human Authority review of the committed written specification.",
+    "AI proposal producers and renderers remain non-authoritative relative to the deterministic causal kernel."
+  ],
+  "canon_lineage": [
+    "evidence/receipts/2026-08-27-worldline-4d-causal-world-model-preflight.json"
+  ],
+  "status": "RECORDED_ON_REVIEW_BRANCH"
+}
