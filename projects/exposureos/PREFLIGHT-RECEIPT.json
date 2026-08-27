@@ -1,0 +1,45 @@
+{
+  "api_version": "aoc/v1",
+  "kind": "PreflightReceipt",
+  "id": "PREFLIGHT-2026-08-27-EXPOSUREOS-V0",
+  "work_item_id": "WI-2026-08-27-EXPOSUREOS-V0",
+  "evaluated_at": "2026-08-27T14:39:00-04:00",
+  "decision": "CREATE_NEW",
+  "sources_consulted": [
+    "Full-Stack-Assets/Canon:aoc/revenue/REVENUE-READY-RELEASE-GATE.md",
+    "Full-Stack-Assets/Canon:projects/subscriptionsweep/apple-trial-guard/WORK-ITEM.yaml",
+    "GitHub repository search: Full-Stack-Assets / ExposureOS",
+    "Approved ExposureOS design from the current Work Item conversation"
+  ],
+  "reuse_decision": {
+    "reuse": [
+      "AOC governance and receipt patterns",
+      "generic SaaS tenancy/authentication/audit patterns",
+      "provider adapter patterns"
+    ],
+    "do_not_reuse_as_canonical_product": [
+      "OpportunityOS",
+      "SubscriptionSweep",
+      "unrelated portfolio repositories"
+    ],
+    "rationale": "No ExposureOS repository or equivalent local-visibility plus revenue-recovery product exists. A separate implementation boundary preserves product authority and provenance."
+  },
+  "authority": {
+    "approved_now": [
+      "design",
+      "implementation planning",
+      "reversible build actions",
+      "tests",
+      "private/staging deployment"
+    ],
+    "fail_closed_later": [
+      "live billing activation",
+      "public commercial launch",
+      "external prospect outreach",
+      "destructive or irreversible third-party mutations"
+    ]
+  },
+  "release_policy": "POL-REV-001",
+  "release_posture": "PRE_RELEASE",
+  "verified": true
+}
