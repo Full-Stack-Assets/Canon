@@ -4,7 +4,7 @@ record_type: work_item
 status: implementation_plan_ready_for_human_review
 canonical: false
 created_at: 2026-08-27T07:04:00-04:00
-updated_at: 2026-08-28T19:55:00-04:00
+updated_at: 2026-08-28T20:00:00-04:00
 human_authority:
   approval_recorded: true
   architecture_approval_receipt: evidence/receipts/2026-08-27-worldline-4d-causal-kernel-design-approval.json
@@ -30,7 +30,7 @@ repository:
   implementation: Full-Stack-Assets/WorldGen
   design_branch: design/worldline-4d-causal-kernel-2026-08-27
   design_commit: 2a7eaa93d87ef876dadd96aa0b7ced8f70d19e05
-  plan_commit: 535c0730b1d08f0754be7fb694a8ab45d79314c0
+  plan_commit: 4cbf50e8e06e12fbb8e0d155a70fe7460d0603d3
   design_spec: docs/superpowers/specs/2026-08-27-worldline-4d-causal-kernel-design.md
   implementation_plan: docs/superpowers/plans/2026-08-28-worldline-4d-causal-kernel.md
   draft_pull_request: https://github.com/Full-Stack-Assets/WorldGen/pull/26
