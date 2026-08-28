@@ -1,0 +1,64 @@
+{
+  "schema": "aoc.acquisition_reply_action_receipt",
+  "version": "1.0.0",
+  "timestamp": "2026-08-28T00:27:43Z",
+  "work_item": "Acquisition Reply Gate Watch",
+  "target": {
+    "listing": "0101-485046",
+    "broker": "Transworld Business Advisors",
+    "contact": "Moche Hazout"
+  },
+  "inbound": [
+    {
+      "received_at": "2026-08-28T00:02:59Z",
+      "type": "remote_operability_confirmation",
+      "status": "SUBSTANTIVE_GATE_CLEARED",
+      "evidence": "Broker confirmed the business is operating remotely and has no inventory."
+    },
+    {
+      "received_at": "2026-08-28T00:27:05Z",
+      "type": "esign_completion_receipt",
+      "status": "COMPLETED",
+      "signer_display": "Blaize Z"
+    }
+  ],
+  "scope_evaluation": {
+    "remote_business": "VERIFIED_BY_BROKER_RESPONSE",
+    "physical_inventory": "NONE_BY_BROKER_RESPONSE",
+    "advance_allowed": true
+  },
+  "nda": {
+    "execution_completion_receipt_received": true,
+    "signature_initiated_by_this_runtime": false,
+    "complete_executed_text_retrieved_by_this_runtime": false,
+    "remaining_evidence_gap": "The Outlook connector exposed the signature-completion receipt but not a retrievable executed NDA document body. An executed/countersigned copy has been requested for clause verification."
+  },
+  "actions": [
+    {
+      "type": "reply",
+      "status": "SENT",
+      "purpose": "Request executed/countersigned NDA and full buyer diligence package including financial, recurring-revenue, customer concentration, A/R, owner-role, workforce, contract, change-of-control, and seller-financing evidence."
+    }
+  ],
+  "diligence_framework": {
+    "required_on_package_receipt": [
+      "normalize EBITDA and CFADS",
+      "include owner-replacement compensation",
+      "quantify working-capital needs",
+      "apply 1.50x stressed DSCR floor",
+      "separate purchase-price financing from post-close working-capital financing",
+      "test senior acquisition debt, seller note, earnout, deferred consideration, ARR/MRR financing, A/R or invoice financing, payroll funding, and lawful HoldCo upstream-distribution debt service where applicable",
+      "identify all-in liquidity requirements",
+      "flag legal, regulatory, financial-assistance, change-of-control, tax, fraud, solvency, collateral, guarantee, control, and remote-operability issues"
+    ]
+  },
+  "prohibited_actions_confirmed_not_taken_by_this_runtime": [
+    "LOI",
+    "proof-of-funds representation",
+    "financing acceptance",
+    "fee payment",
+    "personal guarantee",
+    "collateral agreement"
+  ],
+  "next_condition": "When the executed NDA copy or buyer package arrives, inspect the exact agreement terms and released diligence materials, then perform nonbinding financeability and remote-operability diligence automatically."
+}
