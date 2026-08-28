@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "schema": "canon.human-authority.approval-receipt",
+  "id": "worldline-4d-causal-kernel-written-spec-approval-2026-08-28",
+  "recorded_at": "2026-08-28T19:49:00-04:00",
+  "authority": "HUMAN_AUTHORITY",
+  "work_item": "WI-2026-08-27-WORLDLINE-4D-CAUSAL-KERNEL",
+  "decision": "APPROVED",
+  "approval_scope": [
+    "written specification at WorldGen commit 2a7eaa93d87ef876dadd96aa0b7ced8f70d19e05",
+    "implementation planning",
+    "reversible review-branch plan artifacts"
+  ],
+  "source": {
+    "repository": "Full-Stack-Assets/WorldGen",
+    "pull_request": 26,
+    "spec_path": "docs/superpowers/specs/2026-08-27-worldline-4d-causal-kernel-design.md",
+    "spec_blob_sha": "c7f8ecb1f3fa0a821b2e5008227c0bad22aeed2e"
+  },
+  "still_gated": [
+    "implementation plan acceptance",
+    "promotion of a new agent-generated mechanism to APPROVED_EXECUTABLE",
+    "merge to main",
+    "production persistence migration",
+    "production deployment",
+    "authority-policy changes"
+  ],
+  "note": "Approval authorizes implementation planning only; no runtime implementation or consequential merge is authorized by this receipt."
+}
