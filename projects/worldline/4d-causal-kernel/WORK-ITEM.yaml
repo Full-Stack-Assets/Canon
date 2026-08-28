@@ -1,19 +1,20 @@
 id: WI-2026-08-27-WORLDLINE-4D-CAUSAL-KERNEL
 title: Worldline - 4D Causal World Model Kernel
 record_type: work_item
-status: written_spec_ready_for_human_review
+status: implementation_plan_in_progress
 canonical: false
 created_at: 2026-08-27T07:04:00-04:00
-updated_at: 2026-08-27T07:09:35-04:00
+updated_at: 2026-08-28T19:49:00-04:00
 human_authority:
   approval_recorded: true
-  approval_receipt: evidence/receipts/2026-08-27-worldline-4d-causal-kernel-design-approval.json
+  architecture_approval_receipt: evidence/receipts/2026-08-27-worldline-4d-causal-kernel-design-approval.json
+  written_spec_approval_receipt: evidence/receipts/2026-08-28-worldline-4d-causal-kernel-written-spec-approval.json
   approved_scope:
     - architecture design specification
+    - written specification
+    - implementation planning
     - reversible review-branch artifact creation
-    - written specification self-review
   approval_required_later:
-    - written specification acceptance
     - implementation plan acceptance
     - promotion of any new agent-generated transition mechanism to APPROVED_EXECUTABLE
     - merge to main
@@ -51,7 +52,7 @@ research_evidence:
     use: motivates harness and runtime provenance as part of proposal-producer identity
 deliverables:
   - reviewed architecture specification
-  - implementation plan after written-spec approval
+  - implementation plan
   - deterministic canonical serialization and hashing
   - immutable canonical revision lineage
   - typed Transition IR and bounded deterministic executor
@@ -80,4 +81,4 @@ evidence_required:
   - Transition-gate adverse test results.
   - Renderer non-mutation test results.
   - Repository typecheck, test, and production-build results before implementation completion claims.
-exact_next_gate: Human review of WorldGen draft PR #26 written specification, followed by implementation planning only after explicit approval.
+exact_next_gate: Human review and acceptance of the committed implementation plan before runtime implementation begins.
