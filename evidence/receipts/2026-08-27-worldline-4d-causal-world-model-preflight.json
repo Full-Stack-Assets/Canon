@@ -1,0 +1,122 @@
+{
+  "version": "1.0.0",
+  "schema": "canon.preflight.receipt",
+  "id": "6f8a8a46-8c2d-4d12-b5b0-7a9d7e1a4c27",
+  "timestamp": "2026-08-27T10:06:44Z",
+  "input_digest": "sha256:e6a02f828b9030c262be45b20ec158a69464807d2cb7d2c22f5405eb952fa6dd",
+  "input_summary": "Design a governed Worldline / 4D Causal World Model architecture in WorldGen where Canon remains the deterministic, versioned, causally auditable authority; AI coding agents may propose transition mechanisms and generative models may render canonical states, but neither may directly mutate canonical truth.",
+  "routed_to": {
+    "authority": "HUMAN_AUTHORITY",
+    "company": "AGENT_OPERATING_COMPANY",
+    "division_id": "03",
+    "division_name": "Solution Architecture & Design",
+    "canon_refs": [
+      "AGENTS.md",
+      "enforcement/PREFLIGHT.md",
+      "enforcement/CAPABILITY-ROUTING.md"
+    ],
+    "roles": [
+      "solution-architect"
+    ]
+  },
+  "checks": [
+    {
+      "id": "presence",
+      "name": "Input present",
+      "result": "pass",
+      "detail": "A concrete architecture objective and authority boundary were supplied."
+    },
+    {
+      "id": "routing",
+      "name": "Universal routing",
+      "result": "pass",
+      "detail": "Work Item routed to Solution Architecture & Design with GitHub repository grounding."
+    },
+    {
+      "id": "canon",
+      "name": "Canon grounding",
+      "result": "pass",
+      "detail": "Canon governance and capability-routing policies were inspected before architecture design."
+    },
+    {
+      "id": "repository",
+      "name": "Target repository resolution",
+      "result": "pass",
+      "detail": "Worldline is implemented inside Full-Stack-Assets/WorldGen; no repository literally named Worldline was found."
+    },
+    {
+      "id": "authority",
+      "name": "Mutation authority boundary",
+      "result": "pass",
+      "detail": "Repository reading and evidence preservation are permitted; WorldGen implementation remains gated behind architecture approval under the active design workflow."
+    },
+    {
+      "id": "risk",
+      "name": "Risk screen",
+      "result": "pass",
+      "detail": "The requested architecture strengthens state authority and does not expand agent authority."
+    }
+  ],
+  "decision": "PASS",
+  "fail_closed": false,
+  "work_permitted": true,
+  "status_marker": "[AOC/Canon • Preflight PASS]",
+  "notes": [
+    "Worldline currently has no project-specific entry under Canon/projects; creation of one is part of the proposed architecture work and has not yet occurred.",
+    "Fresh user-supplied evidence concerning JIT-Agent and Code World Model is treated as external research evidence, not Canon truth, until accepted through the project design and provenance process.",
+    "No WorldGen code, schema, production runtime, or canonical state has been modified by this preflight receipt."
+  ],
+  "execution_plan": {
+    "capability_bundles": [
+      "CODE_QUALITY",
+      "SECURE_BUILD",
+      "RESEARCH_GROUNDED"
+    ],
+    "required_skills": [
+      "superpowers:brainstorming",
+      "superpowers:writing-plans",
+      "superpowers:test-driven-development",
+      "superpowers:verification-before-completion"
+    ],
+    "preferred_plugins": [
+      "GitHub"
+    ],
+    "conditional_plugins": [
+      "Context7"
+    ],
+    "verification": [
+      "repository_architecture_review",
+      "deterministic_replay_tests",
+      "state_hash_and_lineage_tests",
+      "transition_gate_adverse_tests",
+      "renderer_non_mutation_tests",
+      "full_repository_typecheck_tests_build"
+    ],
+    "automation_level": "automatic_bounded",
+    "bounded_actions": [
+      "preserve_preflight_receipt_on_review_branch",
+      "prepare_design_spec_after_human_design_approval",
+      "prepare_implementation_plan_after_spec_approval",
+      "open_draft_pull_requests"
+    ],
+    "human_authority_gates": [
+      "architecture_design_approval",
+      "new_canonical_transition_mechanism_promotion",
+      "merge_to_main",
+      "production_deployment",
+      "authority_policy_change"
+    ],
+    "action_policy": {
+      "repository_reading": "automatic_no_interaction",
+      "external_research_verification": "automatic_no_interaction",
+      "evidence_preservation": "automatic_bounded",
+      "branch_creation": "automatic_bounded",
+      "worldgen_architecture_mutation": "human_design_approval_gate",
+      "consequential_release_merge": "human_authority_gate",
+      "production_deployment": "human_authority_gate"
+    },
+    "invocation_rule": "Treat generated code, harnesses, transition mechanisms, simulations, and renderings as candidate or derived artifacts until deterministic validation, provenance, and state-transition gates admit them.",
+    "fallback_rule": "If a transition or rendering artifact cannot be deterministically attributed to a canonical base revision and validated mechanism, fail closed and preserve it outside canonical truth."
+  },
+  "enforcement_version": "1.2.0"
+}
