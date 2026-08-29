@@ -1,0 +1,102 @@
+{
+  "schema": "aoc.acquisition_reply_action_receipt",
+  "version": "1.0.0",
+  "timestamp": "2026-08-29T00:00:09Z",
+  "work_item": "Acquisition Reply Gate Watch",
+  "product_identity": "ProductWeld.tech",
+  "target": {
+    "listing": "0101-485046",
+    "business": "Rank Titan AI / World Power Enterprises",
+    "broker": "Transworld Business Advisors",
+    "contact": "Moche Hazout"
+  },
+  "contact_authority": {
+    "moche_outbound_allowed": false,
+    "financing_provider_outreach_allowed": true
+  },
+  "inbound": [
+    {
+      "received_at": "2026-08-28T01:45:29Z",
+      "type": "confidential_information_package",
+      "status": "SUBSTANTIVE_DILIGENCE_RECEIVED",
+      "evidence": "Broker delivered Rank Titan confidential offering memorandum and related links after NDA completion."
+    },
+    {
+      "received_at": "2026-08-28",
+      "type": "target_status_change",
+      "target": "SBA Pre-Qualified Amazon CPG Agency / Quiet Light",
+      "status": "NO_LONGER_AVAILABLE",
+      "evidence": "Quiet Light advised that the listing is no longer available."
+    }
+  ],
+  "remote_scope": {
+    "rank_titan_remote_business": "VERIFIED_BY_PRIOR_BROKER_RESPONSE",
+    "rank_titan_physical_inventory": "NONE_BY_PRIOR_BROKER_RESPONSE",
+    "cim_support": "Founder-led SaaS, contractor developer, automation and outsourcing model; no inventory cost shown in financial summary."
+  },
+  "rank_titan_cim": {
+    "pages": 31,
+    "seller_reported_2025_sales": 653134,
+    "seller_reported_2025_income_before_tax": 189079,
+    "seller_reported_2025_recasted_earnings": 596075,
+    "seller_reported_2026_ytd_sales_through_apr20": 226855,
+    "seller_reported_2026_annualized_sales": 752745,
+    "seller_reported_2026_annualized_income_before_tax": 438015,
+    "seller_reported_2026_annualized_recasted_earnings": 710660,
+    "annualized_interest_expense": 4745,
+    "annualized_software_development_expense": 220417,
+    "annualized_website_development_expense": 49229,
+    "owner_hours_per_week": 10,
+    "developer_cost_per_month_claim": 1500,
+    "clients_claim": "100+ clients / approximately 250 locations",
+    "assets_included_claim": "SaaS codebase, client contracts, IP, website, brand",
+    "training_claim": "2 weeks",
+    "seller_noncompete_claim": "Global for 3 years"
+  },
+  "diligence_findings": {
+    "seller_recast_quality": "HIGH_RISK_UNVERIFIED",
+    "reason": "The 2026 annualized recast adds back approximately $220.4K of software development and $49.2K of website development, plus utilities, despite the business being a software platform requiring ongoing maintenance and feature work. These add-backs cannot be treated as financeable CFADS until their nonrecurring nature and post-close replacement costs are proven.",
+    "reported_ebitda_proxy": 442760,
+    "owner_replacement_required": true,
+    "working_capital_and_maintenance_reserve_required": true,
+    "provisional_normalized_cfads_range": "Approximately $313K-$363K before taxes and debt service, using the reported EBITDA proxy and a provisional $75K-$125K owner-replacement assumption; exact value remains unverified.",
+    "provisional_max_annual_debt_service_at_1_5x_dscr": "Approximately $209K-$242K",
+    "provisional_10yr_debt_capacity_range_at_10_to_12pct": "Approximately $1.21M-$1.53M",
+    "purchase_price_gap_implication": "At the $2.2M asking price, a conservative debt-supported structure likely requires substantial seller financing, deferred consideration, earnout, and/or outside equity before fees and working capital. Seller-recast-based leverage should not be used until add-backs are verified.",
+    "key_open_items": [
+      "monthly P&L and bank/merchant statements to verify revenue",
+      "MRR/ARR bridge and churn/cohort data",
+      "customer concentration and contract terms",
+      "A/R aging and collections behavior",
+      "software-development and website-development invoices and explanation of recurring versus one-time spend",
+      "owner-role replacement scope and market compensation",
+      "developer contract and continuity/change-of-control terms",
+      "source-code ownership, IP assignments, repo access and dependency inventory",
+      "working-capital requirements and deferred revenue",
+      "seller-financing flexibility"
+    ]
+  },
+  "financing_outreach_status": {
+    "byline": "OUTBOUND_SENT_NO_RESPONSE_YET",
+    "hunter_equity": "OUTBOUND_SENT_NO_RESPONSE_YET",
+    "penstock_equity": "OUTBOUND_SENT_NO_RESPONSE_YET",
+    "unsupported_pof_representation_made": false
+  },
+  "actions_taken_this_run": [
+    "Read inbound acquisition messages",
+    "Materialized and reviewed the Rank Titan CIM",
+    "Performed internal nonbinding financeability analysis",
+    "Did not contact Moche or Transworld",
+    "Did not make an offer or proof-of-funds representation"
+  ],
+  "prohibited_actions_confirmed_not_taken": [
+    "Moche/Transworld outbound contact",
+    "LOI",
+    "proof-of-funds representation",
+    "financing acceptance",
+    "fee payment",
+    "personal guarantee",
+    "collateral agreement"
+  ],
+  "next_condition": "Await financing-provider responses and additional diligence. Do not contact Moche/Transworld without fresh express Human Authority."
+}
