@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_Full_Stack_Assets_Canon_1788050607658-push-trigger-input-set
+  identifier: Build_Full_Stack_Assets_Canon_1788050607658pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_Full_Stack_Assets_Canon_1788050607658
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
